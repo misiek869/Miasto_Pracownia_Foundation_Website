@@ -25,8 +25,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en'>
-			<body
-				className={`${calistoga.variable} ${montserrat.variable}   antialiased`}>
+			<body className={`${calistoga.variable} ${montserrat.variable}`}>
 				{children}
 			</body>
 		</html>
