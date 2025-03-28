@@ -4,12 +4,16 @@ import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import Link from 'next/link'
 import flamingo from '@/public/images/flamingo.jpg'
+import Navigation from '@/components/Navigation'
 
 const HomePage = () => {
 	return (
 		<>
 			<div className='h-screen flex flex-col lg:flex-row'>
-				<div className='bg-[var(--primary)] h-1/2 lg:h-screen lg:w-1/2 flex flex-col items-center justify-center'>
+				<div className='bg-[var(--primary)] h-1/2 lg:h-screen lg:w-1/2 flex flex-col items-center justify-center relative'>
+					<div className='absolute top-6 left-6'>
+						<Navigation disabled={true} />
+					</div>
 					<h1 className='capitalize font-calistoga tracking-wide leading-snug text-6xl text-center mb-10 text-rose-500'>
 						fundacja miasto pracownia
 					</h1>
