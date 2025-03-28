@@ -5,7 +5,7 @@ import { Menu } from 'lucide-react'
 import { GiFlamingo } from 'react-icons/gi'
 
 type NavigationProps = {
-	disabled: boolean
+	disabled?: boolean
 	hidden?: string
 }
 
@@ -48,7 +48,7 @@ const Navigation = ({ disabled, hidden }: NavigationProps) => {
 							O Nas
 						</Link>
 						<Link
-							href='/workshops'
+							href='/pracownie'
 							className={
 								hidden === 'workshops'
 									? 'hidden'
