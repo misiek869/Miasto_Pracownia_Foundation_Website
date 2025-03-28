@@ -19,7 +19,7 @@ const HomePage = () => {
 						size={'lg'}
 						variant={'ghost'}
 						className='bg-rose-500 text-xl uppercase tracking-wider text-[var(--primary)]'>
-						<Link href={'/'}>Poznaj Nas</Link>
+						<Link href={'/about-us'}>Poznaj Nas</Link>
 					</Button>
 				</div>
 				<div className='bg-rose-500 h-1/2 lg:h-screen lg:w-1/2 flex items-end justify-center'>
@@ -28,7 +28,7 @@ const HomePage = () => {
 						width={500}
 						src={flamingo}
 						alt='flamingo_image'
-						className='rounded-tl-[45%] rounded-tr-[45%]'
+						className='rounded-tl-[50%] rounded-tr-[50%] rounde'
 					/>
 				</div>
 			</div>
