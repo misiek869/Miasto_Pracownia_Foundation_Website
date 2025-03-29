@@ -58,7 +58,7 @@ const Navigation = ({ disabled, hidden }: NavigationProps) => {
 							Pracownie
 						</Link>
 						<Link
-							href='/calendar'
+							href='/kalendarz'
 							className={
 								hidden === 'calendar'
 									? 'hidden'
