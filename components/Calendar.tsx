@@ -1,11 +1,13 @@
 'use client'
 
 import { cn } from '@/lib/utils'
-import { generateDate } from '@/utils'
+import { generateDate, months } from '@/utils'
 import dayjs, { Dayjs } from 'dayjs'
 import { useState } from 'react'
 import { MdToday } from 'react-icons/md'
 import { v4 as uuidv4 } from 'uuid'
+import { GrFormPrevious, GrFormNext } from 'react-icons/gr'
+import { set } from 'date-fns/fp'
 
 const events = [
 	{
@@ -54,12 +56,28 @@ const Calendar = () => {
 	const days = ['Pon', 'Wt', 'Śr', 'Czw', 'Pt', 'Sob', 'Ndz']
 	const currentDate = dayjs()
 	const [today, setToday] = useState(currentDate)
+	const [selectDate, setSelectDate] = useState(currentDate)
 
 	return (
 		<div className='flex mx-auto  gap-8 h-screen items-center'>
 			<div className='w-96 h-96'>
-				<div className=''>
-					<h1 className=''>{today.month()}</h1>
+				<div className=' flex justify-between'>
+					<h1 className='font-semibold'>
+						{months[today.month()]} {today.year()}
+					</h1>
+					<div className='flex items-center gap-4'>
+						<GrFormPrevious
+							className='w-6 h-6 hover:text-rose-500 transition-all cursor-pointer'
+							onClick={() => setToday(today.month(today.month() - 1))}
+						/>
+						<p className='cursor-pointer' onClick={() => setToday(currentDate)}>
+							Today
+						</p>
+						<GrFormNext
+							className='w-6 h-6 hover:text-rose-500 transition-all cursor-pointer'
+							onClick={() => setToday(today.month(today.month() + 1))}
+						/>
+					</div>
 				</div>
 				<div className='w-full grid grid-cols-7 text-md font-semibold'>
 					{days.map((day, index) => {
@@ -71,7 +89,7 @@ const Calendar = () => {
 					})}
 				</div>
 				<div className='w-full grid grid-cols-7'>
-					{generateDate().map(day => {
+					{generateDate(today.month(), today.year()).map(day => {
 						const { date, currentMonth, today } = day
 
 						return (
@@ -84,8 +102,16 @@ const Calendar = () => {
 										today
 											? 'bg-rose-500 rounded-full font-semibold text-white'
 											: '',
+
+										selectDate.toDate().toDateString() ===
+											date.toDate().toDateString()
+											? 'bg-gray-900 text-white'
+											: '',
 										'h-10 w-10 grid place-content-center hover:bg-gray-800 hover:text-white transition-all rounded-full cursor-pointer'
-									)}>
+									)}
+									onClick={() => {
+										setSelectDate(date)
+									}}>
 									{date.date()}
 								</h1>
 							</div>
@@ -94,7 +120,9 @@ const Calendar = () => {
 				</div>
 			</div>
 			<div className='h-96 w-96 px-5 border-l'>
-				<h1>Schedule</h1>
+				<h1 className='font-semibold'>
+					Warsztaty {selectDate.toDate().toDateString()}
+				</h1>
 				<p>No meetings</p>
 			</div>
 		</div>
