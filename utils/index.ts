@@ -4,36 +4,36 @@ export const generateDate = (
 	month: number = dayjs().month(),
 	year: number = dayjs().year()
 ): { currentMonth: boolean; date: Dayjs; today?: boolean }[] => {
-	const firstDateOfMOnth = dayjs().year(year).month(month).startOf('month')
-	const lastDateOfMOnth = dayjs().year(year).month(month).endOf('month')
+	const firstDateOfMonth = dayjs().year(year).month(month).startOf('month')
+	const lastDateOfMonth = dayjs().year(year).month(month).endOf('month')
 
 	const arrayOfDate = []
 
 	// generate prefix date
-	for (let i = 0; i < firstDateOfMOnth.day(); i++) {
-		arrayOfDate.push({ currentMonth: false, date: firstDateOfMOnth.day(i) })
+	for (let i = 0; i < firstDateOfMonth.day(); i++) {
+		arrayOfDate.push({ currentMonth: false, date: firstDateOfMonth.day(i) })
 	}
 
 	// generate suffix date
 
 	// generate current date
-	for (let i = firstDateOfMOnth.date(); i <= lastDateOfMOnth.date(); i++) {
+	for (let i = firstDateOfMonth.date(); i <= lastDateOfMonth.date(); i++) {
 		arrayOfDate.push({
 			currentMonth: true,
-			date: firstDateOfMOnth.date(i),
+			date: firstDateOfMonth.date(i),
 			today:
-				firstDateOfMOnth.date(i).toDate().toDateString() ===
-				dayjs().toDate.toString(),
+				firstDateOfMonth.date(i).toDate().toDateString() ===
+				dayjs().toDate().toDateString(),
 		})
 	}
 
 	const remaining = 42 - arrayOfDate.length
 	for (
-		let i = lastDateOfMOnth.date() + 1;
-		i <= lastDateOfMOnth.date() + remaining;
+		let i = lastDateOfMonth.date() + 1;
+		i <= lastDateOfMonth.date() + remaining;
 		i++
 	) {
-		arrayOfDate.push({ currentMonth: false, date: lastDateOfMOnth.date(i) })
+		arrayOfDate.push({ currentMonth: false, date: lastDateOfMonth.date(i) })
 	}
 
 	return arrayOfDate

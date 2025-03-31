@@ -1,3 +1,4 @@
+import { cn } from '@/lib/utils'
 import { generateDate } from '@/utils'
 import { v4 as uuidv4 } from 'uuid'
 
@@ -47,9 +48,11 @@ const events = [
 const Calendar = () => {
 	const days = ['Pon', 'Wt', 'Śr', 'Czw', 'Pt', 'Sob', 'Ndz']
 
+	console.log(generateDate())
+
 	return (
 		<div className='w-96 h-96'>
-			<div className='w-full grid grid-cols-7 text-lg font-semibold'>
+			<div className='w-full grid grid-cols-7 text-md font-semibold'>
 				{days.map((day, index) => {
 					return (
 						<h1 className='h-14 grid place-content-center' key={index}>
@@ -65,8 +68,17 @@ const Calendar = () => {
 					return (
 						<div
 							key={uuidv4()}
-							className='h-14 border-t grid place-content-center'>
-							<h1>{date.date()}</h1>
+							className='h-14 border-t grid place-content-center text-sm'>
+							<h1
+								className={cn(
+									currentMonth ? '' : 'text-gray-400',
+									today
+										? 'bg-rose-500 rounded-full font-semibold text-white'
+										: '',
+									'h-10 w-10 grid place-content-center'
+								)}>
+								{date.date()}
+							</h1>
 						</div>
 					)
 				})}
