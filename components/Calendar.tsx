@@ -1,3 +1,4 @@
+import { generateDate } from '@/utils'
 import {
 	add,
 	eachDayOfInterval,
@@ -56,11 +57,8 @@ const events = [
 	},
 ]
 
-
-
-
 const Calendar = () => {
-	return <div></div>
+	return <div className='w-96 h-96'>{generateDate.map(day)}</div>
 }
 
 export default Calendar

@@ -11,7 +11,7 @@ export const generateDate = (
 
 	// generate prefix date
 	for (let i = 0; i < firstDateOfMOnth.day(); i++) {
-		arrayOfDate.push(firstDateOfMOnth.day(i))
+		arrayOfDate.push({ currentMonth: false, date: firstDateOfMOnth.day(i) })
 	}
 
 	// generate suffix date
@@ -27,7 +27,7 @@ export const generateDate = (
 		i <= lastDateOfMOnth.date() + remaining;
 		i++
 	) {
-		arrayOfDate.push(lastDateOfMOnth.date(i))
+		arrayOfDate.push({ currentMont: false, date: lastDateOfMOnth.date(i) })
 	}
 
 	return arrayOfDate
