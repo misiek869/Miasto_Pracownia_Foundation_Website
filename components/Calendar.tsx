@@ -1,5 +1,10 @@
+'use client'
+
 import { cn } from '@/lib/utils'
 import { generateDate } from '@/utils'
+import dayjs, { Dayjs } from 'dayjs'
+import { useState } from 'react'
+import { MdToday } from 'react-icons/md'
 import { v4 as uuidv4 } from 'uuid'
 
 const events = [
@@ -47,12 +52,15 @@ const events = [
 
 const Calendar = () => {
 	const days = ['Pon', 'Wt', 'Śr', 'Czw', 'Pt', 'Sob', 'Ndz']
-
-	console.log(generateDate())
+	const currentDate = dayjs()
+	const [today, setToday] = useState(currentDate)
 
 	return (
 		<div className='flex mx-auto  gap-8 h-screen items-center'>
 			<div className='w-96 h-96'>
+				<div className=''>
+					<h1 className=''>{today.month()}</h1>
+				</div>
 				<div className='w-full grid grid-cols-7 text-md font-semibold'>
 					{days.map((day, index) => {
 						return (
