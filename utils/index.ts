@@ -3,7 +3,7 @@ import dayjs, { Dayjs } from 'dayjs'
 export const generateDate = (
 	month: number = dayjs().month(),
 	year: number = dayjs().year()
-): Dayjs[] => {
+): { currentMonth: boolean; date: Dayjs; today?: boolean }[] => {
 	const firstDateOfMOnth = dayjs().year(year).month(month).startOf('month')
 	const lastDateOfMOnth = dayjs().year(year).month(month).endOf('month')
 
@@ -18,7 +18,13 @@ export const generateDate = (
 
 	// generate current date
 	for (let i = firstDateOfMOnth.date(); i <= lastDateOfMOnth.date(); i++) {
-		arrayOfDate.push(firstDateOfMOnth.date(i))
+		arrayOfDate.push({
+			currentMonth: true,
+			date: firstDateOfMOnth.date(i),
+			today:
+				firstDateOfMOnth.date(i).toDate().toDateString() ===
+				dayjs().toDate.toString(),
+		})
 	}
 
 	const remaining = 42 - arrayOfDate.length
@@ -27,7 +33,7 @@ export const generateDate = (
 		i <= lastDateOfMOnth.date() + remaining;
 		i++
 	) {
-		arrayOfDate.push({ currentMont: false, date: lastDateOfMOnth.date(i) })
+		arrayOfDate.push({ currentMonth: false, date: lastDateOfMOnth.date(i) })
 	}
 
 	return arrayOfDate

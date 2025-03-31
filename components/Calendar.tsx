@@ -1,18 +1,5 @@
 import { generateDate } from '@/utils'
-import {
-	add,
-	eachDayOfInterval,
-	endOfMonth,
-	format,
-	getDay,
-	isEqual,
-	isSameDay,
-	isSameMonth,
-	isToday,
-	parse,
-	parseISO,
-	startOfToday,
-} from 'date-fns'
+import { v4 as uuidv4 } from 'uuid'
 
 const events = [
 	{
@@ -58,7 +45,34 @@ const events = [
 ]
 
 const Calendar = () => {
-	return <div className='w-96 h-96'>{generateDate.map(day)}</div>
+	const days = ['Pon', 'Wt', 'Śr', 'Czw', 'Pt', 'Sob', 'Ndz']
+
+	return (
+		<div className='w-96 h-96'>
+			<div className='w-full grid grid-cols-7 text-lg font-semibold'>
+				{days.map((day, index) => {
+					return (
+						<h1 className='h-14 grid place-content-center' key={index}>
+							{day}
+						</h1>
+					)
+				})}
+			</div>
+			<div className='w-full grid grid-cols-7'>
+				{generateDate().map(day => {
+					const { date, currentMonth, today } = day
+
+					return (
+						<div
+							key={uuidv4()}
+							className='h-14 border-t grid place-content-center'>
+							<h1>{date.date()}</h1>
+						</div>
+					)
+				})}
+			</div>
+		</div>
+	)
 }
 
 export default Calendar
