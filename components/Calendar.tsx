@@ -3,6 +3,7 @@
 import { cn } from '@/lib/utils'
 import { formatDate, generateDate, months } from '@/utils'
 import dayjs, { Dayjs } from 'dayjs'
+import 'dayjs/locale/pl' // Importuj język polski
 import { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import { GrFormPrevious, GrFormNext } from 'react-icons/gr'
@@ -13,10 +14,12 @@ import {
 	PopoverTrigger,
 } from '@/components/ui/popover'
 import { Event as EventType } from '@/events'
+import Link from 'next/link'
 
 const Calendar = () => {
+	dayjs.locale('pl') // Ustaw język polski globalnie
 	const days = ['Pon', 'Wt', 'Śr', 'Czw', 'Pt', 'Sob', 'Ndz']
-	const currentDate = dayjs()
+	const currentDate = dayjs() // Inicjalizuj bieżącą datę
 	const [today, setToday] = useState(currentDate)
 	const [selectDate, setSelectDate] = useState(currentDate)
 	const [event, setEvent] = useState<EventType | undefined>(undefined)
@@ -34,7 +37,7 @@ const Calendar = () => {
 							onClick={() => setToday(today.month(today.month() - 1))}
 						/>
 						<p className='cursor-pointer' onClick={() => setToday(currentDate)}>
-							Today
+							Dzisiaj
 						</p>
 						<GrFormNext
 							className='w-6 h-6 hover:text-rose-500 transition-all cursor-pointer'
@@ -94,14 +97,18 @@ const Calendar = () => {
 				</div>
 			</div>
 			<div className='h-96 w-96 px-5 border-l'>
-				<h1 className='font-semibold'>
-					Warsztaty {selectDate.toDate().toDateString()}
+				<h1 className='font-semibold capitalize'>
+					{selectDate.format('dddd D MMMM YYYY')}
 				</h1>
 
 				{event !== undefined ? (
-					<p>{event?.name}</p>
+					<article>
+						<h2>{event?.name}</h2>
+
+						<Link href={'#'}>Zapisz się na warsztat</Link>
+					</article>
 				) : (
-					<p>W tym dniu nie ma warsztatów</p>
+					<h2>W tym dniu nie ma warsztatów</h2>
 				)}
 			</div>
 		</div>

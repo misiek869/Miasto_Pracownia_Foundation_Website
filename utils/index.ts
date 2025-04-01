@@ -1,4 +1,5 @@
 import dayjs, { Dayjs } from 'dayjs'
+import 'dayjs/locale/pl'
 
 export const generateDate = (
 	month: number = dayjs().month(),

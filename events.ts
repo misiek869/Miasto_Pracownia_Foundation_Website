@@ -11,7 +11,7 @@ export type Event = {
 export const events: Event[] = [
 	{
 		id: uuidv4(),
-		name: 'Wood',
+		name: 'Pracownia Drewna',
 		color: '#a18a4c',
 		signUpUrl:
 			'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
@@ -19,7 +19,7 @@ export const events: Event[] = [
 	},
 	{
 		id: uuidv4(),
-		name: 'Flowers',
+		name: 'Pracownia Krawiecka',
 		color: '#bb6ec2',
 		signUpUrl:
 			'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
@@ -27,7 +27,7 @@ export const events: Event[] = [
 	},
 	{
 		id: uuidv4(),
-		name: 'Robotics',
+		name: 'Pracownia Ceramiczna',
 		color: '#3f5069',
 		signUpUrl:
 			'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
@@ -35,7 +35,7 @@ export const events: Event[] = [
 	},
 	{
 		id: uuidv4(),
-		name: 'Woman',
+		name: 'Pracownia kobiet',
 		color: '#bd338a',
 		signUpUrl:
 			'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
