@@ -53,3 +53,11 @@ export const months = [
 	'Listopad',
 	'Grudzień',
 ]
+
+export const formatDate = (date: Dayjs): string => {
+	const dateString = date.toDate().toDateString()
+	const newDate = new Date(dateString)
+	const formattedDate = newDate.toISOString().split('T')[0]
+
+	return formattedDate
+}
