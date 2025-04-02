@@ -15,6 +15,7 @@ import {
 } from '@/components/ui/popover'
 import { Event as EventType } from '@/events'
 import Link from 'next/link'
+import { Button } from './ui/button'
 
 const Calendar = () => {
 	dayjs.locale('pl') // Ustaw język polski globalnie
@@ -104,8 +105,9 @@ const Calendar = () => {
 				{event !== undefined ? (
 					<article>
 						<h2>{event?.name}</h2>
-
-						<Link href={'#'}>Zapisz się na warsztat</Link>
+						<Button variant={'outline'} size={'default'}>
+							<Link href={'#'}>Zapisz się na warsztat</Link>
+						</Button>
 					</article>
 				) : (
 					<h2>W tym dniu nie ma warsztatów</h2>
