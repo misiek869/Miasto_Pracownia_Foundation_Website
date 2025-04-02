@@ -2,7 +2,7 @@ import Calendar from '@/components/Calendar'
 
 const CalendarPage = () => {
 	return (
-		<div className='grid place-content-center'>
+		<div className='px-8 '>
 			<Calendar />
 		</div>
 	)

@@ -3,7 +3,7 @@
 import { cn } from '@/lib/utils'
 import { formatDate, generateDate, months } from '@/utils'
 import dayjs, { Dayjs } from 'dayjs'
-import 'dayjs/locale/pl' // Importuj język polski
+import 'dayjs/locale/pl'
 import { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import { GrFormPrevious, GrFormNext } from 'react-icons/gr'
@@ -16,18 +16,19 @@ import {
 import { Event as EventType } from '@/events'
 import Link from 'next/link'
 import { Button } from './ui/button'
+import { MdOutlineExpandMore } from 'react-icons/md'
 
 const Calendar = () => {
-	dayjs.locale('pl') // Ustaw język polski globalnie
+	dayjs.locale('pl')
 	const days = ['Pon', 'Wt', 'Śr', 'Czw', 'Pt', 'Sob', 'Ndz']
-	const currentDate = dayjs() // Inicjalizuj bieżącą datę
+	const currentDate = dayjs()
 	const [today, setToday] = useState(currentDate)
 	const [selectDate, setSelectDate] = useState(currentDate)
 	const [event, setEvent] = useState<EventType | undefined>(undefined)
 
 	return (
-		<div className='flex mx-auto  gap-8 h-screen items-center'>
-			<div className='w-96 h-96'>
+		<div className='flex mx-auto gap-16 h-screen items-center justify-center bg-red-300 lg:flex-row flex-col'>
+			<div className='w-96 h-96 md:h-144 md:w-144 bg-red-400'>
 				<div className=' flex justify-between'>
 					<h1 className='font-semibold'>
 						{months[today.month()]} {today.year()}
@@ -67,12 +68,12 @@ const Calendar = () => {
 						return (
 							<div
 								key={uuidv4()}
-								className='h-14 border-t grid place-content-center text-sm'>
+								className='h-14 md:h-21 border-t grid place-content-center text-sm'>
 								<h1
 									className={cn(
 										currentMonth ? '' : 'text-gray-400',
 										today
-											? 'border border-2 border-rose-500 rounded-full text-black'
+											? 'border-2 border-rose-500 rounded-full text-black'
 											: '',
 
 										selectDate.toDate().toDateString() ===
@@ -92,12 +93,22 @@ const Calendar = () => {
 									}}>
 									{date.date()}
 								</h1>
+								{event ? (
+									<Popover>
+										<PopoverTrigger>
+											<MdOutlineExpandMore />
+										</PopoverTrigger>
+										<PopoverContent>{event.name}</PopoverContent>
+									</Popover>
+								) : (
+									''
+								)}
 							</div>
 						)
 					})}
 				</div>
 			</div>
-			<div className='h-96 w-96 px-5 border-l'>
+			<div className='h-96 w-96 px-5 bg-red-400'>
 				<h1 className='font-semibold capitalize'>
 					{selectDate.format('dddd D MMMM YYYY')}
 				</h1>
