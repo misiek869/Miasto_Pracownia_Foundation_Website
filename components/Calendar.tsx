@@ -73,63 +73,223 @@ const Calendar = () => {
 						return (
 							<div
 								key={uuidv4()}
-								className='h-14 md:h-21 lg:h-28 border-t grid place-content-center text-sm relative'>
-								<h1
-									className={cn(
-										currentMonth ? '' : 'text-gray-400',
-										today
-											? 'border-2 border-rose-500 rounded-full text-black'
-											: '',
-
-										// selectDate.toDate().toDateString() ===
-										// 	date.toDate().toDateString()
-										// 	? 'bg-blue-500 text-white'
-										// 	: '',
-										'h-10 w-10 grid place-content-center lg:text-xl transition-all rounded-full ',
-										event ? 'font-semibold' : ''
-									)}
-									style={{
-										backgroundColor: event ? eventColor : '',
-										color: event ? 'white' : '',
-									}}
-									onClick={() => {
-										setSelectDate(date)
-										setEvent(event)
-									}}>
-									{date.date()}
-								</h1>
+								className='h-14 md:h-21 lg:h-28 border-t grid place-content-center text-sm'>
 								{event ? (
-									<div className='hidden lg:block mx-auto absolute right-3 top-3.5 '>
-										<Popover>
-											<PopoverTrigger>
-												<LuMessageCircleMore className='w-7 h-7 cursor-pointer text-rose-500' />
-											</PopoverTrigger>
-											<PopoverContent>
-												<div className=''>
-													<h1 className='font-semibold text-sm'>
-														{event.name} {event.eventDate}
-													</h1>
-													<p className='text-sm'>godz: {event.eventHour}</p>
-													<p className='text-xs mt-4'>{event.description}</p>
-													<Button
-														className='mt-4'
-														variant={'outline'}
-														size={'sm'}>
-														<Link href={'#'}>Zapisz się na warsztat</Link>
-													</Button>
-												</div>
-											</PopoverContent>
-										</Popover>
-									</div>
+									<Popover>
+										<PopoverTrigger
+											className='h-10 w-10 grid place-content-center lg:text-xl transition-all rounded-full cursor-pointer'
+											style={{
+												backgroundColor: event ? eventColor : '',
+												color: event ? 'white' : '',
+											}}>
+											{date.date()}
+										</PopoverTrigger>
+										<PopoverContent>
+											<div className=''>
+												<h1 className='font-semibold text-sm'>
+													{event.name} {event.eventDate}
+												</h1>
+												<p className='text-sm'>godz: {event.eventHour}</p>
+												<p className='text-xs mt-4'>{event.description}</p>
+												<Button
+													className='mt-4'
+													variant={'outline'}
+													size={'sm'}>
+													<Link href={'#'}>Zapisz się na warsztat</Link>
+												</Button>
+											</div>
+										</PopoverContent>
+									</Popover>
 								) : (
-									''
+									<h1
+										className={cn(
+											currentMonth ? '' : 'text-gray-400',
+											today
+												? 'border-2 border-rose-500 rounded-full text-black'
+												: '',
+											'h-10 w-10 grid place-content-center lg:text-xl transition-all rounded-full ',
+											event ? 'font-semibold' : ''
+										)}>
+										{date.date()}
+									</h1>
 								)}
 							</div>
 						)
 					})}
 				</div>
+				<div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-between w-full mt-6'>
+					<Popover>
+						<PopoverTrigger className='flex mx-auto h-24 w-24 md:p-14 rounded-full items-center justify-center bg-[#a18a4c] cursor-pointer'>
+							<p className='text-center text-sm lg:text-md text-slate-100 font-semibold tracking-wider'>
+								Pracownia
+								<br />
+								Drewna
+							</p>
+						</PopoverTrigger>
+						<PopoverContent className='border-2 border-rose-500 relative pb-12'>
+							<p className='text-justify'>
+								The placeholder text, beginning with the line “Lorem ipsum dolor
+								sit amet, consectetur adipiscing elit”, looks like Latin because
+								in its youth, centuries ago, it was Latin.
+							</p>
+							<Link
+								className='text-rose-500 absolute bottom-4 right-4'
+								href={'#'}>
+								Dowiedz się Więcej
+							</Link>
+						</PopoverContent>
+					</Popover>
+					<Popover>
+						<PopoverTrigger className='flex mx-auto h-24 w-24 md:p-14 rounded-full items-center justify-center bg-[#a18a4c] cursor-pointer'>
+							<p className='text-center text-sm lg:text-md text-slate-100 font-semibold tracking-wider'>
+								Pracownia
+								<br />
+								Drewna
+							</p>
+						</PopoverTrigger>
+						<PopoverContent className='border-2 border-rose-500 relative pb-12'>
+							<p className='text-justify'>
+								The placeholder text, beginning with the line “Lorem ipsum dolor
+								sit amet, consectetur adipiscing elit”, looks like Latin because
+								in its youth, centuries ago, it was Latin.
+							</p>
+							<Link
+								className='text-rose-500 absolute bottom-4 right-4'
+								href={'#'}>
+								Dowiedz się Więcej
+							</Link>
+						</PopoverContent>
+					</Popover>
+					<Popover>
+						<PopoverTrigger className='flex mx-auto h-24 w-24 md:p-14 rounded-full items-center justify-center bg-[#a18a4c] cursor-pointer'>
+							<p className='text-center text-sm lg:text-md text-slate-100 font-semibold tracking-wider'>
+								Pracownia
+								<br />
+								Drewna
+							</p>
+						</PopoverTrigger>
+						<PopoverContent className='border-2 border-rose-500 relative pb-12'>
+							<p className='text-justify'>
+								The placeholder text, beginning with the line “Lorem ipsum dolor
+								sit amet, consectetur adipiscing elit”, looks like Latin because
+								in its youth, centuries ago, it was Latin.
+							</p>
+							<Link
+								className='text-rose-500 absolute bottom-4 right-4'
+								href={'#'}>
+								Dowiedz się Więcej
+							</Link>
+						</PopoverContent>
+					</Popover>
+					<Popover>
+						<PopoverTrigger className='flex mx-auto h-24 w-24 md:p-14 rounded-full items-center justify-center bg-[#a18a4c] cursor-pointer'>
+							<p className='text-center text-sm lg:text-md text-slate-100 font-semibold tracking-wider'>
+								Pracownia
+								<br />
+								Drewna
+							</p>
+						</PopoverTrigger>
+						<PopoverContent className='border-2 border-rose-500 relative pb-12'>
+							<p className='text-justify'>
+								The placeholder text, beginning with the line “Lorem ipsum dolor
+								sit amet, consectetur adipiscing elit”, looks like Latin because
+								in its youth, centuries ago, it was Latin.
+							</p>
+							<Link
+								className='text-rose-500 absolute bottom-4 right-4'
+								href={'#'}>
+								Dowiedz się Więcej
+							</Link>
+						</PopoverContent>
+					</Popover>
+					<Popover>
+						<PopoverTrigger className='flex mx-auto h-24 w-24 md:p-14 rounded-full items-center justify-center bg-[#a18a4c] cursor-pointer'>
+							<p className='text-center text-sm lg:text-md text-slate-100 font-semibold tracking-wider'>
+								Pracownia
+								<br />
+								Drewna
+							</p>
+						</PopoverTrigger>
+						<PopoverContent className='border-2 border-rose-500 relative pb-12'>
+							<p className='text-justify'>
+								The placeholder text, beginning with the line “Lorem ipsum dolor
+								sit amet, consectetur adipiscing elit”, looks like Latin because
+								in its youth, centuries ago, it was Latin.
+							</p>
+							<Link
+								className='text-rose-500 absolute bottom-4 right-4'
+								href={'#'}>
+								Dowiedz się Więcej
+							</Link>
+						</PopoverContent>
+					</Popover>
+					<Popover>
+						<PopoverTrigger className='flex mx-auto h-24 w-24 md:p-14 rounded-full items-center justify-center bg-[#a18a4c] cursor-pointer'>
+							<p className='text-center text-sm lg:text-md text-slate-100 font-semibold tracking-wider'>
+								Pracownia
+								<br />
+								Drewna
+							</p>
+						</PopoverTrigger>
+						<PopoverContent className='border-2 border-rose-500 relative pb-12'>
+							<p className='text-justify'>
+								The placeholder text, beginning with the line “Lorem ipsum dolor
+								sit amet, consectetur adipiscing elit”, looks like Latin because
+								in its youth, centuries ago, it was Latin.
+							</p>
+							<Link
+								className='text-rose-500 absolute bottom-4 right-4'
+								href={'#'}>
+								Dowiedz się Więcej
+							</Link>
+						</PopoverContent>
+					</Popover>
+					<Popover>
+						<PopoverTrigger className='flex mx-auto h-24 w-24 md:p-14 rounded-full items-center justify-center bg-[#a18a4c] cursor-pointer'>
+							<p className='text-center text-sm lg:text-md text-slate-100 font-semibold tracking-wider'>
+								Pracownia
+								<br />
+								Drewna
+							</p>
+						</PopoverTrigger>
+						<PopoverContent className='border-2 border-rose-500 relative pb-12'>
+							<p className='text-justify'>
+								The placeholder text, beginning with the line “Lorem ipsum dolor
+								sit amet, consectetur adipiscing elit”, looks like Latin because
+								in its youth, centuries ago, it was Latin.
+							</p>
+							<Link
+								className='text-rose-500 absolute bottom-4 right-4'
+								href={'#'}>
+								Dowiedz się Więcej
+							</Link>
+						</PopoverContent>
+					</Popover>
+					<Popover>
+						<PopoverTrigger className='flex mx-auto h-24 w-24 md:p-14 rounded-full items-center justify-center bg-[#a18a4c] cursor-pointer'>
+							<p className='text-center text-sm lg:text-md text-slate-100 font-semibold tracking-wider'>
+								Pracownia
+								<br />
+								Drewna
+							</p>
+						</PopoverTrigger>
+						<PopoverContent className='border-2 border-rose-500 relative pb-12'>
+							<p className='text-justify'>
+								The placeholder text, beginning with the line “Lorem ipsum dolor
+								sit amet, consectetur adipiscing elit”, looks like Latin because
+								in its youth, centuries ago, it was Latin.
+							</p>
+							<Link
+								className='text-rose-500 absolute bottom-4 right-4'
+								href={'#'}>
+								Dowiedz się Więcej
+							</Link>
+						</PopoverContent>
+					</Popover>
+				</div>
 			</div>
-			<div className='h-96 w-96 px-5 bg-red-400 lg:hidden'>
+
+			<div className='h-96 w-96 px-5 hidden mt-6'>
 				<h1 className='font-semibold capitalize'>
 					{selectDate.format('dddd D MMMM YYYY')}
 				</h1>
