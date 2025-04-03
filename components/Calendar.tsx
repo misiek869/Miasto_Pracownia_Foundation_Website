@@ -27,7 +27,7 @@ const Calendar = () => {
 	const [event, setEvent] = useState<EventType | undefined>(undefined)
 
 	return (
-		<div className='flex mx-auto gap-16 h-screen items-center justify-center bg-red-300 lg:flex-row flex-col'>
+		<div className='flex mx-auto gap-16 h-screen items-center justify-center  lg:flex-row flex-col'>
 			<div className='w-96 h-96 md:h-144 md:w-144 lg:w-192 lg:h-192 bg-red-400'>
 				<div className=' flex justify-between'>
 					<h1 className='font-semibold'>
