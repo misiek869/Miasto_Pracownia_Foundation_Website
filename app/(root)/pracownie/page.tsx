@@ -6,6 +6,7 @@ import tailoring from '@/public/images/tailoring.jpg'
 import children from '@/public/images/children.jpg'
 import Link from 'next/link'
 import Navigation from '@/components/Navigation'
+import PageTitle from '@/components/PageTitle'
 
 export const metadata = {
 	title: 'Pracownie',
@@ -19,9 +20,7 @@ const WorkshopsPage = () => {
 					<Navigation hidden='workshops' />
 				</div>
 
-				<h1 className='mx-auto text-center  font-calistoga tracking-wide leading-snug text-5xl md:text-6xl text-rose-500 '>
-					Pracownie
-				</h1>
+				<PageTitle title='nasze pracownie' />
 				<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-10  md:px-40 px-20 xl:w-[70vw] mx-auto'>
 					<div className='mb-10'>
 						<Link href={'#'}>
