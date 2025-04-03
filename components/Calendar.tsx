@@ -28,21 +28,23 @@ const Calendar = () => {
 
 	return (
 		<div className='flex mx-auto gap-16 h-screen items-center justify-center bg-red-300 lg:flex-row flex-col'>
-			<div className='w-96 h-96 md:h-144 md:w-144 bg-red-400'>
+			<div className='w-96 h-96 md:h-144 md:w-144 lg:w-192 lg:h-192 bg-red-400'>
 				<div className=' flex justify-between'>
 					<h1 className='font-semibold'>
 						{months[today.month()]} {today.year()}
 					</h1>
 					<div className='flex items-center gap-4'>
 						<GrFormPrevious
-							className='w-6 h-6 hover:text-rose-500 transition-all cursor-pointer'
+							className='w-6 h-6 lg:w-10 lg:h-10 hover:text-rose-500 transition-all cursor-pointer'
 							onClick={() => setToday(today.month(today.month() - 1))}
 						/>
-						<p className='cursor-pointer' onClick={() => setToday(currentDate)}>
+						<p
+							className='cursor-pointer lg:text-lg'
+							onClick={() => setToday(currentDate)}>
 							Dzisiaj
 						</p>
 						<GrFormNext
-							className='w-6 h-6 hover:text-rose-500 transition-all cursor-pointer'
+							className='w-6 h-6 lg:w-10 lg:h-10 hover:text-rose-500 transition-all cursor-pointer'
 							onClick={() => setToday(today.month(today.month() + 1))}
 						/>
 					</div>
@@ -50,7 +52,9 @@ const Calendar = () => {
 				<div className='w-full grid grid-cols-7 text-md font-semibold'>
 					{days.map((day, index) => {
 						return (
-							<h1 className='h-14 grid place-content-center' key={index}>
+							<h1
+								className='h-14 grid place-content-center lg:text-xl lg:font-bold'
+								key={index}>
 								{day}
 							</h1>
 						)
@@ -68,7 +72,7 @@ const Calendar = () => {
 						return (
 							<div
 								key={uuidv4()}
-								className='h-14 md:h-21 border-t grid place-content-center text-sm'>
+								className='h-14 md:h-21 lg:h-28 border-t grid place-content-center text-sm'>
 								<h1
 									className={cn(
 										currentMonth ? '' : 'text-gray-400',
@@ -80,7 +84,7 @@ const Calendar = () => {
 											date.toDate().toDateString()
 											? 'bg-blue-500 text-white'
 											: '',
-										'h-10 w-10 grid place-content-center hover:bg-gray-800 hover:text-white transition-all rounded-full cursor-pointer',
+										'h-10 w-10 grid place-content-center hover:bg-gray-800 lg:text-xl hover:text-white transition-all rounded-full cursor-pointer',
 										event ? 'font-semibold' : ''
 									)}
 									style={{
@@ -94,12 +98,28 @@ const Calendar = () => {
 									{date.date()}
 								</h1>
 								{event ? (
-									<Popover>
-										<PopoverTrigger>
-											<MdOutlineExpandMore />
-										</PopoverTrigger>
-										<PopoverContent>{event.name}</PopoverContent>
-									</Popover>
+									<span className='hidden lg:block mx-auto'>
+										<Popover>
+											<PopoverTrigger>
+												<MdOutlineExpandMore />
+											</PopoverTrigger>
+											<PopoverContent>
+												<div className=''>
+													<h1 className='font-semibold text-sm'>
+														{event.name} {event.eventDate}
+													</h1>
+													<p className='text-sm'>godz: {event.eventHour}</p>
+													<p className='text-xs mt-4'>{event.description}</p>
+													<Button
+														className='mt-4'
+														variant={'outline'}
+														size={'sm'}>
+														<Link href={'#'}>Zapisz się na warsztat</Link>
+													</Button>
+												</div>
+											</PopoverContent>
+										</Popover>
+									</span>
 								) : (
 									''
 								)}
@@ -108,7 +128,7 @@ const Calendar = () => {
 					})}
 				</div>
 			</div>
-			<div className='h-96 w-96 px-5 bg-red-400'>
+			<div className='h-96 w-96 px-5 bg-red-400 lg:hidden'>
 				<h1 className='font-semibold capitalize'>
 					{selectDate.format('dddd D MMMM YYYY')}
 				</h1>
