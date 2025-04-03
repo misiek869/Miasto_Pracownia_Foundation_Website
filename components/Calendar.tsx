@@ -16,7 +16,8 @@ import {
 import { Event as EventType } from '@/events'
 import Link from 'next/link'
 import { Button } from './ui/button'
-import { MdOutlineExpandMore } from 'react-icons/md'
+
+import { LuMessageCircleMore } from 'react-icons/lu'
 
 const Calendar = () => {
 	dayjs.locale('pl')
@@ -27,8 +28,8 @@ const Calendar = () => {
 	const [event, setEvent] = useState<EventType | undefined>(undefined)
 
 	return (
-		<div className='flex mx-auto gap-16 h-screen items-center justify-center  lg:flex-row flex-col'>
-			<div className='w-96 h-96 md:h-144 md:w-144 lg:w-192 lg:h-192 bg-red-400'>
+		<div className='flex mx-auto items-center justify-center  lg:flex-row flex-col mt-10'>
+			<div className='w-96 h-96 md:h-144 md:w-144 lg:w-192 lg:h-192 '>
 				<div className=' flex justify-between'>
 					<h1 className='font-semibold'>
 						{months[today.month()]} {today.year()}
@@ -72,7 +73,7 @@ const Calendar = () => {
 						return (
 							<div
 								key={uuidv4()}
-								className='h-14 md:h-21 lg:h-28 border-t grid place-content-center text-sm'>
+								className='h-14 md:h-21 lg:h-28 border-t grid place-content-center text-sm relative'>
 								<h1
 									className={cn(
 										currentMonth ? '' : 'text-gray-400',
@@ -80,11 +81,11 @@ const Calendar = () => {
 											? 'border-2 border-rose-500 rounded-full text-black'
 											: '',
 
-										selectDate.toDate().toDateString() ===
-											date.toDate().toDateString()
-											? 'bg-blue-500 text-white'
-											: '',
-										'h-10 w-10 grid place-content-center hover:bg-gray-800 lg:text-xl hover:text-white transition-all rounded-full cursor-pointer',
+										// selectDate.toDate().toDateString() ===
+										// 	date.toDate().toDateString()
+										// 	? 'bg-blue-500 text-white'
+										// 	: '',
+										'h-10 w-10 grid place-content-center lg:text-xl transition-all rounded-full ',
 										event ? 'font-semibold' : ''
 									)}
 									style={{
@@ -98,10 +99,10 @@ const Calendar = () => {
 									{date.date()}
 								</h1>
 								{event ? (
-									<span className='hidden lg:block mx-auto'>
+									<div className='hidden lg:block mx-auto absolute right-3 top-3.5 '>
 										<Popover>
 											<PopoverTrigger>
-												<MdOutlineExpandMore />
+												<LuMessageCircleMore className='w-7 h-7 cursor-pointer text-rose-500' />
 											</PopoverTrigger>
 											<PopoverContent>
 												<div className=''>
@@ -119,7 +120,7 @@ const Calendar = () => {
 												</div>
 											</PopoverContent>
 										</Popover>
-									</span>
+									</div>
 								) : (
 									''
 								)}

@@ -4,7 +4,7 @@ import PageTitle from '@/components/PageTitle'
 
 const CalendarPage = () => {
 	return (
-		<div className='px-8 bg-[var(--primary)]'>
+		<div className='px-8 bg-[var(--primary)] pt-20 min-h-screen '>
 			<div className='absolute top-6 left-6'>
 				<Navigation hidden='calendar' />
 			</div>
