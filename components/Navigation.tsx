@@ -38,7 +38,7 @@ const Navigation = ({ disabled, hidden }: NavigationProps) => {
 						</Link> */}
 
 						<Link
-							href='/about-us'
+							href='/o_nas'
 							className={
 								hidden === 'about'
 									? 'hidden'
