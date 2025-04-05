@@ -21,7 +21,7 @@ const WorkshopsPage = () => {
 				</div>
 
 				<PageTitle title='nasze pracownie' />
-				<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-10  md:px-40 px-20 xl:w-[70vw] mx-auto'>
+				<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-20  md:px-40 px-20 xl:w-[70vw] mx-auto'>
 					<div className='mb-10'>
 						<Link href={'#'}>
 							<Image
