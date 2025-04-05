@@ -17,8 +17,6 @@ import { Event as EventType } from '@/events'
 import Link from 'next/link'
 import { Button } from './ui/button'
 
-import { LuMessageCircleMore } from 'react-icons/lu'
-
 const Calendar = () => {
 	dayjs.locale('pl')
 	const days = ['Pon', 'Wt', 'Śr', 'Czw', 'Pt', 'Sob', 'Ndz']
@@ -26,6 +24,8 @@ const Calendar = () => {
 	const [today, setToday] = useState(currentDate)
 	const [selectDate, setSelectDate] = useState(currentDate)
 	const [event, setEvent] = useState<EventType | undefined>(undefined)
+
+	console.log(currentDate)
 
 	return (
 		<div className='flex mx-auto items-center justify-center  lg:flex-row flex-col mt-10'>
@@ -66,7 +66,7 @@ const Calendar = () => {
 						const { date, currentMonth, today } = day
 
 						const event = events.find(
-							event => event.eventDate === formatDate(date)
+							event => event.eventDate === formatDate(date.add(1, 'day'))
 						)
 						const eventColor = event ? event.color : ''
 
@@ -91,12 +91,16 @@ const Calendar = () => {
 												</h1>
 												<p className='text-sm'>godz: {event.eventHour}</p>
 												<p className='text-xs mt-4'>{event.description}</p>
-												<Button
-													className='mt-4'
-													variant={'outline'}
-													size={'sm'}>
-													<Link href={'#'}>Zapisz się na warsztat</Link>
-												</Button>
+												{event.eventDate > formatDate(currentDate) ? (
+													<Button
+														className='mt-4'
+														variant={'outline'}
+														size={'sm'}>
+														<Link href={'#'}>Zapisz się na warsztat</Link>
+													</Button>
+												) : (
+													''
+												)}
 											</div>
 										</PopoverContent>
 									</Popover>

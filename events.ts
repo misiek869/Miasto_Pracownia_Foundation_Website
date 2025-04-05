@@ -55,6 +55,28 @@ export const events: Event[] = [
 		eventDate: '2025-04-19',
 		eventHour: '18:00',
 	},
+	{
+		id: uuidv4(),
+		name: 'Pracownia kobiet',
+		description:
+			'The placeholder text, beginning with the line “Lorem ipsum dolor sit amet, consectetur adipiscing elit”, looks like Latin because in its youth, centuries ago, it was Latin.',
+		color: '#bd338a',
+		signUpUrl:
+			'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+		eventDate: '2025-04-01',
+		eventHour: '18:00',
+	},
+	{
+		id: uuidv4(),
+		name: 'Pracownia kobiet',
+		description:
+			'The placeholder text, beginning with the line “Lorem ipsum dolor sit amet, consectetur adipiscing elit”, looks like Latin because in its youth, centuries ago, it was Latin.',
+		color: '#bd338a',
+		signUpUrl:
+			'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+		eventDate: '2025-04-06',
+		eventHour: '18:00',
+	},
 ]
 
 // export const events = [
