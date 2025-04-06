@@ -27,7 +27,7 @@ const WorkshopsPage = () => {
 						<Link href={'/pracownie/pracownia_drewna'}>
 							<Image
 								src={wood}
-								alt='flowers photo'
+								alt='wood photo'
 								width={250}
 								height={250}
 								className='rounded-full mx-auto'
@@ -38,10 +38,10 @@ const WorkshopsPage = () => {
 						</Link>
 					</div>
 					<div className='mb-10'>
-						<Link href={'#'}>
+						<Link href={'/pracownie/pracownia_krawiecka'}>
 							<Image
 								src={tailoring}
-								alt='flowers photo'
+								alt='tailoring equipment photo'
 								width={250}
 								height={250}
 								className='rounded-full mx-auto'
@@ -52,10 +52,10 @@ const WorkshopsPage = () => {
 						</Link>
 					</div>
 					<div className='mb-10'>
-						<Link href={'#'}>
+						<Link href={'/pracownie/pracownia_ceramiczna'}>
 							<Image
 								src={ceramics}
-								alt='flowers photo'
+								alt='ceramics photo'
 								width={250}
 								height={250}
 								className='rounded-full mx-auto'
