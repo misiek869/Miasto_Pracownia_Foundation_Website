@@ -24,7 +24,7 @@ const WorkshopsPage = () => {
 				<PageTitle title='nasze pracownie' />
 				<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-20  md:px-40 px-20 xl:w-[70vw] mx-auto pb-40'>
 					<div className='mb-10'>
-						<Link href={'#'}>
+						<Link href={'/pracownie/pracownia_drewna'}>
 							<Image
 								src={wood}
 								alt='flowers photo'
