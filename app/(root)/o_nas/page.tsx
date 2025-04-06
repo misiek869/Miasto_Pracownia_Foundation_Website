@@ -4,6 +4,7 @@ import Image from 'next/image'
 import zdjecie_kasia from '@/public/images/woman_1.jpg'
 import zdjecie_dorota from '@/public/images/woman_2.jpg'
 import about_photo from '@/public/images/about_photo.jpg'
+import Footer from '@/components/Footer'
 
 const AboutUsPage = () => {
 	return (
@@ -73,6 +74,7 @@ const AboutUsPage = () => {
 					<div className=''></div>
 				</div>
 			</div>
+			<Footer />
 		</>
 	)
 }
