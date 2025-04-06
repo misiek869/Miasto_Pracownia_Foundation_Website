@@ -66,10 +66,10 @@ const WorkshopsPage = () => {
 						</Link>
 					</div>
 					<div className='mb-10'>
-						<Link href={'#'}>
+						<Link href={'/pracownie/pracownia_kobiet'}>
 							<Image
 								src={tailoring}
-								alt='flowers photo'
+								alt='woman photo'
 								width={250}
 								height={250}
 								className='rounded-full mx-auto'
