@@ -7,7 +7,7 @@ const Footer = () => {
 	console.log(currentYear)
 
 	return (
-		<div className='bg-rose-500 flex-row md:flex justify-center md:justify-between  py-6 px-8 md:py-4'>
+		<div className='bg-rose-500 flex-row md:flex justify-center md:justify-between  py-6 px-8 md:py-4 absolute bottom-0 right-0 min-w-screen'>
 			<p className='text-slate-50 tracking-wider font-montserrat text-lg font-normal mb-4 md:mb-0 text-center'>
 				Copyright &copy;{currentYear} Miasto Pracownia
 			</p>

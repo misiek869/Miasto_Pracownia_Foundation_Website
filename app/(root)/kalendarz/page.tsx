@@ -1,5 +1,4 @@
 import Calendar from '@/components/Calendar'
-import Footer from '@/components/Footer'
 import Navigation from '@/components/Navigation'
 import PageTitle from '@/components/PageTitle'
 
@@ -13,7 +12,6 @@ const CalendarPage = () => {
 				<PageTitle title='kalendarz warsztatów' />
 				<Calendar />
 			</div>
-			<Footer />
 		</>
 	)
 }
