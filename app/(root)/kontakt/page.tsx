@@ -4,6 +4,7 @@ import React from 'react'
 import Navigation from '@/components/Navigation'
 import PageTitle from '@/components/PageTitle'
 import { AdvancedMarker, APIProvider, Map } from '@vis.gl/react-google-maps'
+import Footer from '@/components/Footer'
 
 const ContactPage = () => {
 	const position = { lat: 50.0387346443218, lng: 19.226098300000004 }
@@ -29,6 +30,7 @@ const ContactPage = () => {
 					</APIProvider>
 					<div className=''></div>
 				</div>
+				<Footer />
 			</div>
 		</>
 	)
