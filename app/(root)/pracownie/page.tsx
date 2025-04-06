@@ -7,6 +7,7 @@ import children from '@/public/images/children.jpg'
 import Link from 'next/link'
 import Navigation from '@/components/Navigation'
 import PageTitle from '@/components/PageTitle'
+import Footer from '@/components/Footer'
 
 export const metadata = {
 	title: 'Pracownie',
@@ -15,13 +16,13 @@ export const metadata = {
 const WorkshopsPage = () => {
 	return (
 		<>
-			<section className='min-h-screen bg-[var(--primary)] flex flex-col md:justify-center pt-20'>
+			<div className='min-h-screen bg-[var(--primary)] flex flex-col md:justify-center pt-20'>
 				<div className='absolute top-6 left-6'>
 					<Navigation hidden='workshops' />
 				</div>
 
 				<PageTitle title='nasze pracownie' />
-				<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-20  md:px-40 px-20 xl:w-[70vw] mx-auto'>
+				<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-20  md:px-40 px-20 xl:w-[70vw] mx-auto pb-40'>
 					<div className='mb-10'>
 						<Link href={'#'}>
 							<Image
@@ -107,7 +108,8 @@ const WorkshopsPage = () => {
 						</Link>
 					</div>
 				</div>
-			</section>
+				<Footer />
+			</div>
 		</>
 	)
 }

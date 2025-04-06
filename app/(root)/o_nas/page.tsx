@@ -9,7 +9,7 @@ import Footer from '@/components/Footer'
 const AboutUsPage = () => {
 	return (
 		<>
-			<div className='px-8 bg-[var(--primary)] py-20 min-h-screen'>
+			<div className='px-8 bg-[var(--primary)] pt-20 min-h-screen relative'>
 				<div className='absolute top-6 left-6'>
 					<Navigation hidden='about' />
 				</div>
@@ -34,7 +34,7 @@ const AboutUsPage = () => {
 
 				<PageTitle title='o nas' />
 
-				<div className='grid grid-cols-1 lg:grid-cols-2 mt-10 md:max-w-[60vw] mx-auto'>
+				<div className='grid grid-cols-1 lg:grid-cols-2 mt-10 md:max-w-[60vw] mx-auto pb-60'>
 					<div className='flex flex-col justify-center mx-auto'>
 						<Image
 							src={zdjecie_dorota}
@@ -71,10 +71,9 @@ const AboutUsPage = () => {
 							fugiat animi ut, iure laboriosam.
 						</p>
 					</div>
-					<div className=''></div>
 				</div>
+				<Footer />
 			</div>
-			<Footer />
 		</>
 	)
 }

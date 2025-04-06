@@ -1,4 +1,5 @@
 import Calendar from '@/components/Calendar'
+import Footer from '@/components/Footer'
 import Navigation from '@/components/Navigation'
 import PageTitle from '@/components/PageTitle'
 
@@ -11,6 +12,7 @@ const CalendarPage = () => {
 			<div className='px-8 bg-[var(--primary)] pt-20 min-h-screen '>
 				<PageTitle title='kalendarz warsztatów' />
 				<Calendar />
+				<Footer />
 			</div>
 		</>
 	)
