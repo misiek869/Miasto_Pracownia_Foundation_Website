@@ -5,8 +5,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import logo from '@/public/images/Miasto-Pracownia_Logo.png'
 import Navigation from '@/components/Navigation'
-import useEmblaCarousel from 'embla-carousel-react'
-import Autoplay from 'embla-carousel-autoplay'
+import { EmblaOptionsType } from 'embla-carousel'
+import Carousel from '@/components/carousel/Carousel'
 
 const images: string[] = [
 	'/images/carousel_images/1.jpg',
@@ -19,12 +19,12 @@ const images: string[] = [
 ]
 
 const HomePage = () => {
-	const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay()])
+	const OPTIONS: EmblaOptionsType = { loop: true }
 
 	return (
 		<>
 			<div className=' flex flex-col'>
-				<div className='bg-rose-300 h-screen px-2 pt-10 flex flex-col items-center justify-baseline relative'>
+				<div className='bg-rose-300 h-screen px-2 pt-20 flex flex-col items-center justify-baseline relative'>
 					<div className='absolute top-6 left-6'>
 						<Navigation disabled={true} />
 					</div>
@@ -32,9 +32,7 @@ const HomePage = () => {
 						fundacja miasto pracownia
 					</h1> */}
 					<Image width={600} height={600} src={logo} alt='logo' />
-					{/* <h3 className='font-montserrat text-4xl capitalize mb-16 tracking-wide'>
-						twórcze działania
-					</h3> */}
+
 					<Button
 						asChild
 						size={'lg'}
@@ -42,22 +40,8 @@ const HomePage = () => {
 						className='bg-black text-xl font-montserrat font-semibold uppercase tracking-wider text-rose-300'>
 						<Link href={'/about-us'}>Poznaj Nas</Link>
 					</Button>
-
-					<div className='embla' ref={emblaRef}>
-						<div className='embla__container'>
-							{images.map((image, index) => {
-								return (
-									<div className='embla__slide' key={index}>
-										<Image
-											src={image}
-											alt={`Slide ${index + 1}`}
-											width={600}
-											height={400}
-										/>
-									</div>
-								)
-							})}
-						</div>
+					<div className='w-[90vw] mt-20'>
+						<Carousel slides={images} options={OPTIONS} />
 					</div>
 				</div>
 				{/* <div className='bg-[var(--primary)] lg:bg-rose-400 lg:h-screen hidden lg:block lg:w-1/2 relative'>
