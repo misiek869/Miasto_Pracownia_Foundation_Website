@@ -11,7 +11,7 @@ const AboutUsPage = () => {
 		<>
 			<div className='px-8 bg-[var(--primary)] pt-20 min-h-screen relative'>
 				<div className='absolute top-6 left-6'>
-					<Navigation hidden='about' />
+					<Navigation hidden='about' home={true} />
 				</div>
 				<PageTitle title='o fundacji' />
 

@@ -12,7 +12,7 @@ const ContactPage = () => {
 	return (
 		<>
 			<div className='absolute top-6 left-6'>
-				<Navigation hidden='contact' />
+				<Navigation hidden='contact' home={true} />
 			</div>
 			<div className='px-8 bg-[var(--primary)] py-20 min-h-screen w-screen'>
 				<PageTitle title='kontakt' />

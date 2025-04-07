@@ -18,7 +18,7 @@ const WorkshopsPage = () => {
 		<>
 			<div className='min-h-screen bg-[var(--primary)] flex flex-col md:justify-center pt-20'>
 				<div className='absolute top-6 left-6'>
-					<Navigation hidden='workshops' />
+					<Navigation hidden='workshops' home={true} />
 				</div>
 
 				<PageTitle title='nasze pracownie' />

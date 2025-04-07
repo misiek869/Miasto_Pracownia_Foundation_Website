@@ -7,7 +7,7 @@ const WoodWorkshopPage = () => {
 		<>
 			<div className='px-8 bg-[var(--primary)] pt-20 min-h-screen relative'>
 				<div className='absolute top-6 left-6'>
-					<Navigation />
+					<Navigation home={true} />
 				</div>
 				<PageTitle title='pracownia drewna' />
 				<Footer />

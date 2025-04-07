@@ -26,7 +26,7 @@ const HomePage = () => {
 			<div className=' flex flex-col'>
 				<div className='bg-rose-300 h-screen px-2 pt-20 flex flex-col items-center justify-baseline relative'>
 					<div className='absolute top-6 left-6'>
-						<Navigation disabled={true} />
+						<Navigation />
 					</div>
 					{/* <h1 className='capitalize font-calistoga tracking-wide leading-snug text-6xl md:text-7xl lg:text-6xl text-center mb-10 text-rose-500'>
 						fundacja miasto pracownia
@@ -37,8 +37,8 @@ const HomePage = () => {
 						asChild
 						size={'lg'}
 						variant={'ghost'}
-						className='bg-black text-xl font-montserrat font-semibold uppercase tracking-wider text-rose-300'>
-						<Link href={'/about-us'}>Poznaj Nas</Link>
+						className='bg-black text-xl font-montserrat font-semibold uppercase tracking-wider text-rose-300 rounded-full'>
+						<Link href={'/kalendarz'}>Kalendarz Wydarzeń</Link>
 					</Button>
 					<div className='w-[90vw] mt-20'>
 						<Carousel slides={images} options={OPTIONS} />
