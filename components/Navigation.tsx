@@ -14,7 +14,7 @@ const Navigation = ({ disabled, hidden }: NavigationProps) => {
 		<header className='flex w-full shrink-0 items-center'>
 			<Sheet>
 				<SheetTrigger asChild>
-					<Button variant='outline' size='icon' className='rounded-lg'>
+					<Button variant='outline' size='icon' className='rounded-full'>
 						<Menu className='h-6 w-6' />
 					</Button>
 				</SheetTrigger>
