@@ -9,19 +9,22 @@ import Footer from '@/components/Footer'
 const AboutUsPage = () => {
 	return (
 		<>
-			<div className='px-8 bg-[var(--primary)] pt-20 min-h-screen relative'>
-				<div className='absolute top-6 left-6'>
-					<Navigation hidden='about' home={true} />
+			<div className='min-h-screen bg-slate-50 pt-20 flex flex-col relative px-4'>
+				<div className='fixed top-6 left-6'>
+					<Navigation hidden='about' />
 				</div>
 				<PageTitle title='o fundacji' />
 
-				<div className='mt-20 md:max-w-[60vw] mx-auto mb-20'>
+				<div className='mt-20 max-w-[80vw] md:max-w-[60vw] mx-auto mb-20'>
 					<Image
 						src={about_photo}
 						alt='about image'
+						// width={300}
+						// height={300}
 						className='rounded-full mx-auto'
+						sizes='(max-width: 480px) 150px, (max-width: 768px) 200px, (min-width: 768px) 400px, 200px'
 					/>
-					<p className='max-w-[70%] mt-10 text-justify font-montserrat tracking-wide leading-loose text-lg lg:text-xl mx-auto'>
+					<p className='w-full mt-10 text-justify font-montserrat tracking-wide leading-loose text-lg lg:text-xl mx-auto'>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
 						dolores harum quas in nulla voluptate temporibus illo asperiores
 						corrupti doloribus deserunt eius, esse nobis officiis rem recusandae

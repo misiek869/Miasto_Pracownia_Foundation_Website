@@ -29,8 +29,8 @@ const Calendar = () => {
 	console.log(currentDate)
 
 	return (
-		<div className='h-screen flex flex-col mx-auto items-center justify-center mt-10 relative'>
-			<div className='w-96 h-96 md:h-144 md:w-144 lg:w-192 lg:h-192 '>
+		<div className='mt-20 flex flex-col xl:flex-row mx-auto justify-center xl:gap-x-16 pb-40'>
+			<div className='w-96 h-96 md:h-144 md:w-144 lg:w-192 lg:h-192 xl:w-192 xl:h-144  xl:p-4 '>
 				<div className=' flex justify-between'>
 					<h1 className='font-semibold'>
 						{months[today.month()]} {today.year()}
@@ -74,7 +74,7 @@ const Calendar = () => {
 						return (
 							<div
 								key={uuidv4()}
-								className='h-14 md:h-21 lg:h-28 border-t grid place-content-center text-sm'>
+								className='h-14 md:h-21 lg:h-28 xl:h-20 border-t grid place-content-center text-sm'>
 								{event ? (
 									<Popover>
 										<PopoverTrigger
@@ -123,24 +123,25 @@ const Calendar = () => {
 					})}
 				</div>
 			</div>
-			<div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-between w-full mt-6'>
+			<div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 xl:grid-cols-2 justify-between w-full xl:w-1/2 mt-12 lg:mt-6'>
 				{popoverData.map(item => {
 					const { id, firstName, secondName, bgColor, description, link } = item
 
 					return (
 						<Popover key={id}>
 							<PopoverTrigger
-								className={`flex mx-auto h-24 w-24 md:p-14 rounded-full items-center justify-center bg-[${bgColor}] cursor-pointer hover:animate-pulse`}>
-								<p className='text-center text-sm lg:text-md text-slate-100 font-semibold tracking-wider'>
+								style={{ backgroundColor: bgColor }}
+								className={`flex mx-auto h-24 w-24 md:p-14 rounded-full items-center justify-center cursor-pointer hover:scale-110 duration-300`}>
+								<p className='text-center text-sm lg:text-md text-slate-50 font-semibold tracking-wider'>
 									{firstName}
 									<br />
 									{secondName}
 								</p>
 							</PopoverTrigger>
-							<PopoverContent className='border-2 border-rose-500 relative pb-12'>
+							<PopoverContent className='border-2 border-rose-300 relative pb-12'>
 								<p className='text-justify'>{description}</p>
 								<Link
-									className='text-rose-500 absolute bottom-4 right-4'
+									className='text-rose-300 absolute bottom-4 right-4'
 									href={link}>
 									Dowiedz się Więcej
 								</Link>
@@ -149,23 +150,6 @@ const Calendar = () => {
 					)
 				})}
 			</div>
-
-			{/* <div className='h-96 w-96 px-5 hidden mt-6'>
-				<h1 className='font-semibold capitalize'>
-					{selectDate.format('dddd D MMMM YYYY')}
-				</h1>
-
-				{event !== undefined ? (
-					<article>
-						<h2>{event?.name}</h2>
-						<Button variant={'outline'} size={'default'}>
-							<Link href={'#'}>Zapisz się na warsztat</Link>
-						</Button>
-					</article>
-				) : (
-					<h2>W tym dniu nie ma warsztatów</h2>
-				)}
-			</div> */}
 		</div>
 	)
 }
