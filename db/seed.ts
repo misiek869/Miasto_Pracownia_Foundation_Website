@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client'
-import { seedEvents } from '@/events'
+import { events } from '@/events'
 
 async function main() {
 	const prisma = new PrismaClient()
@@ -7,7 +7,7 @@ async function main() {
 	await prisma.event.deleteMany()
 
 	await prisma.event.createMany({
-		data: seedEvents,
+		data: events,
 	})
 
 	console.log('database seeded')

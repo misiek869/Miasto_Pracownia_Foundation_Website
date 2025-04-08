@@ -4,8 +4,6 @@ import { FaFacebook, FaInstagram } from 'react-icons/fa'
 
 const Footer = () => {
 	const currentYear = dayjs().year()
-	console.log(currentYear)
-
 	return (
 		<div className='bg-gray-900 flex md:flex-row flex-col justify-center md:justify-between  py-6 px-8 md:py-4  min-w-screen absolute bottom-0 right-0'>
 			<p className='text-slate-50 tracking-wider font-montserrat text-md md:text-lg font-normal mb-4 md:mb-0 text-center'>

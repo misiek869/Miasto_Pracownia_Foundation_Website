@@ -1,5 +1,4 @@
 'use client'
-
 import { cn } from '@/lib/utils'
 import { formatDate, generateDate, months } from '@/utils'
 import dayjs from 'dayjs'
@@ -7,7 +6,6 @@ import 'dayjs/locale/pl'
 import { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import { GrFormPrevious, GrFormNext } from 'react-icons/gr'
-import { events } from '@/events'
 import {
 	Popover,
 	PopoverContent,
@@ -18,15 +16,18 @@ import Link from 'next/link'
 import { Button } from './ui/button'
 import { popoverData } from '@/calendarData'
 
-const Calendar = () => {
+type CalendarProps = {
+	events: EventType[]
+}
+
+const Calendar = ({ events }: CalendarProps) => {
 	dayjs.locale('pl')
+
 	const days = ['Pon', 'Wt', 'Śr', 'Czw', 'Pt', 'Sob', 'Ndz']
 	const currentDate = dayjs()
 	const [today, setToday] = useState(currentDate)
-	const [selectDate, setSelectDate] = useState(currentDate)
-	const [event, setEvent] = useState<EventType | undefined>(undefined)
-
-	console.log(currentDate)
+	// const [selectDate, setSelectDate] = useState(currentDate)
+	// const [event, setEvent] = useState<EventType | undefined>(undefined)
 
 	return (
 		<div className='mt-20 flex flex-col xl:flex-row mx-auto justify-center xl:gap-x-16 pb-40'>
