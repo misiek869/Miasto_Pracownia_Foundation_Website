@@ -17,9 +17,8 @@ model Event {
   id          String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   name        String
   color       String
-  signUpUrl   String @unique
+  signUpUrl   String
   eventDate   String
   description String
   eventHour   String
 }
-
