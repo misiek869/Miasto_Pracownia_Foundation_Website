@@ -24,12 +24,12 @@ const HomePage = () => {
 	return (
 		<>
 			<div className=' flex flex-col'>
-				<div className='bg-rose-300 h-screen px-2 pt-20 flex flex-col items-center justify-baseline relative'>
+				<div className='bg-rose-300 h-screen px-2 lg:pt-10 flex flex-col items-center justify-center lg:justify-baseline relative'>
 					<div className='absolute top-6 left-6'>
 						<Navigation disabled={true} />
 					</div>
 
-					<Image width={600} height={600} src={logo} alt='logo' />
+					<Image width={700} height={700} src={logo} alt='logo' />
 
 					<Button
 						asChild
