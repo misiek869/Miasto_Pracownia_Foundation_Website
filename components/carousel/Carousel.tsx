@@ -90,7 +90,7 @@ const Carousel = ({ slides, options }: CarouselPropType) => {
 				</div>
 
 				<button
-					className='bg-slate-100 w-[85px] py-2 rounded-full touch-manipulation cursor-pointer items-center justify-center justify-self-end font-semibold tracking-wider uppercase'
+					className='bg-slate-100 w-[85px] py-2 rounded-full touch-manipulation cursor-pointer items-center justify-center justify-self-end font-semibold tracking-wider uppercase hover:bg-slate-200 duration-300'
 					onClick={toggleAutoplay}
 					type='button'>
 					{isPlaying ? 'Stop' : 'Start'}

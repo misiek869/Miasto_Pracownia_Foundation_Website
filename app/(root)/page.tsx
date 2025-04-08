@@ -29,13 +29,19 @@ const HomePage = () => {
 						<Navigation disabled={true} />
 					</div>
 
-					<Image width={700} height={700} src={logo} alt='logo' />
+					<Image
+						width={700}
+						height={700}
+						src={logo}
+						alt='logo'
+						className='pb-16 xl:pb-2'
+					/>
 
 					<Button
 						asChild
 						size={'lg'}
 						variant={'ghost'}
-						className='bg-black text-xl font-montserrat font-semibold uppercase tracking-wider text-rose-300 rounded-full'>
+						className='bg-black text-xl font-montserrat font-semibold uppercase tracking-wider text-rose-300 rounded-full duration-300'>
 						<Link href={'/kalendarz'}>Kalendarz Wydarzeń</Link>
 					</Button>
 					<div className='w-[90vw] mt-20'>

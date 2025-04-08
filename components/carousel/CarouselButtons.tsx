@@ -59,7 +59,7 @@ export const PrevButton: React.FC<PropType> = props => {
 
 	return (
 		<button
-			className='bg-slate-100 touch-manipulation inline-flex cursor-pointer px-4 py-4 rounded-full'
+			className='bg-slate-100 touch-manipulation inline-flex cursor-pointer px-4 py-4 rounded-full hover:bg-slate-200 duration-300'
 			type='button'
 			{...restProps}>
 			<svg className='w-4 h-4' viewBox='0 0 532 532'>
@@ -78,7 +78,7 @@ export const NextButton: React.FC<PropType> = props => {
 
 	return (
 		<button
-			className='bg-slate-100 touch-manipulation inline-flex cursor-pointer px-4 py-4 rounded-full'
+			className='bg-slate-100 touch-manipulation inline-flex cursor-pointer px-4 py-4 rounded-full hover:bg-slate-200 duration-300'
 			type='button'
 			{...restProps}>
 			<svg className='w-4 h-4' viewBox='0 0 532 532'>
