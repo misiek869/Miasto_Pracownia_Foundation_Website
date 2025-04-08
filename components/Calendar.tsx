@@ -11,13 +11,13 @@ import {
 	PopoverContent,
 	PopoverTrigger,
 } from '@/components/ui/popover'
-import { Event as EventType } from '@/events'
+import { Event } from '@/types'
 import Link from 'next/link'
 import { Button } from './ui/button'
 import { popoverData } from '@/calendarData'
 
 type CalendarProps = {
-	events: EventType[]
+	events: Event[]
 }
 
 const Calendar = ({ events }: CalendarProps) => {
