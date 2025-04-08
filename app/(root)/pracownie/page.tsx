@@ -30,7 +30,7 @@ const WorkshopsPage = () => {
 								alt='wood photo'
 								width={250}
 								height={250}
-								className='rounded-full mx-auto'
+								className='rounded-full mx-auto h-[250px]'
 							/>
 							<p className='text-center font-montserrat text-2xl tracking-wide font-semibold text-gray-700 mt-4'>
 								Drewna
@@ -44,7 +44,7 @@ const WorkshopsPage = () => {
 								alt='tailoring equipment photo'
 								width={250}
 								height={250}
-								className='rounded-full mx-auto'
+								className='rounded-full mx-auto h-[250px]'
 							/>
 							<p className='text-center font-montserrat text-2xl tracking-wide font-semibold text-gray-700 mt-4'>
 								Krawiecka
@@ -58,7 +58,7 @@ const WorkshopsPage = () => {
 								alt='ceramics photo'
 								width={250}
 								height={250}
-								className='rounded-full mx-auto'
+								className='rounded-full mx-auto h-[250px]'
 							/>
 							<p className='text-center font-montserrat text-2xl tracking-wide font-semibold text-gray-700 mt-4'>
 								Ceramiczna
@@ -72,7 +72,7 @@ const WorkshopsPage = () => {
 								alt='woman photo'
 								width={250}
 								height={250}
-								className='rounded-full mx-auto'
+								className='rounded-full mx-auto h-[250px]'
 							/>
 							<p className='text-center font-montserrat text-2xl tracking-wide font-semibold text-gray-700 mt-4'>
 								Kobiet
@@ -86,7 +86,7 @@ const WorkshopsPage = () => {
 								alt='flowers photo'
 								width={250}
 								height={250}
-								className='rounded-full mx-auto'
+								className='rounded-full mx-auto h-[250px]'
 							/>
 							<p className='text-center font-montserrat text-2xl tracking-wide font-semibold text-gray-700 mt-4'>
 								Dzieci
@@ -100,7 +100,7 @@ const WorkshopsPage = () => {
 								alt='flowers photo'
 								width={250}
 								height={250}
-								className='rounded-full mx-auto'
+								className='rounded-full mx-auto h-[250px]'
 							/>
 							<p className='text-center font-montserrat text-2xl tracking-wide font-semibold text-gray-700 mt-4'>
 								Miasta
