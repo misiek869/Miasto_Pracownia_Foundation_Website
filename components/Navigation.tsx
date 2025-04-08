@@ -2,13 +2,15 @@ import { Sheet, SheetTrigger, SheetContent } from '@/components/ui/sheet'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { Menu } from 'lucide-react'
+import logo_small from '@/public/images/Miasto-Pracownia_Logo_small.png'
+import Image from 'next/image'
 
 type NavigationProps = {
-	home?: boolean
+	disabled?: boolean
 	hidden?: string
 }
 
-const Navigation = ({ home, hidden }: NavigationProps) => {
+const Navigation = ({ disabled, hidden }: NavigationProps) => {
 	return (
 		<Sheet>
 			<SheetTrigger asChild>
@@ -17,24 +19,40 @@ const Navigation = ({ home, hidden }: NavigationProps) => {
 				</Button>
 			</SheetTrigger>
 			<SheetContent side='left' className='h-[300px] w-[300px] rounded-full'>
-				<div className='grid gap-2 py-6 justify-center '>
-					{home ? (
-						<Link
-							href='/o_nas'
-							className={'text-center py-2 text-xl font-semibold'}
+				{disabled ? (
+					<div className='mt-4 flex justify-center'>
+						<Image
+							src={logo_small}
+							alt='small logo image'
+							width={100}
+							height={100}
+						/>
+					</div>
+				) : (
+					<Link href='/' className='mt-4 flex justify-center' prefetch={false}>
+						<Image
+							src={logo_small}
+							alt='small logo image'
+							width={100}
+							height={100}
+						/>
+					</Link>
+				)}
+
+				<div className='grid gap-0.5 justify-center '>
+					{/* <Link
+							href='#'
+							className='flex w-full items-center py-2 text-lg font-semibold'
 							prefetch={false}>
-							Główna
-						</Link>
-					) : (
-						''
-					)}
+							Home
+						</Link> */}
 
 					<Link
 						href='/o_nas'
 						className={
 							hidden === 'about'
-								? 'hidden'
-								: 'text-center py-2 text-xl font-semibold'
+								? 'text-center my-0.5 py-0.5 text-xl font-semibold text-rose-300 pointer-events-none'
+								: 'text-center my-0.5 py-0.5 text-xl font-semibold'
 						}
 						prefetch={false}>
 						O Nas
@@ -43,8 +61,8 @@ const Navigation = ({ home, hidden }: NavigationProps) => {
 						href='/pracownie'
 						className={
 							hidden === 'workshops'
-								? 'hidden'
-								: 'text-center py-2 text-xl font-semibold'
+								? 'text-center my-0.5 py-0.5 text-xl font-semibold text-rose-300 pointer-events-none'
+								: 'text-center my-0.5 py-0.5 text-xl font-semibold'
 						}
 						prefetch={false}>
 						Pracownie
@@ -53,8 +71,8 @@ const Navigation = ({ home, hidden }: NavigationProps) => {
 						href='/kalendarz'
 						className={
 							hidden === 'calendar'
-								? 'hidden'
-								: 'text-center py-2 text-xl font-semibold'
+								? 'text-center my-0.5 py-0.5 text-xl font-semibold text-rose-300 pointer-events-none'
+								: 'text-center my-0.5 py-0.5 text-xl font-semibold'
 						}
 						prefetch={false}>
 						Kalendarz
@@ -63,8 +81,8 @@ const Navigation = ({ home, hidden }: NavigationProps) => {
 						href='/kontakt'
 						className={
 							hidden === 'contact'
-								? 'hidden'
-								: 'text-center py-2 text-xl font-semibold'
+								? 'text-center my-0.5 py-0.5 text-xl font-semibold text-rose-300 pointer-events-none'
+								: 'text-center my-0.5 py-0.5 text-xl font-semibold'
 						}
 						prefetch={false}>
 						Kontakt

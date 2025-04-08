@@ -29,7 +29,7 @@ const Calendar = () => {
 	console.log(currentDate)
 
 	return (
-		<div className='flex mx-auto items-center justify-center  lg:flex-row flex-col mt-10'>
+		<div className='h-screen flex flex-col mx-auto items-center justify-center mt-10 relative'>
 			<div className='w-96 h-96 md:h-144 md:w-144 lg:w-192 lg:h-192 '>
 				<div className=' flex justify-between'>
 					<h1 className='font-semibold'>
@@ -122,36 +122,35 @@ const Calendar = () => {
 						)
 					})}
 				</div>
-				<div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-between w-full mt-6'>
-					{popoverData.map(item => {
-						const { id, firstName, secondName, bgColor, description, link } =
-							item
+			</div>
+			<div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-between w-full mt-6'>
+				{popoverData.map(item => {
+					const { id, firstName, secondName, bgColor, description, link } = item
 
-						return (
-							<Popover key={id}>
-								<PopoverTrigger
-									className={`flex mx-auto h-24 w-24 md:p-14 rounded-full items-center justify-center bg-[${bgColor}] cursor-pointer hover:animate-pulse`}>
-									<p className='text-center text-sm lg:text-md text-slate-100 font-semibold tracking-wider'>
-										{firstName}
-										<br />
-										{secondName}
-									</p>
-								</PopoverTrigger>
-								<PopoverContent className='border-2 border-rose-500 relative pb-12'>
-									<p className='text-justify'>{description}</p>
-									<Link
-										className='text-rose-500 absolute bottom-4 right-4'
-										href={link}>
-										Dowiedz się Więcej
-									</Link>
-								</PopoverContent>
-							</Popover>
-						)
-					})}
-				</div>
+					return (
+						<Popover key={id}>
+							<PopoverTrigger
+								className={`flex mx-auto h-24 w-24 md:p-14 rounded-full items-center justify-center bg-[${bgColor}] cursor-pointer hover:animate-pulse`}>
+								<p className='text-center text-sm lg:text-md text-slate-100 font-semibold tracking-wider'>
+									{firstName}
+									<br />
+									{secondName}
+								</p>
+							</PopoverTrigger>
+							<PopoverContent className='border-2 border-rose-500 relative pb-12'>
+								<p className='text-justify'>{description}</p>
+								<Link
+									className='text-rose-500 absolute bottom-4 right-4'
+									href={link}>
+									Dowiedz się Więcej
+								</Link>
+							</PopoverContent>
+						</Popover>
+					)
+				})}
 			</div>
 
-			<div className='h-96 w-96 px-5 hidden mt-6'>
+			{/* <div className='h-96 w-96 px-5 hidden mt-6'>
 				<h1 className='font-semibold capitalize'>
 					{selectDate.format('dddd D MMMM YYYY')}
 				</h1>
@@ -166,7 +165,7 @@ const Calendar = () => {
 				) : (
 					<h2>W tym dniu nie ma warsztatów</h2>
 				)}
-			</div>
+			</div> */}
 		</div>
 	)
 }

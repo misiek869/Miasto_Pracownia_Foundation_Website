@@ -26,11 +26,9 @@ const HomePage = () => {
 			<div className=' flex flex-col'>
 				<div className='bg-rose-300 h-screen px-2 pt-20 flex flex-col items-center justify-baseline relative'>
 					<div className='absolute top-6 left-6'>
-						<Navigation />
+						<Navigation disabled={true} />
 					</div>
-					{/* <h1 className='capitalize font-calistoga tracking-wide leading-snug text-6xl md:text-7xl lg:text-6xl text-center mb-10 text-rose-500'>
-						fundacja miasto pracownia
-					</h1> */}
+
 					<Image width={600} height={600} src={logo} alt='logo' />
 
 					<Button
