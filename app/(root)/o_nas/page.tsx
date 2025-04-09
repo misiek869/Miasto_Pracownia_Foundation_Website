@@ -5,6 +5,7 @@ import zdjecie_kasia from '@/public/images/woman_1.jpg'
 import zdjecie_dorota from '@/public/images/woman_2.jpg'
 import about_photo from '@/public/images/about_photo.jpg'
 import Footer from '@/components/Footer'
+import UserButton from '@/components/UserButton'
 
 const AboutUsPage = () => {
 	return (
@@ -14,7 +15,7 @@ const AboutUsPage = () => {
 					<Navigation hidden='about' />
 				</div>
 				<PageTitle title='o fundacji' />
-
+				<UserButton />
 				<div className='mt-20 max-w-[80vw] md:max-w-[60vw] mx-auto mb-20'>
 					<Image
 						src={about_photo}

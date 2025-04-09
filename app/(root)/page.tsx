@@ -48,6 +48,7 @@ const HomePage = () => {
 						<Carousel slides={images} options={OPTIONS} />
 					</div>
 				</div>
+
 				{/* <div className='bg-[var(--primary)] lg:bg-rose-400 lg:h-screen hidden lg:block lg:w-1/2 relative'>
 					<Image
 						height={500}
