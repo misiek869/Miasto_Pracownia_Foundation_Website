@@ -1,6 +1,14 @@
-import { Card, CardHeader } from '@/components/ui/card'
+import {
+	Card,
+	CardContent,
+	CardDescription,
+	CardHeader,
+	CardTitle,
+} from '@/components/ui/card'
 import { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
+import logoSmall from '@/public/images/Miasto-Pracownia_Logo_small.png'
 
 export const metadata: Metadata = {
 	title: 'Sign In',
@@ -11,7 +19,19 @@ const SignInPage = () => {
 		<div className='w-full max-w-md mx-auto'>
 			<Card>
 				<CardHeader className='space-y-4'>
-					<Link href={'/'} className=''></Link>
+					<Link href={'/'} className='flex justify-center item'>
+						<Image
+							src={logoSmall}
+							width={200}
+							height={200}
+							alt='small logo image'
+						/>
+					</Link>
+					{/* <CardTitle className='text-center'>Zaloguj Się</CardTitle> */}
+					<CardDescription className='text-center'>
+						Zaloguj się jako Admin
+					</CardDescription>
+					<CardContent className='space-y-4'>{/* Form */}</CardContent>
 				</CardHeader>
 			</Card>
 		</div>
