@@ -3,6 +3,7 @@
 import { signInFormSchema } from '../validators'
 import { signIn, signOut } from '@/auth'
 import { isRedirectError } from 'next/dist/client/components/redirect-error'
+import { redirect } from 'next/navigation'
 
 export async function signInWithCredentials(prev: unknown, formData: FormData) {
 	try {
@@ -25,4 +26,5 @@ export async function signInWithCredentials(prev: unknown, formData: FormData) {
 
 export async function signOutUser() {
 	await signOut()
+	redirect('/')
 }
