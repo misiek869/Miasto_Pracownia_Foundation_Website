@@ -10,3 +10,10 @@ export const insertEventSchema = z.object({
 	description: z.string().min(1, { message: 'Opis jest wymagany' }),
 	eventHour: z.string().min(1, { message: 'Godzina wydarzenia jest wymagana' }),
 })
+
+//schema for sign user
+
+export const signInFormSchema = z.object({
+	email: z.string().email('Invalid emial address'),
+	password: z.string().min(6, 'Password must be at least 6 characters'),
+})
