@@ -9,6 +9,7 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import logoSmall from '@/public/images/Miasto-Pracownia_Logo_small.png'
+import SignInForm from '@/components/SignInForm'
 
 export const metadata: Metadata = {
 	title: 'Sign In',
@@ -31,7 +32,9 @@ const SignInPage = () => {
 					<CardDescription className='text-center'>
 						Zaloguj się jako Admin
 					</CardDescription>
-					<CardContent className='space-y-4'>{/* Form */}</CardContent>
+					<CardContent className='space-y-4'>
+						<SignInForm />
+					</CardContent>
 				</CardHeader>
 			</Card>
 		</div>
