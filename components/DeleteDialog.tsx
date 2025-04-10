@@ -29,8 +29,9 @@ const DeleteDialog = ({
 			const res = await action(id)
 
 			if (!res.success) {
-				return
+				toast('Nie udało się usnąć warsztatu')
 			} else {
+				toast('Warsztat usunięty')
 				setOpen(false)
 			}
 		})
