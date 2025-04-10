@@ -1,6 +1,7 @@
 import { requireAdmin } from '@/lib/auth-guard'
 import { auth } from '@/auth'
 import { getAllOrders } from '@/lib/actions/event.action'
+import { formatId } from '@/lib/utils'
 import { Metadata } from 'next'
 import Link from 'next/link'
 import {
@@ -32,8 +33,6 @@ const AdminEventsPage = async (props: {
 		limit: 2,
 	})
 
-	console.log(events)
-
 	return (
 		<div className='space-y-2'>
 			<h2 className='h2-bold'>Orders</h2>
@@ -50,7 +49,7 @@ const AdminEventsPage = async (props: {
 					<TableBody>
 						{events.data.map(event => (
 							<TableRow key={event.id}>
-								{/* <TableCell>{formatId(order.id)}</TableCell> */}
+								<TableCell>{formatId(event.id)}</TableCell>
 
 								{/* <TableCell>
 									{order.isPaid && order.paidAt

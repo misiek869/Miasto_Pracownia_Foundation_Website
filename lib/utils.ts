@@ -8,3 +8,7 @@ export function cn(...inputs: ClassValue[]) {
 export function convertToPlainObject<T>(value: T): T {
 	return JSON.parse(JSON.stringify(value))
 }
+
+export function formatId(id: string) {
+	return `..${id.substring(id.length - 6)}`
+}
