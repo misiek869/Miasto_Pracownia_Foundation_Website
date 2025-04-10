@@ -30,7 +30,7 @@ const AdminEventsPage = async (props: {
 
 	const events = await getAllOrders({
 		page: Number(page),
-		limit: 2,
+		limit: 4,
 	})
 
 	return (
@@ -50,18 +50,9 @@ const AdminEventsPage = async (props: {
 						{events.data.map(event => (
 							<TableRow key={event.id}>
 								<TableCell>{formatId(event.id)}</TableCell>
-
-								{/* <TableCell>
-									{order.isPaid && order.paidAt
-										? formatDateTime(order.paidAt).dateTime
-										: 'Not Paid'}
-								</TableCell> */}
-
-								<TableCell>
-									<Link href={`/order/${event.id}`}>
-										<span className='px-2'>Details</span>
-									</Link>
-								</TableCell>
+								<TableCell>{event.name}</TableCell>
+								<TableCell>{event.eventDate}</TableCell>
+								<TableCell>{event.eventHour}</TableCell>
 							</TableRow>
 						))}
 					</TableBody>
