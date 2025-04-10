@@ -17,3 +17,7 @@ export const signInFormSchema = z.object({
 	email: z.string().email('Invalid emial address'),
 	password: z.string().min(6, 'Password must be at least 6 characters'),
 })
+
+export const updateEventSchema = insertEventSchema.extend({
+	id: z.string().min(1, 'id is required'),
+})
