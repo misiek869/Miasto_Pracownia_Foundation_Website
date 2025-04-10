@@ -1,6 +1,6 @@
 import { requireAdmin } from '@/lib/auth-guard'
 import { auth } from '@/auth'
-import { getAllOrders } from '@/lib/actions/event.action'
+import { deleteEvent, getAllOrders } from '@/lib/actions/event.action'
 import { formatId } from '@/lib/utils'
 import { Metadata } from 'next'
 import Link from 'next/link'
@@ -13,6 +13,7 @@ import {
 	TableRow,
 } from '@/components/ui/table'
 import Pagination from '@/components/Pagination'
+import DeleteDialog from '@/components/DeleteDialog'
 
 export const metadata: Metadata = {
 	title: 'Admin Warsztaty',
@@ -45,6 +46,7 @@ const AdminEventsPage = async (props: {
 							<TableHead>NAZWA</TableHead>
 							<TableHead>DATA</TableHead>
 							<TableHead>GODZINA</TableHead>
+							<TableHead>EDYCJA</TableHead>
 						</TableRow>
 					</TableHeader>
 					<TableBody>
@@ -54,6 +56,9 @@ const AdminEventsPage = async (props: {
 								<TableCell>{event.name}</TableCell>
 								<TableCell>{event.eventDate}</TableCell>
 								<TableCell>{event.eventHour}</TableCell>
+								<TableCell>
+									<DeleteDialog id={event.id} action={deleteEvent} />
+								</TableCell>
 							</TableRow>
 						))}
 					</TableBody>

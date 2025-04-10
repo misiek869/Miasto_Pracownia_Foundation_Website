@@ -70,6 +70,6 @@ export async function deleteEvent(id: string) {
 		revalidatePath('/admin/events')
 		return { success: true, message: 'Usunięto' }
 	} catch (error) {
-		return { success: false, message: error }
+		return { success: false, message: 'Nie udało się usunąć wydarzenia' }
 	}
 }
