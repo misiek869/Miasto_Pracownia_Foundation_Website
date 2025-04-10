@@ -24,23 +24,6 @@ const DeleteDialog = ({
 
 	const [isPending, startTransition] = useTransition()
 
-	const handleClick = () => {
-		const toastId = toast('Ładowanie...', {
-			duration: Infinity, // Toast nie zniknie automatycznie
-		})
-
-		setTimeout(() => {
-			toast.dismiss(toastId)
-			toast('Zaktualizowano!', {
-				description: 'Operacja zakończona pomyślnie.',
-				action: {
-					label: 'OK',
-					onClick: () => console.log('Kliknięto OK'),
-				},
-			})
-		}, 2000)
-	}
-
 	const handleDelete = () => {
 		startTransition(async () => {
 			const res = await action(id)
