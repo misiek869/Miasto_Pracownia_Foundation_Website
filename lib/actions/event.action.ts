@@ -73,3 +73,4 @@ export async function deleteEvent(id: string) {
 		return { success: false, message: 'Nie udało się usunąć wydarzenia' }
 	}
 }
+

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Montserrat, Calistoga } from 'next/font/google'
 import './globals.css'
+import { Toaster } from 'sonner'
 
 const calistoga = Calistoga({
 	variable: '--font-calistoga',
@@ -27,6 +28,7 @@ export default function RootLayout({
 		<html lang='en'>
 			<body className={`${calistoga.variable} ${montserrat.variable}`}>
 				{children}
+				<Toaster />
 			</body>
 		</html>
 	)
