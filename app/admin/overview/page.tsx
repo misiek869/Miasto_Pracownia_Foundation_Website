@@ -4,12 +4,14 @@ import { getEventsSummary } from '@/lib/actions/event.action'
 import { Metadata } from 'next'
 import { redirect } from 'next/dist/server/api-utils'
 import { GrWorkshop } from 'react-icons/gr'
+import { requireAdmin } from '@/lib/auth-guard'
 
 export const metadata: Metadata = {
 	title: 'Admin',
 }
 
 const AdminOverviewPage = async () => {
+	await requireAdmin()
 	const session = await auth()
 
 	console.log(session)
