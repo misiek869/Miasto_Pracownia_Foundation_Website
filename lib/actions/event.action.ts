@@ -3,6 +3,7 @@
 import { PrismaClient } from '@prisma/client'
 import { convertToPlainObject } from '../utils'
 import { Prisma } from '@prisma/client'
+import { revalidatePath } from 'next/cache'
 
 // Get latest events
 
@@ -55,5 +56,20 @@ export async function getAllOrders({
 	return {
 		data,
 		totalPages: Math.ceil(dataCount / limit),
+	}
+}
+
+export async function deleteEvent(id: string) {
+	const prisma = new PrismaClient()
+
+	try {
+		await prisma.event.delete({
+			where: { id },
+		})
+
+		revalidatePath('/admin/events')
+		return { success: true, message: 'Usunięto' }
+	} catch (error) {
+		return { success: false, message: error }
 	}
 }
