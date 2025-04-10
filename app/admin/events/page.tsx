@@ -14,6 +14,7 @@ import {
 } from '@/components/ui/table'
 import Pagination from '@/components/Pagination'
 import DeleteDialog from '@/components/DeleteDialog'
+import { Button } from '@/components/ui/button'
 
 export const metadata: Metadata = {
 	title: 'Admin Warsztaty',
@@ -46,7 +47,9 @@ const AdminEventsPage = async (props: {
 							<TableHead>NAZWA</TableHead>
 							<TableHead>DATA</TableHead>
 							<TableHead>GODZINA</TableHead>
-							<TableHead>EDYCJA</TableHead>
+							<TableHead className='flex items-center justify-end'>
+								EDYCJA
+							</TableHead>
 						</TableRow>
 					</TableHeader>
 					<TableBody>
@@ -56,7 +59,10 @@ const AdminEventsPage = async (props: {
 								<TableCell>{event.name}</TableCell>
 								<TableCell>{event.eventDate}</TableCell>
 								<TableCell>{event.eventHour}</TableCell>
-								<TableCell>
+								<TableCell className='flex gap-x-4 justify-end'>
+									<Button asChild variant='outline' size='sm'>
+										<Link href={`/admin/events/${event.id}`}>Edytuj</Link>
+									</Button>
 									<DeleteDialog id={event.id} action={deleteEvent} />
 								</TableCell>
 							</TableRow>
