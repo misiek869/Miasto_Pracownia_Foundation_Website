@@ -12,6 +12,7 @@ import {
 	TableHeader,
 	TableRow,
 } from '@/components/ui/table'
+import Pagination from '@/components/Pagination'
 
 export const metadata: Metadata = {
 	title: 'Admin Warsztaty',
@@ -57,12 +58,12 @@ const AdminEventsPage = async (props: {
 						))}
 					</TableBody>
 				</Table>
-				{/* {events.totalPages > 1 && (
+				{events.totalPages > 1 && (
 					<Pagination
 						page={Number(page) || 1}
 						totalPages={events?.totalPages}
 					/>
-				)} */}
+				)}
 			</div>
 		</div>
 	)
