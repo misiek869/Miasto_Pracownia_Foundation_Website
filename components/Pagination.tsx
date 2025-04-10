@@ -25,22 +25,22 @@ const Pagination = ({ page, totalPages, urlParamName }: PaginationProps) => {
 	}
 
 	return (
-		<div className='flex gap-2'>
+		<div className='flex gap-x-4 mt-6'>
 			<Button
-				size='lg'
+				size={'sm'}
 				variant='outline'
 				className='w-28'
 				disabled={Number(page) <= 1}
 				onClick={() => handleClick('prev')}>
-				Previous
+				Wróć
 			</Button>
 			<Button
-				size='lg'
+				size={'sm'}
 				variant='outline'
 				className='w-28'
 				disabled={Number(page) >= totalPages}
 				onClick={() => handleClick('next')}>
-				Next
+				Dalej
 			</Button>
 		</div>
 	)
