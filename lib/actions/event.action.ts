@@ -35,3 +35,25 @@ export async function getEventsSummary() {
 
 	return eventCount
 }
+
+export async function getAllOrders({
+	limit = 10,
+	page,
+}: {
+	limit?: number
+	page?: number
+}) {
+	const prisma = new PrismaClient()
+	const data = await prisma.event.findMany({
+		orderBy: { eventDate: 'desc' },
+		take: limit,
+		skip: (page - 1) * limit,
+	})
+
+	const dataCount = await prisma.event.count()
+
+	return {
+		data,
+		totalPages: Math.ceil(dataCount / limit),
+	}
+}
