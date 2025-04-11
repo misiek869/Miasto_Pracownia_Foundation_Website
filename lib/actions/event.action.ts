@@ -124,5 +124,5 @@ export async function getSingleEventById(eventId: string) {
 
 	const data = prisma.event.findFirst({ where: { id: eventId } })
 
-	return convertToPlainObject(data)
+	return data
 }

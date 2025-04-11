@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 const CreateEventPage = () => {
 	return (
 		<>
-			<h1 className='text-xl font-bold'>Utwórz Warsztat</h1>
+			<h1 className='text-xl font-bold tracking-wider'>Utwórz Warsztat</h1>
 			<div className='my-8'>
 				<EventForm type={'create'} />
 			</div>
