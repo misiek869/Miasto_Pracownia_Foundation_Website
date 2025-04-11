@@ -3,7 +3,7 @@
 import { Event } from '@/types'
 import { useRouter } from 'next/navigation'
 import { toast } from 'sonner'
-import { ControllerRenderProps, useForm } from 'react-hook-form'
+import { ControllerRenderProps, SubmitHandler, useForm } from 'react-hook-form'
 import z from 'zod'
 import { insertEventSchema, updateEventSchema } from '@/lib/validators'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -25,8 +25,7 @@ import {
 import { Input } from './ui/input'
 import { Textarea } from './ui/textarea'
 import { Button } from './ui/button'
-import { useState } from 'react'
-import TimePicker from 'react-time-picker'
+import { createEvent, updateEvent } from '@/lib/actions/event.action'
 
 type EventFormProps = {
 	type: 'create' | 'update'
@@ -35,7 +34,7 @@ type EventFormProps = {
 }
 
 export const eventDefaultValues = {
-	id: '',
+	id: undefined,
 	name: '',
 	color: '',
 	signUpUrl: '',
@@ -44,10 +43,19 @@ export const eventDefaultValues = {
 	eventHour: '',
 }
 
+type EventFormValues = {
+	name: string
+	color: string
+	signUpUrl: string
+	description: string
+	eventDate: string
+	eventHour: string
+	id?: string
+}
+
 const EventForm = ({ type, event, eventId }: EventFormProps) => {
-	const [value, onChange] = useState<string>('10:00')
 	const router = useRouter()
-	const form = useForm<z.infer<typeof insertEventSchema>>({
+	const form = useForm<EventFormValues>({
 		resolver:
 			type === 'update'
 				? zodResolver(updateEventSchema)
@@ -55,9 +63,42 @@ const EventForm = ({ type, event, eventId }: EventFormProps) => {
 		defaultValues: event && type === 'update' ? event : eventDefaultValues,
 	})
 
+	const onSubmit: SubmitHandler<EventFormValues> = async values => {
+		// Logika tworzenia lub aktualizacji wydarzenia
+		if (type === 'create') {
+			const res = await createEvent(values)
+
+			if (!res.success) {
+				toast('Nie można utworzyć warsztatu')
+			} else {
+				toast(res.message)
+				router.push('/admin/events')
+			}
+		}
+
+		if (type === 'update') {
+			if (!eventId) {
+				router.push('/admin/events')
+				return
+			}
+
+			const res = await updateEvent({ ...values, id: eventId })
+
+			if (!res.success) {
+				toast('Nie można zaktualizować warsztatu')
+			} else {
+				toast(res.message)
+				router.push('/admin/events')
+			}
+		}
+	}
+
 	return (
 		<Form {...form}>
-			<form className='space-y-8'>
+			<form
+				method='POST'
+				onSubmit={form.handleSubmit(onSubmit)}
+				className='space-y-8'>
 				<div className='flex flex-col gap-5 md:flex-row'>
 					{/* name */}
 					<FormField
@@ -81,6 +122,38 @@ const EventForm = ({ type, event, eventId }: EventFormProps) => {
 						render={({ field }) => (
 							<FormItem className='w-full'>
 								<FormLabel>Link do zapisów</FormLabel>
+								<FormControl>
+									<Input placeholder='wklej link do zapisów' {...field} />
+								</FormControl>
+								<FormMessage />
+							</FormItem>
+						)}
+					/>
+				</div>
+
+				<div className='flex flex-col gap-5 md:flex-row'>
+					{/* name */}
+					<FormField
+						control={form.control}
+						name='eventDate'
+						render={({ field }) => (
+							<FormItem className='w-full'>
+								<FormLabel>Data</FormLabel>
+								<FormControl>
+									<Input placeholder='Wpisz nazwę warsztatu' {...field} />
+								</FormControl>
+								<FormMessage />
+							</FormItem>
+						)}
+					/>
+
+					{/* link */}
+					<FormField
+						control={form.control}
+						name='eventHour'
+						render={({ field }) => (
+							<FormItem className='w-full'>
+								<FormLabel>Godzina</FormLabel>
 								<FormControl>
 									<Input placeholder='wklej link do zapisów' {...field} />
 								</FormControl>
@@ -152,7 +225,7 @@ const EventForm = ({ type, event, eventId }: EventFormProps) => {
 				</div>
 				<div className='flex flex-col gap-5 md:flex-row'>
 					{/* link */}
-					<FormField
+					{/* <FormField
 						control={form.control}
 						name='signUpUrl'
 						render={({ field }) => (
@@ -164,7 +237,7 @@ const EventForm = ({ type, event, eventId }: EventFormProps) => {
 								<FormMessage />
 							</FormItem>
 						)}
-					/>
+					/> */}
 
 					{/* eventHour and eventDate */}
 				</div>
