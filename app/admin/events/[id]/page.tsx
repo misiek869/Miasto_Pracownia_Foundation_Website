@@ -13,7 +13,6 @@ const AdminEventEditPage = async (props: {
 	const { id } = await props.params
 
 	const event = await getSingleEventById(id)
-	console.log(event)
 
 	if (!event) {
 		return <NotFoundPage />
