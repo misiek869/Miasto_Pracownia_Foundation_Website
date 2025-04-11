@@ -118,3 +118,11 @@ export async function updateEvent(data: z.infer<typeof updateEventSchema>) {
 		return { success: false, message: 'nie udało się utworzyć warsztatu' }
 	}
 }
+
+export async function getSingleEventById(eventId: string) {
+	const prisma = new PrismaClient()
+
+	const data = prisma.event.findFirst({ where: { id: eventId } })
+
+	return convertToPlainObject(data)
+}
