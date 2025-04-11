@@ -1,9 +1,15 @@
-import { Sheet, SheetTrigger, SheetContent } from '@/components/ui/sheet'
+import {
+	Sheet,
+	SheetTrigger,
+	SheetContent,
+	SheetTitle,
+} from '@/components/ui/sheet'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { Menu } from 'lucide-react'
 import logo_small from '@/public/images/Miasto-Pracownia_Logo_small.png'
 import Image from 'next/image'
+import { VisuallyHidden } from '@radix-ui/react-visually-hidden'
 
 type NavigationProps = {
 	disabled?: boolean
@@ -19,6 +25,9 @@ const Navigation = ({ disabled, hidden }: NavigationProps) => {
 				</Button>
 			</SheetTrigger>
 			<SheetContent side='left' className='h-[300px] w-[300px] rounded-full'>
+				<SheetTitle asChild>
+					<VisuallyHidden>Ukryty tytuł dla czytników ekranu</VisuallyHidden>
+				</SheetTitle>
 				{disabled ? (
 					<div className='mt-4 flex justify-center'>
 						<Image

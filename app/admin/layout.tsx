@@ -1,16 +1,17 @@
 import Image from 'next/image'
 import Link from 'next/link'
-// import Menu from '@/components/shared/header/menu'
 import MainNav from './main-nav'
-// import AdminSearch from '@/components/admin/admin-search'
 import smallLogo from '@/public/images/Miasto-Pracownia_Logo_small.png'
 import UserButton from '@/components/UserButton'
+import { auth } from '@/auth'
 
-export default function AdminLayout({
+export default async function AdminLayout({
 	children,
 }: Readonly<{
 	children: React.ReactNode
 }>) {
+	const session = await auth()
+
 	return (
 		<>
 			<div className='flex flex-col'>
@@ -23,7 +24,7 @@ export default function AdminLayout({
 							<MainNav className='mx-6' />
 						</div>
 
-						<UserButton />
+						<UserButton user={session?.user || undefined} />
 					</div>
 				</div>
 

@@ -3,6 +3,7 @@
 import { Event } from '@/types'
 import { useRouter } from 'next/navigation'
 import { toast } from 'sonner'
+import { format } from 'date-fns'
 import { ControllerRenderProps, SubmitHandler, useForm } from 'react-hook-form'
 import z from 'zod'
 import { insertEventSchema, updateEventSchema } from '@/lib/validators'
@@ -26,6 +27,13 @@ import { Input } from './ui/input'
 import { Textarea } from './ui/textarea'
 import { Button } from './ui/button'
 import { createEvent, updateEvent } from '@/lib/actions/event.action'
+import { Popover, PopoverTrigger } from './ui/popover'
+import { cn } from '@/lib/utils'
+import { Calendar1Icon } from 'lucide-react'
+import { CiClock2 } from 'react-icons/ci'
+import { PopoverContent } from '@radix-ui/react-popover'
+import { Calendar } from '@/components/ui/calendar'
+import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area'
 
 type EventFormProps = {
 	type: 'create' | 'update'
@@ -64,7 +72,6 @@ const EventForm = ({ type, event, eventId }: EventFormProps) => {
 	})
 
 	const onSubmit: SubmitHandler<EventFormValues> = async values => {
-		// Logika tworzenia lub aktualizacji wydarzenia
 		if (type === 'create') {
 			const res = await createEvent(values)
 
@@ -91,6 +98,31 @@ const EventForm = ({ type, event, eventId }: EventFormProps) => {
 				router.push('/admin/events')
 			}
 		}
+	}
+
+	function handleDateSelect(date: Date | undefined) {
+		if (date) {
+			const formattedDate = date.toISOString().split('T')[0]
+
+			form.setValue('eventDate', formattedDate)
+		}
+	}
+	function handleTimeChange(type: 'hour' | 'minute', value: string) {
+		const currentTime = form.getValues('eventHour') || '00:00'
+		const [currentHour, currentMinute] = currentTime.split(':')
+
+		let newHour = currentHour
+		let newMinute = currentMinute
+
+		if (type === 'hour') {
+			newHour = value.padStart(2, '0')
+		} else if (type === 'minute') {
+			newMinute = value.padStart(2, '0')
+		}
+
+		const newTime = `${newHour}:${newMinute}`
+
+		form.setValue('eventHour', newTime)
 	}
 
 	return (
@@ -132,31 +164,127 @@ const EventForm = ({ type, event, eventId }: EventFormProps) => {
 				</div>
 
 				<div className='flex flex-col gap-5 md:flex-row'>
-					{/* name */}
+					{/* event date */}
 					<FormField
 						control={form.control}
 						name='eventDate'
 						render={({ field }) => (
 							<FormItem className='w-full'>
-								<FormLabel>Data</FormLabel>
-								<FormControl>
-									<Input placeholder='Wpisz nazwę warsztatu' {...field} />
-								</FormControl>
+								<FormLabel>Data warsztatu</FormLabel>
+
+								<Popover>
+									<PopoverTrigger asChild>
+										<FormControl>
+											<Button
+												variant={'outline'}
+												className={cn(
+													'w-full pl-3 text-left font-normal',
+													!field.value && 'text-muted-foreground'
+												)}>
+												{field.value ? (
+													format(field.value, 'yyyy/MM/dd')
+												) : (
+													<span>YYYY/MM/DD</span>
+												)}
+												<Calendar1Icon className='ml-auto h-4 w-4 opacity-50' />
+											</Button>
+										</FormControl>
+									</PopoverTrigger>
+									<PopoverContent className='w-auto p-0'>
+										<div className='sm:flex bg-white border rounded-xl mt-1'>
+											<Calendar
+												mode='single'
+												selected={
+													field.value ? new Date(field.value) : undefined
+												}
+												onSelect={handleDateSelect}
+												initialFocus
+											/>
+										</div>
+									</PopoverContent>
+								</Popover>
 								<FormMessage />
 							</FormItem>
 						)}
 					/>
 
-					{/* link */}
+					{/* event hour */}
 					<FormField
 						control={form.control}
 						name='eventHour'
 						render={({ field }) => (
 							<FormItem className='w-full'>
-								<FormLabel>Godzina</FormLabel>
-								<FormControl>
-									<Input placeholder='wklej link do zapisów' {...field} />
-								</FormControl>
+								<FormLabel>Godzina warsztatu</FormLabel>
+								<Popover>
+									<PopoverTrigger asChild>
+										<FormControl>
+											<Button
+												type='button'
+												variant={'outline'}
+												className={cn(
+													'w-full pl-3 text-left font-normal',
+													!field.value && 'text-muted-foreground'
+												)}>
+												{field.value ? (
+													field.value // Wyświetl wartość bez formatowania
+												) : (
+													<span>HH:mm</span>
+												)}
+												<CiClock2 className='ml-auto h-4 w-4 opacity-50' />
+											</Button>
+										</FormControl>
+									</PopoverTrigger>
+									<PopoverContent>
+										<div className='flex flex-col sm:flex-row sm:h-[300px] divide-y sm:divide-y-0 sm:divide-x bg-white mt-1 border rounded-xl'>
+											<ScrollArea className='w-64 sm:w-auto'>
+												<div className='flex sm:flex-col p-2'>
+													{Array.from({ length: 24 }, (_, i) => i)
+														.reverse()
+														.map(hour => (
+															<Button
+																type='button'
+																key={hour}
+																size='icon'
+																variant={'ghost'}
+																className='sm:w-full shrink-0 aspect-square'
+																onClick={() => {
+																	handleTimeChange('hour', hour.toString())
+																}}>
+																{hour.toString().padStart(2, '0')}
+															</Button>
+														))}
+												</div>
+												<ScrollBar
+													orientation='horizontal'
+													className='sm:hidden'
+												/>
+											</ScrollArea>
+											<ScrollArea className='w-64 sm:w-auto'>
+												<div className='flex sm:flex-col p-2'>
+													{Array.from({ length: 12 }, (_, i) => i * 5).map(
+														minute => (
+															<Button
+																type='button'
+																key={minute}
+																size='icon'
+																variant={'ghost'}
+																className='sm:w-full shrink-0 aspect-square'
+																onClick={() =>
+																	handleTimeChange('minute', minute.toString())
+																}>
+																{minute.toString().padStart(2, '0')}
+															</Button>
+														)
+													)}
+												</div>
+												<ScrollBar
+													orientation='horizontal'
+													className='sm:hidden'
+												/>
+											</ScrollArea>
+										</div>
+									</PopoverContent>
+								</Popover>
 								<FormMessage />
 							</FormItem>
 						)}
@@ -223,33 +351,20 @@ const EventForm = ({ type, event, eventId }: EventFormProps) => {
 						)}
 					/>
 				</div>
-				<div className='flex flex-col gap-5 md:flex-row'>
-					{/* link */}
-					{/* <FormField
-						control={form.control}
-						name='signUpUrl'
-						render={({ field }) => (
-							<FormItem className='w-full'>
-								<FormLabel>Link do zapisów</FormLabel>
-								<FormControl>
-									<Input placeholder='wklej link do zapisów' {...field} />
-								</FormControl>
-								<FormMessage />
-							</FormItem>
-						)}
-					/> */}
 
-					{/* eventHour and eventDate */}
-				</div>
 				<div className=''>
 					<Button
 						type={'submit'}
 						variant={'secondary'}
 						className='text-slate-50 col-span-2 w-full'
 						disabled={form.formState.isSubmitting}>
-						{form.formState.isSubmitting
-							? 'Dodawanie warsztatu...'
-							: 'Utwórz warsztat'}
+						{type === 'create'
+							? form.formState.isSubmitting
+								? 'Dodawanie warsztatu...'
+								: 'Utwórz warsztat'
+							: form.formState.isSubmitting
+							? 'Edycja warsztatu...'
+							: 'Edytuj warsztat'}
 					</Button>
 				</div>
 			</form>
