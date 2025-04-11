@@ -4,6 +4,9 @@ import { PrismaClient } from '@prisma/client'
 import { convertToPlainObject } from '../utils'
 import { Prisma } from '@prisma/client'
 import { revalidatePath } from 'next/cache'
+import z from 'zod'
+import { insertEventSchema, updateEventSchema } from '../validators'
+import { error } from 'console'
 
 // Get latest events
 
@@ -74,3 +77,44 @@ export async function deleteEvent(id: string) {
 	}
 }
 
+export async function createEvent(data: z.infer<typeof insertEventSchema>) {
+	const prisma = new PrismaClient()
+	try {
+		const event = insertEventSchema.parse(data)
+
+		await prisma.event.create({
+			data: event,
+		})
+
+		revalidatePath('/admin/events')
+
+		return { success: true, message: 'utworzono warsztat' }
+	} catch (error) {
+		return { success: false, message: 'nie udało się utworzyć warsztatu' }
+	}
+}
+
+export async function updateEvent(data: z.infer<typeof updateEventSchema>) {
+	const prisma = new PrismaClient()
+	try {
+		const event = updateEventSchema.parse(data)
+		const existingEvent = await prisma.event.findFirst({
+			where: { id: event.id },
+		})
+
+		if (!existingEvent) {
+			throw new error('Nie udało się znaleźć warsztatu')
+		}
+
+		await prisma.event.update({
+			where: { id: event.id },
+			data: event,
+		})
+
+		revalidatePath('/admin/events')
+
+		return { success: true, message: 'edytowano warsztat' }
+	} catch (error) {
+		return { success: false, message: 'nie udało się utworzyć warsztatu' }
+	}
+}
