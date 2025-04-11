@@ -151,21 +151,6 @@ const EventForm = ({ type, event, eventId }: EventFormProps) => {
 					/>
 				</div>
 				<div className='flex flex-col gap-5 md:flex-row'>
-					{/* eventHour */}
-					<FormField
-						control={form.control}
-						name='eventHour'
-						render={({ field }) => (
-							<FormItem className='w-full'>
-								<FormLabel>Godzina</FormLabel>
-								<FormControl>
-									<Input placeholder='Wpisz godzinę warsztatu' {...field} />
-								</FormControl>
-								<FormMessage />
-							</FormItem>
-						)}
-					/>
-
 					{/* link */}
 					<FormField
 						control={form.control}
@@ -180,6 +165,8 @@ const EventForm = ({ type, event, eventId }: EventFormProps) => {
 							</FormItem>
 						)}
 					/>
+
+					{/* eventHour and eventDate */}
 				</div>
 				<div className=''>
 					<Button
