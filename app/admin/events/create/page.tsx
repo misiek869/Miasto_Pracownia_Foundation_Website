@@ -1,7 +1,19 @@
-import React from 'react'
+import EventForm from '@/components/EventForm'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+	title: 'Utwórz warsztat',
+}
 
 const CreateEventPage = () => {
-	return <div>create</div>
+	return (
+		<>
+			<h1 className='text-xl font-bold'>Utwórz Warsztat</h1>
+			<div className='my-8'>
+				<EventForm type={'create'} />
+			</div>
+		</>
+	)
 }
 
 export default CreateEventPage
