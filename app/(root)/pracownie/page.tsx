@@ -21,15 +21,15 @@ const WorkshopsPage = () => {
 			</div>
 
 			<PageTitle title='nasze pracownie' />
-			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-20  md:px-40 px-20 xl:w-[70vw] mx-auto pb-40'>
+			<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-20  md:px-40 px-20 xl:w-[70vw] mx-auto pb-40'>
 				<div className='mb-10'>
 					<Link href={'/pracownie/pracownia_drewna'}>
 						<Image
 							src={wood}
 							alt='wood photo'
-							width={125}
-							height={125}
-							className='rounded-full mx-auto h-[125px] sm:h-[175px] sm:w-[175px] md:h-[200px] md:w-[200px] lg:h-[200px] lg:w-[200px] xl:h-[250px] xl:w-[250px]'
+							width={250}
+							height={250}
+							className='rounded-full mx-auto h-[250px]'
 						/>
 						<p className='text-center font-montserrat text-2xl tracking-wide font-semibold text-gray-700 mt-4'>
 							Drewna
@@ -41,9 +41,9 @@ const WorkshopsPage = () => {
 						<Image
 							src={tailoring}
 							alt='tailoring equipment photo'
-							width={125}
-							height={125}
-							className='rounded-full mx-auto h-[125px] sm:h-[175px] sm:w-[175px] md:h-[200px] md:w-[200px] lg:h-[200px] lg:w-[200px] xl:h-[250px] xl:w-[250px]'
+							width={250}
+							height={250}
+							className='rounded-full mx-auto h-[250px]'
 						/>
 						<p className='text-center font-montserrat text-2xl tracking-wide font-semibold text-gray-700 mt-4'>
 							Krawiecka
@@ -55,9 +55,9 @@ const WorkshopsPage = () => {
 						<Image
 							src={ceramics}
 							alt='ceramics photo'
-							width={125}
-							height={125}
-							className='rounded-full mx-auto h-[125px] sm:h-[175px] sm:w-[175px] md:h-[200px] md:w-[200px] lg:h-[200px] lg:w-[200px] xl:h-[250px] xl:w-[250px]'
+							width={250}
+							height={250}
+							className='rounded-full mx-auto h-[250px]'
 						/>
 						<p className='text-center font-montserrat text-2xl tracking-wide font-semibold text-gray-700 mt-4'>
 							Ceramiczna
@@ -69,9 +69,9 @@ const WorkshopsPage = () => {
 						<Image
 							src={tailoring}
 							alt='woman photo'
-							width={125}
-							height={125}
-							className='rounded-full mx-auto h-[125px] sm:h-[175px] sm:w-[175px] md:h-[200px] md:w-[200px] lg:h-[200px] lg:w-[200px] xl:h-[250px] xl:w-[250px]'
+							width={250}
+							height={250}
+							className='rounded-full mx-auto h-[250px]'
 						/>
 						<p className='text-center font-montserrat text-2xl tracking-wide font-semibold text-gray-700 mt-4'>
 							Kobiet
@@ -83,9 +83,9 @@ const WorkshopsPage = () => {
 						<Image
 							src={children}
 							alt='flowers photo'
-							width={125}
-							height={125}
-							className='rounded-full mx-auto h-[125px] sm:h-[175px] sm:w-[175px] md:h-[200px] md:w-[200px] lg:h-[200px] lg:w-[200px] xl:h-[250px] xl:w-[250px]'
+							width={250}
+							height={250}
+							className='rounded-full mx-auto h-[250px]'
 						/>
 						<p className='text-center font-montserrat text-2xl tracking-wide font-semibold text-gray-700 mt-4'>
 							Dzieci
@@ -97,9 +97,9 @@ const WorkshopsPage = () => {
 						<Image
 							src={tailoring}
 							alt='flowers photo'
-							width={125}
-							height={125}
-							className='rounded-full mx-auto h-[125px] sm:h-[175px] sm:w-[175px] md:h-[200px] md:w-[200px] lg:h-[200px] lg:w-[200px] xl:h-[250px] xl:w-[250px]'
+							width={250}
+							height={250}
+							className='rounded-full mx-auto h-[250px]'
 						/>
 						<p className='text-center font-montserrat text-2xl tracking-wide font-semibold text-gray-700 mt-4'>
 							Miasta
