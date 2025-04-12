@@ -5,13 +5,11 @@ import PageTitle from '@/components/PageTitle'
 const WomanWorkshopPage = () => {
 	return (
 		<>
-			<div className='px-8 bg-[var(--primary)] pt-20 min-h-screen relative'>
-				<div className='absolute top-6 left-6'>
-					<Navigation />
-				</div>
-				<PageTitle title='pracownia kobiet' />
-				<Footer />
+			<div className='absolute top-6 left-6'>
+				<Navigation />
 			</div>
+			<PageTitle title='pracownia kobiet' />
+			<Footer />
 		</>
 	)
 }

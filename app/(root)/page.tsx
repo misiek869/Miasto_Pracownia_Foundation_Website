@@ -23,7 +23,7 @@ const HomePage = () => {
 
 	return (
 		<>
-			<div className=' flex flex-col'>
+			<div className='flex flex-col'>
 				<div className='bg-rose-300 h-screen px-2 lg:pt-10 flex flex-col items-center justify-center lg:justify-baseline relative'>
 					<div className='absolute top-6 left-6'>
 						<Navigation disabled={true} />
@@ -48,16 +48,6 @@ const HomePage = () => {
 						<Carousel slides={images} options={OPTIONS} />
 					</div>
 				</div>
-
-				{/* <div className='bg-[var(--primary)] lg:bg-rose-400 lg:h-screen hidden lg:block lg:w-1/2 relative'>
-					<Image
-						height={500}
-						width={500}
-						src={flamingo}
-						alt='flamingo_image'
-						className='rounded-tl-[50%] rounded-tr-[50%] absolute bottom-0 left-1/2 transform -translate-x-1/2'
-					/>
-				</div> */}
 			</div>
 		</>
 	)
