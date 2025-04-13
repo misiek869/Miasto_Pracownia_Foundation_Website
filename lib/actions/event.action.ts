@@ -26,7 +26,7 @@ type SalesDataType = {
 export async function getEventsSummary() {
 	const prisma = new PrismaClient()
 
-	const eventCount = await prisma.event.count()
+	const events = await prisma.event.findMany({})
 
 	// const salesDataRaw = await prisma.$queryRaw<
 	// 	Array<{ month: string; totalEvents: Prisma.Decimal }>
@@ -37,7 +37,7 @@ export async function getEventsSummary() {
 	// 	totalEvents: eventCount,
 	// }))
 
-	return eventCount
+	return events
 }
 
 export async function getAllOrders({

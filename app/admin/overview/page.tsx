@@ -5,6 +5,8 @@ import { Metadata } from 'next'
 import { redirect } from 'next/dist/server/api-utils'
 import { GrWorkshop } from 'react-icons/gr'
 import { requireAdmin } from '@/lib/auth-guard'
+import dayjs from 'dayjs'
+import { formatDate } from '@/utils'
 
 export const metadata: Metadata = {
 	title: 'Admin',
@@ -13,14 +15,20 @@ export const metadata: Metadata = {
 const AdminOverviewPage = async () => {
 	await requireAdmin()
 	const session = await auth()
+	const currentDate = dayjs()
+	const summary = await getEventsSummary()
 
-	console.log(session)
+	const endedWorkshops = summary.filter(
+		item => item.eventDate < currentDate.format('YYYY-MM-DD')
+	)
+
+	const futureWorkshops = summary.filter(
+		item => item.eventDate >= currentDate.format('YYYY-MM-DD')
+	)
 
 	if (session?.user?.role !== 'admin') {
 		throw new Error('User must be admin')
 	}
-
-	const summary = await getEventsSummary()
 
 	return (
 		<div className='space-y-2'>
@@ -32,7 +40,7 @@ const AdminOverviewPage = async () => {
 						<GrWorkshop />
 					</CardHeader>
 					<CardContent>
-						<div className='text-2xl font-bold'>{summary}</div>
+						<div className='text-2xl font-bold'>{summary.length}</div>
 					</CardContent>
 				</Card>
 				<Card>
@@ -41,7 +49,7 @@ const AdminOverviewPage = async () => {
 						<GrWorkshop />
 					</CardHeader>
 					<CardContent>
-						<div className='text-2xl font-bold'>{summary}</div>
+						<div className='text-2xl font-bold'>{endedWorkshops.length}</div>
 					</CardContent>
 				</Card>
 				<Card>
@@ -50,7 +58,7 @@ const AdminOverviewPage = async () => {
 						<GrWorkshop />
 					</CardHeader>
 					<CardContent>
-						<div className='text-2xl font-bold'>{summary}</div>
+						<div className='text-2xl font-bold'>{futureWorkshops.length}</div>
 					</CardContent>
 				</Card>
 			</div>
