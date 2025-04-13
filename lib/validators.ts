@@ -3,6 +3,7 @@ import { z } from 'zod'
 //schema for inserting events
 
 export const insertEventSchema = z.object({
+	id: z.string(),
 	name: z.string().min(1, { message: 'Nazwa jest wymagana' }),
 	color: z.string().min(1, { message: 'Kolor jest wymagany' }),
 	signUpUrl: z.string().min(1, { message: 'URL zapisów jest wymagany' }),
