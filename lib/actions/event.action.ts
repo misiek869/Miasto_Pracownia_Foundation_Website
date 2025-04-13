@@ -28,16 +28,16 @@ export async function getEventsSummary() {
 
 	const events = await prisma.event.findMany({})
 
-	// const salesDataRaw = await prisma.$queryRaw<
-	// 	Array<{ month: string; totalEvents: Prisma.Decimal }>
-	// >`SELECT to_char("eventDate", 'MM/YY') as "month", sum("eventC") as "totalSales" FROM "Order" GROUP BY to_char("createdAt", 'MM/YY')`
+	const eventsByMonthRaw = await prisma.$queryRaw<
+		Array<{ month: string; eventCount: number }>
+	>`SELECT to_char(cast("eventDate" as date), 'MM/YY') as "month", COUNT(*) as "eventCount" FROM "Event" GROUP BY to_char(cast("eventDate" as date), 'MM/YY')`
 
-	// const salesData: SalesDataType = salesDataRaw.map(entry => ({
-	// 	month: entry.month,
-	// 	totalEvents: eventCount,
-	// }))
+	const eventsByMonth = eventsByMonthRaw.map(entry => ({
+		month: entry.month,
+		eventCount: Number(entry.eventCount),
+	}))
 
-	return events
+	return { events, eventsByMonth }
 }
 
 export async function getAllOrders({

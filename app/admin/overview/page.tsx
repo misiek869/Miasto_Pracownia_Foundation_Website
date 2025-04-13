@@ -16,13 +16,14 @@ const AdminOverviewPage = async () => {
 	await requireAdmin()
 	const session = await auth()
 	const currentDate = dayjs()
-	const summary = await getEventsSummary()
+	const { events, eventsByMonth } = await getEventsSummary()
+	console.log(eventsByMonth)
 
-	const endedWorkshops = summary.filter(
+	const endedWorkshops = events.filter(
 		item => item.eventDate < currentDate.format('YYYY-MM-DD')
 	)
 
-	const futureWorkshops = summary.filter(
+	const futureWorkshops = events.filter(
 		item => item.eventDate >= currentDate.format('YYYY-MM-DD')
 	)
 
@@ -40,7 +41,7 @@ const AdminOverviewPage = async () => {
 						<GrWorkshop />
 					</CardHeader>
 					<CardContent>
-						<div className='text-2xl font-bold'>{summary.length}</div>
+						<div className='text-2xl font-bold'>{events.length}</div>
 					</CardContent>
 				</Card>
 				<Card>
