@@ -29,12 +29,12 @@ export async function getEventsSummary() {
 	const events = await prisma.event.findMany({})
 
 	const eventsByMonthRaw = await prisma.$queryRaw<
-		Array<{ month: string; eventCount: number }>
-	>`SELECT to_char(cast("eventDate" as date), 'MM/YY') as "month", COUNT(*) as "eventCount" FROM "Event" GROUP BY to_char(cast("eventDate" as date), 'MM/YY')`
+		Array<{ month: string; warsztaty: number }>
+	>`SELECT to_char(cast("eventDate" as date), 'MM/YY') as "month", COUNT(*) as "warsztaty" FROM "Event" GROUP BY to_char(cast("eventDate" as date), 'MM/YY')`
 
 	const eventsByMonth = eventsByMonthRaw.map(entry => ({
 		month: entry.month,
-		eventCount: Number(entry.eventCount),
+		warsztaty: Number(entry.warsztaty),
 	}))
 
 	return { events, eventsByMonth }

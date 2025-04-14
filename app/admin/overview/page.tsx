@@ -2,11 +2,10 @@ import { auth } from '@/auth'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { getEventsSummary } from '@/lib/actions/event.action'
 import { Metadata } from 'next'
-import { redirect } from 'next/dist/server/api-utils'
 import { GrWorkshop } from 'react-icons/gr'
 import { requireAdmin } from '@/lib/auth-guard'
 import dayjs from 'dayjs'
-import { formatDate } from '@/utils'
+import Charts from './charts'
 
 export const metadata: Metadata = {
 	title: 'Admin',
@@ -60,6 +59,20 @@ const AdminOverviewPage = async () => {
 					</CardHeader>
 					<CardContent>
 						<div className='text-2xl font-bold'>{futureWorkshops.length}</div>
+					</CardContent>
+				</Card>
+				<Card className='col-span-3 mt-4'>
+					<CardHeader className='flex flex-row items-center justify-between space-y-0 pb-2'>
+						<CardTitle className='text-sm font-medium'>
+							Liczba warsztatów w poszczególnych miesiącach
+						</CardTitle>
+					</CardHeader>
+					<CardContent>
+						<Charts
+							data={{
+								eventsByMonth: eventsByMonth,
+							}}
+						/>
 					</CardContent>
 				</Card>
 			</div>
