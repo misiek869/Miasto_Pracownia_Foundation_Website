@@ -15,6 +15,7 @@ import {
 import Pagination from '@/components/Pagination'
 import DeleteDialog from '@/components/DeleteDialog'
 import { Button } from '@/components/ui/button'
+import dayjs from 'dayjs'
 
 export const metadata: Metadata = {
 	title: 'Admin Warsztaty',
@@ -26,6 +27,7 @@ const AdminEventsPage = async (props: {
 	await requireAdmin()
 	const { page = '1' } = await props.searchParams
 	const session = await auth()
+	const currentDate = dayjs()
 
 	if (session?.user?.role !== 'admin') {
 		throw new Error('User must be admin')
@@ -35,6 +37,12 @@ const AdminEventsPage = async (props: {
 		page: Number(page),
 		limit: 4,
 	})
+
+	const endedWorkshops = events.data.filter(
+		item => item.eventDate < currentDate.format('YYYY-MM-DD')
+	)
+
+	console.log(endedWorkshops)
 
 	return (
 		<div className='space-y-2'>
