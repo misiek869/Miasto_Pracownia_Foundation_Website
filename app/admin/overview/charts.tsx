@@ -8,7 +8,6 @@ import {
 	ResponsiveContainer,
 	CartesianGrid,
 	Tooltip,
-	Legend,
 } from 'recharts'
 
 type ChartsProps = {

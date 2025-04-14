@@ -3,6 +3,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { getEventsSummary } from '@/lib/actions/event.action'
 import { Metadata } from 'next'
 import { GrWorkshop } from 'react-icons/gr'
+import { FaRegCalendarCheck, FaRegCalendarPlus } from 'react-icons/fa'
+
 import { requireAdmin } from '@/lib/auth-guard'
 import dayjs from 'dayjs'
 import Charts from './charts'
@@ -46,7 +48,7 @@ const AdminOverviewPage = async () => {
 				<Card>
 					<CardHeader className='flex flex-row items-center justify-between space-y-0 pb-2'>
 						<CardTitle className='text-sm font-medium'>Zakończone</CardTitle>
-						<GrWorkshop />
+						<FaRegCalendarCheck />
 					</CardHeader>
 					<CardContent>
 						<div className='text-2xl font-bold'>{endedWorkshops.length}</div>
@@ -55,7 +57,7 @@ const AdminOverviewPage = async () => {
 				<Card>
 					<CardHeader className='flex flex-row items-center justify-between space-y-0 pb-2'>
 						<CardTitle className='text-sm font-medium'>Przyszłe</CardTitle>
-						<GrWorkshop />
+						<FaRegCalendarPlus />
 					</CardHeader>
 					<CardContent>
 						<div className='text-2xl font-bold'>{futureWorkshops.length}</div>
