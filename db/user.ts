@@ -1,8 +1,8 @@
 import { hashSync } from 'bcrypt-ts-edge'
 
 export const sampleUser = {
-	name: 'Michał',
-	email: 'michal@michal.pl',
-	password: hashSync('123456', 10),
+	name: process.env.ADMIN_NAME,
+	email: process.env.ADMIN_EMAIL,
+	password: hashSync(process.env.ADMIN_INITIAL_PASSWORD, 10),
 	role: 'admin',
 }
