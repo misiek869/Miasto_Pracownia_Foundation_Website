@@ -1,6 +1,6 @@
 import { PrismaClient } from '@prisma/client'
 import { events } from './events'
-import { sampleUser } from './user'
+import { user } from './user'
 
 async function main() {
 	const prisma = new PrismaClient()
@@ -13,8 +13,8 @@ async function main() {
 	await prisma.event.createMany({
 		data: events,
 	})
-	await prisma.user.createMany({
-		data: sampleUser,
+	await prisma.user.create({
+		data: user,
 	})
 
 	console.log('database seeded')
