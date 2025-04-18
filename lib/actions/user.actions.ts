@@ -5,6 +5,10 @@ import { signIn, signOut } from '@/auth'
 import { isRedirectError } from 'next/dist/client/components/redirect-error'
 
 export async function signInWithCredentials(prev: unknown, formData: FormData) {
+	console.log('ENV:', {
+		email: process.env.ADMIN_EMAIL,
+		password: process.env.ADMIN_INITIAL_PASSWORD,
+	})
 	try {
 		const user = signInFormSchema.parse({
 			email: formData.get('email'),

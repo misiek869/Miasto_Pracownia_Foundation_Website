@@ -40,7 +40,6 @@ const SignInForm = () => {
 						type='email'
 						required
 						autoComplete='email'
-						defaultValue={'michal@michal.pl'}
 					/>
 				</div>
 				<div>
@@ -51,7 +50,6 @@ const SignInForm = () => {
 						type='password'
 						required
 						autoComplete='password'
-						defaultValue={'123456'}
 					/>
 				</div>
 				<div className=''>
