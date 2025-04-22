@@ -39,11 +39,9 @@ const AdminEventsPage = async (props: {
 		limit: 4,
 	})
 
-	const endedWorkshops = events.data.filter(
-		item => item.eventDate < currentDate.format('YYYY-MM-DD')
-	)
-
-	console.log(endedWorkshops)
+	// const endedWorkshops = events.data.filter(
+	// 	item => item.eventDate < currentDate.format('YYYY-MM-DD')
+	// )
 
 	return (
 		<div className='space-y-2'>
@@ -75,8 +73,10 @@ const AdminEventsPage = async (props: {
 								<TableCell>{event.eventDate}</TableCell>
 								<TableCell>{event.eventHour}</TableCell>
 								<TableCell>
-									{event.eventDate < currentDate.format('YYYY-MM-DD') && (
+									{event.eventDate < currentDate.format('YYYY-MM-DD') ? (
 										<ImCheckboxChecked className='w-5 h-5 text-green-800 mx-auto' />
+									) : (
+										<ImCheckboxChecked className='w-5 h-5 text-muted-foreground mx-auto opacity-60' />
 									)}
 								</TableCell>
 								<TableCell className='flex gap-x-4 justify-end'>
