@@ -15,6 +15,7 @@ import {
 import Pagination from '@/components/Pagination'
 import DeleteDialog from '@/components/DeleteDialog'
 import { Button } from '@/components/ui/button'
+import { ImCheckboxChecked } from 'react-icons/im'
 import dayjs from 'dayjs'
 
 export const metadata: Metadata = {
@@ -60,6 +61,7 @@ const AdminEventsPage = async (props: {
 							<TableHead>NAZWA</TableHead>
 							<TableHead>DATA</TableHead>
 							<TableHead>GODZINA</TableHead>
+							<TableHead className='text-center'>ZAKOŃCZONY</TableHead>
 							<TableHead className='flex items-center justify-end'>
 								EDYCJA
 							</TableHead>
@@ -72,6 +74,11 @@ const AdminEventsPage = async (props: {
 								<TableCell>{event.name}</TableCell>
 								<TableCell>{event.eventDate}</TableCell>
 								<TableCell>{event.eventHour}</TableCell>
+								<TableCell>
+									{event.eventDate < currentDate.format('YYYY-MM-DD') && (
+										<ImCheckboxChecked className='w-5 h-5 text-green-800 mx-auto' />
+									)}
+								</TableCell>
 								<TableCell className='flex gap-x-4 justify-end'>
 									<Button asChild variant='outline' size='sm'>
 										<Link href={`/admin/events/${event.id}`}>Edytuj</Link>
