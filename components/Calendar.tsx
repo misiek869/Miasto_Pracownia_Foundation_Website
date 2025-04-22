@@ -83,6 +83,10 @@ const Calendar = ({ events }: CalendarProps) => {
 											style={{
 												backgroundColor: event ? eventColor : '',
 												color: event ? 'white' : '',
+												opacity:
+													event?.eventDate < currentDate.format('YYYY-MM-DD')
+														? 0.6
+														: 1,
 											}}>
 											{date.date()}
 										</PopoverTrigger>
