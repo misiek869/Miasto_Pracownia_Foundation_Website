@@ -5,7 +5,6 @@ import zdjecie_kasia from '@/public/images/woman_1.jpg'
 import zdjecie_dorota from '@/public/images/woman_2.jpg'
 import about_photo from '@/public/images/about_photo.jpg'
 import Footer from '@/components/Footer'
-import UserButton from '@/components/UserButton'
 
 const AboutUsPage = () => {
 	return (
@@ -15,46 +14,68 @@ const AboutUsPage = () => {
 					<Navigation hidden='about' />
 				</div>
 				<PageTitle title='o fundacji' />
-				<UserButton />
+
 				<div className='mt-20 max-w-[80vw] md:max-w-[60vw] mx-auto mb-20'>
 					<Image
 						src={about_photo}
 						alt='about image'
 						// width={300}
 						// height={300}
-						className='rounded-full mx-auto'
-						sizes='(max-width: 480px) 150px, (max-width: 768px) 200px, (min-width: 768px) 400px, 200px'
+						className='rounded-full mx-auto shadow-lg'
+						sizes='(max-width: 480px) 150px, (max-width: 768px) 200px, (min-width: 768px) 100px, 100px'
 					/>
 					<p className='w-full mt-10 text-justify font-montserrat tracking-wide leading-loose text-lg lg:text-xl mx-auto'>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
-						dolores harum quas in nulla voluptate temporibus illo asperiores
-						corrupti doloribus deserunt eius, esse nobis officiis rem recusandae
-						ullam, perspiciatis doloremque. Lorem ipsum dolor sit amet
-						consectetur adipisicing elit. Dolorem, a minus repellendus maxime
-						cupiditate nostrum obcaecati alias odit et optio dignissimos autem
-						temporibus ab sunt exercitationem rerum nihil? Ea, aliquam?
+						Fundacja Miasto Pracownia powstała w 2017 roku w Oświęcimiu z
+						inicjatywy dwóch przyjaciółek – kobiet z pasją do twórczości,
+						działań społecznych i miejskich metamorfoz. Od początku przyświeca
+						nam jeden cel: ożywić nasze miasto i obudzić twórczy potencjał jego
+						mieszkańców. Organizujemy warsztaty twórcze dla dzieci, młodzieży,
+						dorosłych i całych rodzin – od ceramiki, przez pracę z drewnem, po
+						florystykę i inne rękodzieła. Wierzymy, że każdy ma w sobie potrzebę
+						tworzenia – wystarczy ją tylko trochę rozbudzić. Ale Miasto
+						Pracownia to nie tylko praca przy stole – to także działania w
+						przestrzeni publicznej. Tworzymy murale, zakładamy ogrody społeczne,
+						angażujemy lokalną społeczność w zmienianie otoczenia na bardziej
+						przyjazne, kolorowe i wspólne. Nasza fundacja to przestrzeń spotkań,
+						wymiany, współpracy. To miejsce, gdzie małe inicjatywy mają wielką
+						moc zmiany. Działamy lokalnie, z sercem i przekonaniem, że twórczość
+						może być narzędziem budowania więzi – z ludźmi i z miastem.
 					</p>
 				</div>
 
 				<PageTitle title='o nas' />
 
-				<div className='grid grid-cols-1 lg:grid-cols-2 mt-10 md:max-w-[60vw] mx-auto pb-60'>
-					<div className='flex flex-col justify-center mx-auto'>
+				<div className='grid grid-cols-1 xl:grid-cols-2 mt-20 md:max-w-[60vw] mx-auto pb-60 items-start xl:gap-x-20'>
+					<div className='flex flex-col justify-center mx-auto mb-20 xl:mb-0'>
 						<Image
 							src={zdjecie_dorota}
 							alt='zdjęcie Doroty'
 							width={442}
 							height={442}
-							className='rounded-full max-w-[75%] mx-auto'
+							className='rounded-full max-w-[75%] mx-auto shadow-lg'
 						/>
 						<h2 className='font-calistoga tracking-wide text-rose-500 mx-auto pt-10 text-3xl md:text-4xl'>
-							Dorota
+							Dorota Zwolak
 						</h2>
-						<p className='pt-4 px-8 text-justify font-montserrat tracking-wide leading-loose text-sm lg:text-lg'>
-							Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-							Perspiciatis eveniet quo deserunt soluta esse voluptatum in
-							corrupti saepe adipisci nihil veniam earum numquam eum dicta
-							fugiat animi ut, iure laboriosam.
+						<p className='pt-4 px-8 text-justify font-montserrat tracking-wide leading-loose text-sm lg:text-base'>
+							Współzałożycielka Fundacji Miasto Pracownia, absolwentka Wydziału
+							Architektury Politechniki Wrocławskiej na kierunku Architektura i
+							Urbanistyka. Czynna architektka i projektantka prowadząca studio
+							architektoniczne, członek Izby Architektów Rzeczpospolitej
+							Polskiej. Adeptka szkoły florystycznej tworząca małe, zielone
+							kompozycje odzwierciedlające świat rzeczywisty. Absolwentka kursu
+							„Pani od architektury” organizowanego przez pracownię k. Członkini
+							byłej fundacji Animatornia - twórcze działania, w ramach której
+							m.in. współorganizowała i prowadziła działania w przestrzeni
+							miejskiej, warsztaty architektoniczne, konstrukcyjne, planowania
+							przestrzennego. Prowadząca jako edukatorka architektoniczna
+							warsztaty projektowe i konstrukcyjne w ramach projektu
+							„Archi-przygody” realizowanego przez Narodowe Centrum Kultury,
+							„Laboratorium w Archiwum” i „Laboratorium przestrzeni” w Ośrodku
+							Dokumentacji Sztuki Tadeusza Kantora CRICOTEKA w Krakowie oraz
+							„Projekt-Miasto” w Ośrodku Kultury Norwida w Krakowie.
+							Realizatorka warsztatów twórczych i konstrukcyjnych w ramach
+							działań Fundacji Miasto Pracownia.
 						</p>
 					</div>
 					<div className='flex flex-col justify-center mx-auto pt-10 lg:pt-0'>
@@ -63,16 +84,30 @@ const AboutUsPage = () => {
 							alt='zdjęcie Kasi'
 							width={442}
 							height={442}
-							className='rounded-full max-w-[75%] mx-auto'
+							className='rounded-full max-w-[75%] mx-auto shadow-lg'
 						/>
 						<h2 className='font-calistoga tracking-wide text-rose-500 mx-auto pt-10 text-3xl md:text-4xl'>
-							Kasia
+							Katarzyna Heród
 						</h2>
-						<p className='pt-4 px-8 text-justify font-montserrat tracking-wide leading-loose text-sm lg:text-lg'>
-							Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-							Perspiciatis eveniet quo deserunt soluta esse voluptatum in
-							corrupti saepe adipisci nihil veniam earum numquam eum dicta
-							fugiat animi ut, iure laboriosam.
+						<p className='pt-4 px-8 text-justify font-montserrat tracking-wide leading-loose text-sm lg:text-base'>
+							Współzałożycielka Fundacji Miasto Pracownia, w latach 2015 -2017
+							dyrektorka oddziału Fundacji Machina Fotografika w Oświęcimiu,
+							laureatka stypendium Olgi - Rok, certyfikowana trenerka edukacji
+							medialnej. Lokalna patriotka, która swoje działania koncentruje
+							wokół oświęcimskiej społeczności. Tworzy i koordynuje projekty dla
+							dzieci, młodzieży i dorosłych. Realizatorka projektów
+							samorządowych, FIO Małopolska Lokalnie, MKiDN i wiele innych. W
+							swoich działaniach stawia na nieszablonowość i kreatywność,
+							kierując się zasadą, że "projekty są dla ludzi, nie dla idei".
+							Realizatorka i Inicjatorka takich projektów jak: "Nieruchomość
+							Literacka - budujemy mikroiblioteki", Noc Maturzystów, Nocny
+							Maraton Wiedzy, Wyklikaj to - edukacja medialna dla dzieci,
+							"Pudełko Czasu - kobiecy projekt międzypokoleniowy", "Kobieca
+							Przestrzeń Inspiracji - II edycje", Kreatywna Strefa Kobiet - II
+							edycje" i wiele innych. Realizatorka autorskich warsztatów
+							"Doradztwo Kreatywne - od pomysłu do projektu" (do tej pory w
+							Lublinie, Warszawie i Gdańsku). Aktualnie nauczycielka w szkole
+							podstawowej w Brzeszczach.
 						</p>
 					</div>
 				</div>
