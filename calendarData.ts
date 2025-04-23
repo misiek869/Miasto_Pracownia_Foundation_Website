@@ -14,7 +14,7 @@ export const popoverData: PopoverContent[] = [
 		id: uuidv4(),
 		firstName: 'Pracownia',
 		secondName: 'Drewna',
-		bgColor: '#a18a4c',
+		bgColor: '#a65f00',
 		description: `The placeholder text, beginning with the line “Lorem ipsum dolor
 								sit amet, consectetur adipiscing elit”, looks like Latin because
 								in its youth, centuries ago, it was Latin.`,
@@ -23,8 +23,8 @@ export const popoverData: PopoverContent[] = [
 	{
 		id: uuidv4(),
 		firstName: 'Pracownia',
-		secondName: 'Drewna',
-		bgColor: '#a18a4c',
+		secondName: 'Krawiecka',
+		bgColor: '#0084d1',
 		description: `The placeholder text, beginning with the line “Lorem ipsum dolor
 								sit amet, consectetur adipiscing elit”, looks like Latin because
 								in its youth, centuries ago, it was Latin.`,
@@ -33,8 +33,8 @@ export const popoverData: PopoverContent[] = [
 	{
 		id: uuidv4(),
 		firstName: 'Pracownia',
-		secondName: 'Drewna',
-		bgColor: '#a18a4c',
+		secondName: 'Ceramiczna',
+		bgColor: '#fcc800',
 		description: `The placeholder text, beginning with the line “Lorem ipsum dolor
 								sit amet, consectetur adipiscing elit”, looks like Latin because
 								in its youth, centuries ago, it was Latin.`,
@@ -43,8 +43,8 @@ export const popoverData: PopoverContent[] = [
 	{
 		id: uuidv4(),
 		firstName: 'Pracownia',
-		secondName: 'Drewna',
-		bgColor: '#a18a4c',
+		secondName: 'Kobiet',
+		bgColor: '#f6339a',
 		description: `The placeholder text, beginning with the line “Lorem ipsum dolor
 								sit amet, consectetur adipiscing elit”, looks like Latin because
 								in its youth, centuries ago, it was Latin.`,
@@ -53,8 +53,8 @@ export const popoverData: PopoverContent[] = [
 	{
 		id: uuidv4(),
 		firstName: 'Pracownia',
-		secondName: 'Drewna',
-		bgColor: '#a18a4c',
+		secondName: 'Dzieci',
+		bgColor: '#ff6900',
 		description: `The placeholder text, beginning with the line “Lorem ipsum dolor
 								sit amet, consectetur adipiscing elit”, looks like Latin because
 								in its youth, centuries ago, it was Latin.`,
@@ -63,28 +63,8 @@ export const popoverData: PopoverContent[] = [
 	{
 		id: uuidv4(),
 		firstName: 'Pracownia',
-		secondName: 'Drewna',
-		bgColor: '#a18a4c',
-		description: `The placeholder text, beginning with the line “Lorem ipsum dolor
-								sit amet, consectetur adipiscing elit”, looks like Latin because
-								in its youth, centuries ago, it was Latin.`,
-		link: '#',
-	},
-	{
-		id: uuidv4(),
-		firstName: 'Pracownia',
-		secondName: 'Drewna',
-		bgColor: '#a18a4c',
-		description: `The placeholder text, beginning with the line “Lorem ipsum dolor
-								sit amet, consectetur adipiscing elit”, looks like Latin because
-								in its youth, centuries ago, it was Latin.`,
-		link: '#',
-	},
-	{
-		id: uuidv4(),
-		firstName: 'Pracownia',
-		secondName: 'Drewna',
-		bgColor: '#a18a4c',
+		secondName: 'w Mieście',
+		bgColor: '#5ea500',
 		description: `The placeholder text, beginning with the line “Lorem ipsum dolor
 								sit amet, consectetur adipiscing elit”, looks like Latin because
 								in its youth, centuries ago, it was Latin.`,
