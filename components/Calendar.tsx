@@ -128,7 +128,7 @@ const Calendar = ({ events }: CalendarProps) => {
 					})}
 				</div>
 			</div>
-			<div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 xl:grid-cols-2 justify-between w-full xl:w-1/2 mt-12 lg:mt-6'>
+			<div className='grid justify-items-center grid-cols-2 md:grid-cols-4 gap-4 xl:grid-cols-2 justify-between w-full xl:w-1/2 mt-12 lg:mt-6'>
 				{popoverData.map(item => {
 					const { id, firstName, secondName, bgColor, description, link } = item
 
@@ -137,7 +137,7 @@ const Calendar = ({ events }: CalendarProps) => {
 							<PopoverTrigger
 								style={{ backgroundColor: bgColor }}
 								className={`flex mx-auto h-24 w-24 md:p-14 rounded-full items-center justify-center cursor-pointer hover:scale-110 duration-300`}>
-								<p className='text-center text-sm lg:text-md text-slate-50 font-semibold tracking-wider'>
+								<p className='text-center text-sm lg:text-md text-gray-900 font-bold tracking-wider'>
 									{firstName}
 									<br />
 									{secondName}
