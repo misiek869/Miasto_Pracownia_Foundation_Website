@@ -74,7 +74,7 @@ const Navigation = ({ disabled, hidden }: NavigationProps) => {
 								: 'text-center my-0.5 py-0.5 text-xl font-semibold'
 						}
 						prefetch={false}>
-						Pracownie
+						Warsztaty
 					</Link>
 					<Link
 						href='/kalendarz'

@@ -1,9 +1,11 @@
-import Image from 'next/image'
 import React from 'react'
-import wood from '@/public/images/wood.jpg'
-import ceramics from '@/public/images/ceramics.jpg'
-import tailoring from '@/public/images/tailoring.jpg'
-import children from '@/public/images/children.jpg'
+// import Image from 'next/image'
+// import wood from '@/public/images/wood.png'
+// import ceramics from '@/public/images/ceramics.png'
+// import tailoring from '@/public/images/tailoring.png'
+// import children from '@/public/images/children.png'
+// import woman from '@/public/images/woman.png'
+// import city from '@/public/images/city.png'
 import Link from 'next/link'
 import Navigation from '@/components/Navigation'
 import PageTitle from '@/components/PageTitle'
@@ -20,92 +22,50 @@ const WorkshopsPage = () => {
 				<Navigation hidden='workshops' />
 			</div>
 
-			<PageTitle title='nasze pracownie' />
-			<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-20  md:px-40 px-20 xl:w-[70vw] mx-auto pb-40'>
-				<div className='mb-10'>
-					<Link href={'/pracownie/pracownia_drewna'}>
-						<Image
-							src={wood}
-							alt='wood photo'
-							width={250}
-							height={250}
-							className='rounded-full mx-auto h-[250px]'
-						/>
-						<p className='text-center font-montserrat text-2xl tracking-wide font-semibold text-gray-700 mt-4'>
-							Drewna
-						</p>
-					</Link>
-				</div>
-				<div className='mb-10'>
-					<Link href={'/pracownie/pracownia_krawiecka'}>
-						<Image
-							src={tailoring}
-							alt='tailoring equipment photo'
-							width={250}
-							height={250}
-							className='rounded-full mx-auto h-[250px]'
-						/>
-						<p className='text-center font-montserrat text-2xl tracking-wide font-semibold text-gray-700 mt-4'>
-							Krawiecka
-						</p>
-					</Link>
-				</div>
-				<div className='mb-10'>
-					<Link href={'/pracownie/pracownia_ceramiczna'}>
-						<Image
-							src={ceramics}
-							alt='ceramics photo'
-							width={250}
-							height={250}
-							className='rounded-full mx-auto h-[250px]'
-						/>
-						<p className='text-center font-montserrat text-2xl tracking-wide font-semibold text-gray-700 mt-4'>
-							Ceramiczna
-						</p>
-					</Link>
-				</div>
-				<div className='mb-10'>
-					<Link href={'/pracownie/pracownia_kobiet'}>
-						<Image
-							src={tailoring}
-							alt='woman photo'
-							width={250}
-							height={250}
-							className='rounded-full mx-auto h-[250px]'
-						/>
-						<p className='text-center font-montserrat text-2xl tracking-wide font-semibold text-gray-700 mt-4'>
-							Kobiet
-						</p>
-					</Link>
-				</div>
-				<div className='mb-10'>
-					<Link href={'#'}>
-						<Image
-							src={children}
-							alt='flowers photo'
-							width={250}
-							height={250}
-							className='rounded-full mx-auto h-[250px]'
-						/>
-						<p className='text-center font-montserrat text-2xl tracking-wide font-semibold text-gray-700 mt-4'>
-							Dzieci
-						</p>
-					</Link>
-				</div>
-				<div className='mb-10'>
-					<Link href={'#'}>
-						<Image
-							src={tailoring}
-							alt='flowers photo'
-							width={250}
-							height={250}
-							className='rounded-full mx-auto h-[250px]'
-						/>
-						<p className='text-center font-montserrat text-2xl tracking-wide font-semibold text-gray-700 mt-4'>
-							Miasta
-						</p>
-					</Link>
-				</div>
+			<PageTitle title='warsztaty' />
+
+			<div className='grid grid-cols-1 sm:grid-cols-2 justify-items-center md:grid-cols-3 gap-8 mt-20  md:px-40 px-20 xl:w-[70vw] mx-auto pb-40'>
+				<Link
+					href={'/pracownie/pracownia_drewna'}
+					className='flex items-center justify-center text-center font-montserrat text-[26px] tracking-wider font-bold text-gray-900 mt-4 mb-10 w-[250px] h-[250px] bg-yellow-700 rounded-full'>
+					Pracownia
+					<br />
+					Drewna
+				</Link>
+				<Link
+					href={'/pracownie/pracownia_drewna'}
+					className='flex items-center justify-center text-center font-montserrat text-[26px] tracking-wider font-bold text-gray-900  mt-4 mb-10 w-[250px] h-[250px] bg-sky-600 rounded-full'>
+					Pracownia
+					<br />
+					Krawiecka
+				</Link>
+				<Link
+					href={'/pracownie/pracownia_drewna'}
+					className='flex items-center justify-center text-center font-montserrat text-[26px] tracking-wider font-bold text-gray-900  mt-4 mb-10 w-[250px] h-[250px] bg-yellow-400 rounded-full'>
+					Pracownia
+					<br />
+					Ceramiczna
+				</Link>
+				<Link
+					href={'/pracownie/pracownia_drewna'}
+					className='flex items-center justify-center text-center font-montserrat text-[26px] tracking-wider font-bold text-gray-900  mt-4 mb-10 w-[250px] h-[250px] bg-pink-500 rounded-full'>
+					Pracownia
+					<br />
+					Kobiet
+				</Link>
+				<Link
+					href={'/pracownie/pracownia_drewna'}
+					className='flex items-center justify-center text-center font-montserrat text-[26px] tracking-wider font-bold text-gray-900  mt-4 mb-10 w-[250px] h-[250px] bg-orange-500 rounded-full'>
+					Pracownia
+					<br />
+					Dzieci
+				</Link>
+				<Link
+					href={'/pracownie/pracownia_drewna'}
+					className='flex items-center justify-center text-center font-montserrat text-[26px] tracking-wider font-bold text-gray-900  mt-4 mb-10 w-[250px] h-[250px] bg-lime-600 rounded-full'>
+					Pracownia
+					<br />w Mieście
+				</Link>
 			</div>
 			<Footer />
 		</>
