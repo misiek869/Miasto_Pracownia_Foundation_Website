@@ -16,7 +16,7 @@ const CalendarPage = async () => {
 				<PageTitle title='kalendarz warsztatów' />
 				<Calendar events={events} />
 
-				<Footer />
+				<Footer linkActive={true} />
 			</div>
 		</>
 	)

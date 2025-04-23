@@ -25,6 +25,7 @@ const Calendar = ({ events }: CalendarProps) => {
 
 	const days = ['Pon', 'Wt', 'Śr', 'Czw', 'Pt', 'Sob', 'Ndz']
 	const currentDate = dayjs()
+	const currentHour = dayjs().format('HH:mm')
 	const [today, setToday] = useState(currentDate)
 	// const [selectDate, setSelectDate] = useState(currentDate)
 	// const [event, setEvent] = useState<EventType | undefined>(undefined)
