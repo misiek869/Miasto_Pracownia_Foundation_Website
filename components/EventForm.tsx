@@ -309,21 +309,39 @@ const EventForm = ({ type, event, eventId }: EventFormProps) => {
 									<SelectContent>
 										<SelectItem
 											className=' mb-2 cursor-pointer'
-											value='#a18a4c'>
-											<span className='bg-[#a18a4c] w-6 h-6 rounded-full mr-2'></span>
+											value='#a65f00'>
+											<span className='bg-[#a65f00] w-6 h-6 rounded-full mr-2'></span>
 											<p className='text-gray-900'>Pracownia Drewna</p>
 										</SelectItem>
 										<SelectItem
 											className=' mb-2 cursor-pointer'
-											value='#bb6ec2'>
-											<span className='bg-[#bb6ec2] w-6 h-6 rounded-full mr-2'></span>
+											value='#0084d1'>
+											<span className='bg-[#0084d1] w-6 h-6 rounded-full mr-2'></span>
 											<p className='text-gray-900'>Pracownia Krawiecka</p>
 										</SelectItem>
 										<SelectItem
 											className=' mb-2 cursor-pointer'
-											value='#3f5069'>
-											<span className='bg-[#3f5069] w-6 h-6 rounded-full mr-2'></span>
+											value='#fcc800'>
+											<span className='bg-[#fcc800] w-6 h-6 rounded-full mr-2'></span>
 											<p className='text-gray-900'>Pracownia Ceramiczna</p>
+										</SelectItem>
+										<SelectItem
+											className=' mb-2 cursor-pointer'
+											value='#f6339a'>
+											<span className='bg-[#f6339a] w-6 h-6 rounded-full mr-2'></span>
+											<p className='text-gray-900'>Pracownia Kobiet</p>
+										</SelectItem>
+										<SelectItem
+											className=' mb-2 cursor-pointer'
+											value='#ff6900'>
+											<span className='bg-[#ff6900] w-6 h-6 rounded-full mr-2'></span>
+											<p className='text-gray-900'>Pracownia Dzieci</p>
+										</SelectItem>
+										<SelectItem
+											className=' mb-2 cursor-pointer'
+											value='#5ea500'>
+											<span className='bg-[#5ea500] w-6 h-6 rounded-full mr-2'></span>
+											<p className='text-gray-900'>Pracownia w Mieście</p>
 										</SelectItem>
 									</SelectContent>
 								</Select>

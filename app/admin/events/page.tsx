@@ -46,7 +46,7 @@ const AdminEventsPage = async (props: {
 	return (
 		<div className='space-y-2'>
 			<div className='flex items-center justify-between mb-6'>
-				<h2 className='font-bold text-xl'>Warsztaty</h2>
+				<h2 className='font-bold text-xl'>Warsztaty: {events.data.length}</h2>
 				<Button asChild variant={'secondary'} className='text-slate-50'>
 					<Link href={'/admin/events/create'}>Dodaj Warsztat</Link>
 				</Button>
