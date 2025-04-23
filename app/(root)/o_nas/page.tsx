@@ -3,8 +3,12 @@ import PageTitle from '@/components/PageTitle'
 import Image from 'next/image'
 import zdjecie_kasia from '@/public/images/woman_1.jpg'
 import zdjecie_dorota from '@/public/images/woman_2.jpg'
-import about_photo from '@/public/images/about_photo.jpg'
+import about_photo from '@/public/images/about_us_main_photo.jpg'
 import Footer from '@/components/Footer'
+
+export const metadata = {
+	title: 'FMP | O Nas',
+}
 
 const AboutUsPage = () => {
 	return (
@@ -19,10 +23,10 @@ const AboutUsPage = () => {
 					<Image
 						src={about_photo}
 						alt='about image'
-						// width={300}
-						// height={300}
+						width={960}
+						height={300}
 						className='rounded-full mx-auto shadow-lg'
-						sizes='(max-width: 480px) 150px, (max-width: 768px) 200px, (min-width: 768px) 100px, 100px'
+						// sizes='(max-width: 480px) 150px, (max-width: 767px) 200px, (min-width: 768px) 80px, 500px'
 					/>
 					<p className='w-full mt-10 text-justify font-montserrat tracking-wide leading-loose text-lg lg:text-xl mx-auto'>
 						Fundacja Miasto Pracownia powstała w 2017 roku w Oświęcimiu z
