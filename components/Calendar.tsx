@@ -143,10 +143,17 @@ const Calendar = ({ events }: CalendarProps) => {
 									{secondName}
 								</p>
 							</PopoverTrigger>
-							<PopoverContent className='border-2 border-rose-300 relative pb-12'>
+							<PopoverContent
+								style={{
+									borderColor: bgColor,
+									borderStyle: 'solid',
+									borderWidth: '3px',
+								}}
+								className=' relative pb-12 rounded-4xl shadow-2xl'>
 								<p className='text-justify'>{description}</p>
 								<Link
-									className='text-rose-300 absolute bottom-4 right-4'
+									style={{ color: bgColor }}
+									className='absolute bottom-4 right-4 font-semibold'
 									href={link}>
 									Dowiedz się Więcej
 								</Link>
