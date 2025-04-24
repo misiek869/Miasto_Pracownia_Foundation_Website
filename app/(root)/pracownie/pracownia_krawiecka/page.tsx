@@ -12,7 +12,7 @@ const TailoringWorkshopPage = () => {
 			<div className='absolute top-6 left-6'>
 				<Navigation />
 			</div>
-			<PageTitle title='pracownia drewna' />
+			<PageTitle title='pracownia krawiecka' />
 			<div className='mt-10 lg:mt-20 max-w-[80vw] md:max-w-[60vw] mx-auto mb-20'>
 				<h3 className='w-full text-justify font-montserrat tracking-wide leading-loose text-lg lg:text-xl mx-auto'>
 					Kreatywne warsztaty krawieckie dla dzieci, dorosłych i całych rodzin!
