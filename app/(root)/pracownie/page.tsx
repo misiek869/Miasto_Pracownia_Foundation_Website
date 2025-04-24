@@ -27,7 +27,7 @@ const WorkshopsPage = () => {
 
 			<PageTitle title='warsztaty' />
 
-			<div className='grid grid-cols-1 sm:grid-cols-2 justify-items-center md:grid-cols-3 gap-8 mt-20  md:px-40 px-20 xl:w-[70vw] mx-auto pb-40'>
+			<div className='grid grid-cols-1 sm:grid-cols-2 justify-items-center lg:grid-cols-3 gap-8 mt-20  md:px-20 px-10 w-[90vw] xl:w-[70vw] mx-auto pb-40'>
 				<Link
 					href={'/pracownie/pracownia_drewna'}
 					className={`${linkStyle} bg-yellow-700`}>
@@ -35,6 +35,7 @@ const WorkshopsPage = () => {
 					<br />
 					Drewna
 				</Link>
+
 				<Link
 					href={'/pracownie/pracownia_krawiecka'}
 					className={`${linkStyle} bg-sky-600`}>
