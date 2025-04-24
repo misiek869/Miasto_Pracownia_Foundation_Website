@@ -1,8 +1,8 @@
 import Navigation from '@/components/Navigation'
 import PageTitle from '@/components/PageTitle'
 import Image from 'next/image'
-import zdjecie_kasia from '@/public/images/woman_1.jpg'
-import zdjecie_dorota from '@/public/images/woman_2.jpg'
+import zdjecie_kasia from '@/public/images/kasia_photo.webp'
+import zdjecie_dorota from '@/public/images/dorota_photo.webp'
 import about_photo from '@/public/images/about_us_main_photo.jpg'
 import Footer from '@/components/Footer'
 
