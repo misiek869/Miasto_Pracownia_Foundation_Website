@@ -24,7 +24,7 @@ export const popoverData: PopoverContent[] = [
 		secondName: 'Krawiecka',
 		bgColor: '#0084d1',
 		description: `Kreatywne warsztaty krawieckie dla dzieci, dorosłych i całych rodzin! Niezależnie od wieku i doświadczenia – każdy może tu odkryć radość szycia i tworzenia wyjątkowych projektów własnymi rękami.`,
-		link: '#',
+		link: '/pracownie/pracownia_krawiecka',
 	},
 	{
 		id: uuidv4(),
@@ -32,7 +32,7 @@ export const popoverData: PopoverContent[] = [
 		secondName: 'Ceramiczna',
 		bgColor: '#fcc800',
 		description: `Warsztaty ceramiczne, podczas których odkrywamy magię pracy z gliną – od pierwszego dotyku, przez lepienie, aż po szkliwienie i wypalanie w piecu.`,
-		link: '#',
+		link: '/pracownie/pracownia_ceramiczna',
 	},
 	{
 		id: uuidv4(),
@@ -40,7 +40,7 @@ export const popoverData: PopoverContent[] = [
 		secondName: 'Kobiet',
 		bgColor: '#f6339a',
 		description: `Przestrzeń stworzona z myślą o kobietach – pełna ciepła, zrozumienia i wzajemnego wsparcia. Nasze warsztaty to coś więcej niż tylko zajęcia – to czas dla Ciebie. `,
-		link: '#',
+		link: '/pracownie/pracownia_kobiet',
 	},
 	{
 		id: uuidv4(),
@@ -48,7 +48,7 @@ export const popoverData: PopoverContent[] = [
 		secondName: 'Dzieci',
 		bgColor: '#ff6900',
 		description: `Przestrzeń stworzona z myślą o najmłodszych – pełna koloru, pomysłów i radości tworzenia. Każde zajęcia to nowa przygoda, nowy temat i nowe wyzwanie!`,
-		link: '#',
+		link: '/pracownie/pracownia_dzieci',
 	},
 	{
 		id: uuidv4(),
@@ -56,6 +56,6 @@ export const popoverData: PopoverContent[] = [
 		secondName: 'w Mieście',
 		bgColor: '#5ea500',
 		description: `Projekt „Pracownia w mieście” to cykl warsztatów twórczych, które łączą kreatywność, praktyczność i sąsiedzką energię.`,
-		link: '#',
+		link: '/pracownie/pracownia_miasto',
 	},
 ]
