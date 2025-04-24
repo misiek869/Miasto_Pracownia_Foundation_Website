@@ -13,17 +13,21 @@ import { Button } from '@/components/ui/button'
 // }
 
 const images: string[] = [
-	'/images/workshops_images/wood/01.webp',
-	'/images/workshops_images/wood/02.webp',
-	'/images/workshops_images/wood/03.webp',
-	'/images/workshops_images/wood/04.webp',
-	'/images/workshops_images/wood/05.webp',
-	'/images/workshops_images/wood/06.webp',
-	'/images/workshops_images/wood/07.webp',
-	'/images/workshops_images/wood/08.webp',
-	'/images/workshops_images/wood/09.webp',
-	'/images/workshops_images/wood/10.webp',
-	'/images/workshops_images/wood/11.webp',
+	'/images/workshops_images/children/01.webp',
+	'/images/workshops_images/children/02.webp',
+	'/images/workshops_images/children/03.webp',
+	'/images/workshops_images/children/04.webp',
+	'/images/workshops_images/children/05.webp',
+	'/images/workshops_images/children/06.webp',
+	'/images/workshops_images/children/07.webp',
+	'/images/workshops_images/children/08.webp',
+	'/images/workshops_images/children/09.webp',
+	'/images/workshops_images/children/10.webp',
+	'/images/workshops_images/children/11.webp',
+	'/images/workshops_images/children/12.webp',
+	'/images/workshops_images/children/13.webp',
+	'/images/workshops_images/children/14.webp',
+	'/images/workshops_images/children/15.webp',
 ]
 
 const ChildrenWorkshopPage = () => {
