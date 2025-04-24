@@ -4,6 +4,10 @@ import Navigation from '@/components/Navigation'
 import PageTitle from '@/components/PageTitle'
 import { getLatestEvents } from '@/lib/actions/event.action'
 
+export const metadata = {
+	title: 'FMP | Kalendarz Warsztatów',
+}
+
 const CalendarPage = async () => {
 	const events = await getLatestEvents()
 
