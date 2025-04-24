@@ -21,7 +21,7 @@ const images: string[] = [
 const WoodWorkshopPage = () => {
 	const OPTIONS: EmblaOptionsType = { loop: true }
 	return (
-		<>
+		<div className=''>
 			<div className='absolute top-6 left-6'>
 				<Navigation />
 			</div>
@@ -38,7 +38,7 @@ const WoodWorkshopPage = () => {
 					więzi, naukę współpracy oraz rozwijanie zdolności manualnych u dzieci
 					i dorosłych.
 				</h3>
-				<div className='max-w-[80vw] md:max-w-[60vw] mt-20 mx-auto'>
+				<div className='max-w-[80vw] md:max-w-[60vw] mt-20 pb-20 mx-auto '>
 					<Carousel
 						slides={images}
 						options={OPTIONS}
@@ -47,7 +47,7 @@ const WoodWorkshopPage = () => {
 				</div>
 			</div>
 			<Footer />
-		</>
+		</div>
 	)
 }
 
