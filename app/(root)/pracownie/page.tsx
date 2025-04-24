@@ -36,14 +36,14 @@ const WorkshopsPage = () => {
 					Drewna
 				</Link>
 				<Link
-					href={'/pracownie/pracownia_drewna'}
+					href={'/pracownie/pracownia_krawiecka'}
 					className={`${linkStyle} bg-sky-600`}>
 					Pracownia
 					<br />
 					Krawiecka
 				</Link>
 				<Link
-					href={'/pracownie/pracownia_drewna'}
+					href={'/pracownie/pracownia_ceramiczna'}
 					className={`${linkStyle} bg-yellow-400`}>
 					Pracownia
 					<br />
