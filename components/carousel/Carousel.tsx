@@ -8,9 +8,16 @@ import Image from 'next/image'
 type CarouselPropType = {
 	slides: string[]
 	options?: EmblaOptionsType
+	borderColor: string
+	hideBtns?: string
 }
 
-const Carousel = ({ slides, options }: CarouselPropType) => {
+const Carousel = ({
+	slides,
+	options,
+	borderColor,
+	hideBtns,
+}: CarouselPropType) => {
 	const [emblaRef, emblaApi] = useEmblaCarousel(options, [
 		AutoScroll({ playOnInit: true, speed: 1 }),
 	])
@@ -66,7 +73,7 @@ const Carousel = ({ slides, options }: CarouselPropType) => {
 				<div className='flex -ml-[1rem]'>
 					{slides.map((slide, index) => (
 						<Image
-							className='border-r-8 border-l-8 border-rose-300'
+							className={`border-r-8 border-l-8 ${borderColor}`}
 							key={index}
 							src={slide}
 							alt={'photo'}
@@ -77,7 +84,8 @@ const Carousel = ({ slides, options }: CarouselPropType) => {
 				</div>
 			</div>
 
-			<div className='grid grid-cols-[auto_1fr] justify-between gap-6 mt-7 w-3/4 mx-auto'>
+			<div
+				className={`grid grid-cols-[auto_1fr] justify-between gap-6 mt-7 w-3/4 mx-auto ${hideBtns}`}>
 				<div className='grid grid-cols-2 gap-2 items-center'>
 					<PrevButton
 						onClick={() => onButtonAutoplayClick(onPrevButtonClick)}
@@ -90,7 +98,7 @@ const Carousel = ({ slides, options }: CarouselPropType) => {
 				</div>
 
 				<button
-					className='bg-slate-100 w-[85px] py-2 rounded-full touch-manipulation cursor-pointer items-center justify-center justify-self-end font-semibold tracking-wider uppercase hover:bg-slate-200 duration-300'
+					className={`bg-gray-900 w-[85px] py-2 rounded-full touch-manipulation cursor-pointer items-center justify-center justify-self-end font-semibold tracking-wider uppercase hover:bg-gray-800 duration-300 text-slate-50`}
 					onClick={toggleAutoplay}
 					type='button'>
 					{isPlaying ? 'Stop' : 'Start'}

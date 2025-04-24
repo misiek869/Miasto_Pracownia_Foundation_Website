@@ -45,7 +45,12 @@ const HomePage = () => {
 						<Link href={'/kalendarz'}>Kalendarz Wydarzeń</Link>
 					</Button>
 					<div className='w-[90vw] mt-20'>
-						<Carousel slides={images} options={OPTIONS} />
+						<Carousel
+							slides={images}
+							options={OPTIONS}
+							borderColor={'border-rose-300'}
+							hideBtns='hidden'
+						/>
 					</div>
 				</div>
 			</div>
