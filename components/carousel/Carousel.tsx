@@ -10,6 +10,7 @@ type CarouselPropType = {
 	options?: EmblaOptionsType
 	borderColor: string
 	hideBtns?: string
+	imageHeight?: string
 }
 
 const Carousel = ({
@@ -17,6 +18,7 @@ const Carousel = ({
 	options,
 	borderColor,
 	hideBtns,
+	imageHeight,
 }: CarouselPropType) => {
 	const [emblaRef, emblaApi] = useEmblaCarousel(options, [
 		AutoScroll({ playOnInit: true, speed: 1 }),
@@ -69,11 +71,11 @@ const Carousel = ({
 
 	return (
 		<div className='max-w-screen m-auto '>
-			<div className='overflow-hidden rounded-full' ref={emblaRef}>
+			<div className='overflow-hidden rounded-full ' ref={emblaRef}>
 				<div className='flex -ml-[1rem]'>
 					{slides.map((slide, index) => (
 						<Image
-							className={`border-r-8 border-l-8 ${borderColor}`}
+							className={`border-r-8 border-l-8 ${borderColor} ${imageHeight}`}
 							key={index}
 							src={slide}
 							alt={'photo'}
