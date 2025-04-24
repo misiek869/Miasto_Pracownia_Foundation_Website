@@ -15,9 +15,7 @@ export const popoverData: PopoverContent[] = [
 		firstName: 'Pracownia',
 		secondName: 'Drewna',
 		bgColor: '#a65f00',
-		description: `The placeholder text, beginning with the line “Lorem ipsum dolor
-								sit amet, consectetur adipiscing elit”, looks like Latin because
-								in its youth, centuries ago, it was Latin.`,
+		description: `Warsztaty rodzinne, podczas których wspólnie tworzymy drewniane konstrukcje – od prostych projektów po prawdziwe dzieła wyobraźni!`,
 		link: '/pracownie/pracownia_drewna',
 	},
 	{
@@ -25,9 +23,7 @@ export const popoverData: PopoverContent[] = [
 		firstName: 'Pracownia',
 		secondName: 'Krawiecka',
 		bgColor: '#0084d1',
-		description: `The placeholder text, beginning with the line “Lorem ipsum dolor
-								sit amet, consectetur adipiscing elit”, looks like Latin because
-								in its youth, centuries ago, it was Latin.`,
+		description: `Kreatywne warsztaty krawieckie dla dzieci, dorosłych i całych rodzin! Niezależnie od wieku i doświadczenia – każdy może tu odkryć radość szycia i tworzenia wyjątkowych projektów własnymi rękami.`,
 		link: '#',
 	},
 	{
@@ -35,9 +31,7 @@ export const popoverData: PopoverContent[] = [
 		firstName: 'Pracownia',
 		secondName: 'Ceramiczna',
 		bgColor: '#fcc800',
-		description: `The placeholder text, beginning with the line “Lorem ipsum dolor
-								sit amet, consectetur adipiscing elit”, looks like Latin because
-								in its youth, centuries ago, it was Latin.`,
+		description: `Warsztaty ceramiczne, podczas których odkrywamy magię pracy z gliną – od pierwszego dotyku, przez lepienie, aż po szkliwienie i wypalanie w piecu.`,
 		link: '#',
 	},
 	{
@@ -45,9 +39,7 @@ export const popoverData: PopoverContent[] = [
 		firstName: 'Pracownia',
 		secondName: 'Kobiet',
 		bgColor: '#f6339a',
-		description: `The placeholder text, beginning with the line “Lorem ipsum dolor
-								sit amet, consectetur adipiscing elit”, looks like Latin because
-								in its youth, centuries ago, it was Latin.`,
+		description: `Przestrzeń stworzona z myślą o kobietach – pełna ciepła, zrozumienia i wzajemnego wsparcia. Nasze warsztaty to coś więcej niż tylko zajęcia – to czas dla Ciebie. `,
 		link: '#',
 	},
 	{
@@ -55,9 +47,7 @@ export const popoverData: PopoverContent[] = [
 		firstName: 'Pracownia',
 		secondName: 'Dzieci',
 		bgColor: '#ff6900',
-		description: `The placeholder text, beginning with the line “Lorem ipsum dolor
-								sit amet, consectetur adipiscing elit”, looks like Latin because
-								in its youth, centuries ago, it was Latin.`,
+		description: `Przestrzeń stworzona z myślą o najmłodszych – pełna koloru, pomysłów i radości tworzenia. Każde zajęcia to nowa przygoda, nowy temat i nowe wyzwanie!`,
 		link: '#',
 	},
 	{
@@ -65,9 +55,7 @@ export const popoverData: PopoverContent[] = [
 		firstName: 'Pracownia',
 		secondName: 'w Mieście',
 		bgColor: '#5ea500',
-		description: `The placeholder text, beginning with the line “Lorem ipsum dolor
-								sit amet, consectetur adipiscing elit”, looks like Latin because
-								in its youth, centuries ago, it was Latin.`,
+		description: `Projekt „Pracownia w mieście” to cykl warsztatów twórczych, które łączą kreatywność, praktyczność i sąsiedzką energię.`,
 		link: '#',
 	},
 ]
