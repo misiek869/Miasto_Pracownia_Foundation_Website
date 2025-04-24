@@ -2,6 +2,10 @@ import Footer from '@/components/Footer'
 import Navigation from '@/components/Navigation'
 import PageTitle from '@/components/PageTitle'
 
+export const metadata = {
+	title: 'FMP | Pracownia w Mieście',
+}
+
 const CityWorkshopPage = () => {
 	return (
 		<>
