@@ -1,33 +1,19 @@
 import React from 'react'
-// import Image from 'next/image'
-// import wood from '@/public/images/wood.png'
-// import ceramics from '@/public/images/ceramics.png'
-// import tailoring from '@/public/images/tailoring.png'
-// import children from '@/public/images/children.png'
-// import woman from '@/public/images/woman.png'
-// import city from '@/public/images/city.png'
 import Link from 'next/link'
-import Navigation from '@/components/Navigation'
 import PageTitle from '@/components/PageTitle'
-import Footer from '@/components/Footer'
 
 export const metadata = {
 	title: 'FMP | Pracownie',
 }
 
 const linkStyle =
-	'flex items-center justify-center text-center font-montserrat text-[26px] tracking-wider font-bold text-gray-900 mt-4 mb-10 w-[250px] h-[250px] rounded-full shadow-lg'
+	'flex items-center justify-center text-center font-montserrat text-xl lg:text-[26px] tracking-wider font-bold text-gray-900 mt-4 mb-4 md:w-[250px] md:h-[250px] h-[200px] w-[200px] rounded-full shadow-lg'
 
 const WorkshopsPage = () => {
 	return (
 		<>
-			<div className='absolute top-6 left-6'>
-				<Navigation hidden='workshops' />
-			</div>
-
 			<PageTitle title='warsztaty' />
-
-			<div className='grid grid-cols-1 sm:grid-cols-2 justify-items-center lg:grid-cols-3 gap-8 mt-20  md:px-20 px-10 w-[90vw] xl:w-[70vw] mx-auto pb-40'>
+			<div className='grid grid-cols-1 sm:grid-cols-2 justify-items-center lg:grid-cols-3 gap-8 mt-10 xl:mt-20 mb-20 lg:mb-0 md:px-20 px-10 w-[90vw] xl:w-[70vw] xl:pb-20'>
 				<Link
 					href={'/pracownie/pracownia_drewna'}
 					className={`${linkStyle} bg-yellow-700`}>
@@ -71,7 +57,6 @@ const WorkshopsPage = () => {
 					<br />w Mieście
 				</Link>
 			</div>
-			<Footer />
 		</>
 	)
 }
