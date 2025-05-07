@@ -24,7 +24,7 @@ const HomePage = () => {
 	return (
 		<>
 			<div className='flex flex-col'>
-				<div className='bg-rose-300 h-screen px-2 lg:pt-10 flex flex-col items-center justify-center lg:justify-baseline relative'>
+				<div className='bg-rose-400 h-screen px-2 lg:pt-10 flex flex-col items-center justify-center lg:justify-baseline relative'>
 					<div className='absolute top-6 left-6'>
 						<Navigation disabled={true} />
 					</div>
@@ -41,7 +41,7 @@ const HomePage = () => {
 						asChild
 						size={'lg'}
 						variant={'ghost'}
-						className='bg-black text-xl font-montserrat font-semibold uppercase tracking-wider text-rose-300 rounded-full duration-300'>
+						className='bg-black text-xl font-montserrat font-semibold uppercase tracking-wider text-rose-400 rounded-full duration-300 shadow-xl'>
 						<Link href={'/kalendarz'}>Kalendarz Wydarzeń</Link>
 					</Button>
 					<div className='w-[90vw] mt-20'>
