@@ -27,7 +27,7 @@ const WoodWorkshopPage = () => {
 	return (
 		<>
 			<PageTitle title='pracownia drewna' />
-			<div className='mt-10 lg:mt-20 max-w-[80vw] md:max-w-[60vw] mx-auto mb-20 flex flex-col justify-center'>
+			<div className='mt-10 lg:mt-20 max-w-[80vw] md:max-w-[60vw] mx-auto flex flex-col justify-center'>
 				<h3 className='w-full text-justify font-montserrat tracking-wide leading-loose text-lg lg:text-xl mx-auto'>
 					Warsztaty rodzinne, podczas których wspólnie tworzymy drewniane
 					konstrukcje – od prostych projektów po prawdziwe dzieła wyobraźni! To
@@ -37,7 +37,7 @@ const WoodWorkshopPage = () => {
 					wieku i umiejętności – każdy znajdzie coś dla siebie. Wspólne
 					majsterkowanie to nie tylko świetna zabawa, ale i sposób na budowanie
 					więzi, naukę współpracy oraz rozwijanie zdolności manualnych u dzieci
-					i dorosłych.{' '}
+					i dorosłych.
 				</h3>
 
 				<div className='max-w-[80vw] md:max-w-[60vw] mt-20 pb-20 mx-auto '>
@@ -54,3 +54,6 @@ const WoodWorkshopPage = () => {
 }
 
 export default WoodWorkshopPage
+
+
+
