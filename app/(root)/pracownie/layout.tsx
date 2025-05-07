@@ -13,7 +13,7 @@ interface RootLayoutProps {
 	isVisible?: boolean
 }
 
-const RootLayout = ({ children, isVisible }: RootLayoutProps) => {
+const RootLayout = ({ children }: RootLayoutProps) => {
 	const pathname = usePathname()
 
 	return (
@@ -30,7 +30,7 @@ const RootLayout = ({ children, isVisible }: RootLayoutProps) => {
 					className={
 						pathname === '/pracownie'
 							? 'hidden'
-							: `bg-gray-900 text-xl font-montserrat font-semibold uppercase tracking-wider text-slate-50 rounded-full duration-300 mb-20 mt-4 `
+							: `bg-gray-900 text-lg sm:text-xl font-montserrat font-semibold uppercase tracking-wider text-slate-50 rounded-full duration-300 mb-20 mt-4 `
 					}>
 					<Link href={'/kalendarz'}>Kalendarz Wydarzeń</Link>
 				</Button>

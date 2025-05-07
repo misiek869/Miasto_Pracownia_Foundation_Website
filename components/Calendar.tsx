@@ -25,14 +25,14 @@ const Calendar = ({ events }: CalendarProps) => {
 
 	const days = ['Pon', 'Wt', 'Śr', 'Czw', 'Pt', 'Sob', 'Ndz']
 	const currentDate = dayjs()
-	const currentHour = dayjs().format('HH:mm')
+	// const currentHour = dayjs().format('HH:mm')
 	const [today, setToday] = useState(currentDate)
 	// const [selectDate, setSelectDate] = useState(currentDate)
 	// const [event, setEvent] = useState<EventType | undefined>(undefined)
 
 	return (
-		<div className='mt-20 flex flex-col xl:flex-row mx-auto justify-center xl:gap-x-16 pb-40'>
-			<div className='w-96 h-96 md:h-144 md:w-144 lg:w-192 lg:h-192 xl:w-192 xl:h-144  xl:p-4 '>
+		<div className='mt-20 flex flex-col xl:flex-row xl:max-w-[50vw] justify-center items-center xl:gap-x-16 pb-20'>
+			<div className=' xs:w-80 sm:w-96 md:h-144 md:w-144 lg:w-192 lg:h-192 xl:w-192 xl:h-144 xl:p-4 mx-auto'>
 				<div className=' flex justify-between'>
 					<h1 className='font-semibold'>
 						{months[today.month()]} {today.year()}
@@ -129,7 +129,7 @@ const Calendar = ({ events }: CalendarProps) => {
 					})}
 				</div>
 			</div>
-			<div className='grid justify-items-center grid-cols-2 md:grid-cols-4 gap-4 xl:grid-cols-2 justify-between w-full xl:w-1/2 mt-12 lg:mt-6'>
+			<div className='grid justify-items-center grid-cols-2 md:grid-cols-4 gap-4 xl:grid-cols-2 justify-between w-full xl:w-1/2 pt-12  lg:pt-16'>
 				{popoverData.map(item => {
 					const { id, firstName, secondName, bgColor, description, link } = item
 
