@@ -3,7 +3,6 @@ import {
 	CardContent,
 	CardDescription,
 	CardHeader,
-	CardTitle,
 } from '@/components/ui/card'
 import { Metadata } from 'next'
 import Image from 'next/image'
