@@ -7,7 +7,7 @@ export const metadata = {
 }
 
 const linkStyle =
-	'flex items-center justify-center text-center font-montserrat text-xl lg:text-[26px] tracking-wider font-bold text-gray-900 mt-4 mb-4 md:w-[250px] md:h-[250px] h-[200px] w-[200px] rounded-full shadow-lg'
+	'flex items-center justify-center text-center font-montserrat text-lg md:text-xl lg:text-[26px] tracking-wider font-bold text-gray-900 mt-4 mb-4 md:w-[200px] lg:h-[225px] md:h-[200px] lg:w-[225px] xl:h-[250px] xl:w-[250px] h-[150px] w-[150px] rounded-full shadow-lg'
 
 const WorkshopsPage = () => {
 	return (
