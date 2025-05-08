@@ -70,7 +70,7 @@ const Navigation = ({ disabled, hidden }: NavigationProps) => {
 						href='/pracownie'
 						className={
 							hidden === 'workshops'
-								? 'text-center my-0.5 py-0.5 text-xl font-semibold text-rose-300 pointer-events-none'
+								? 'text-center my-0.5 py-0.5 text-xl font-semibold text-rose-300'
 								: 'text-center my-0.5 py-0.5 text-xl font-semibold'
 						}
 						prefetch={false}>

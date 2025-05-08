@@ -10,7 +10,6 @@ import React from 'react'
 
 interface RootLayoutProps {
 	children: React.ReactNode
-	isVisible?: boolean
 }
 
 const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
@@ -20,7 +19,7 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
 		<div className='px-8 bg-[var(--primary)] pt-20 pb-20 min-h-screen relative flex flex-col'>
 			<div className='flex flex-col justify-center items-center'>
 				<div className='absolute top-6 left-6'>
-					<Navigation />
+					<Navigation hidden='workshops' />
 				</div>
 				{children}
 				<Button

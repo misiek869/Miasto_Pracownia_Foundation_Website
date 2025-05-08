@@ -16,7 +16,7 @@ const ContactPage = () => {
 		<>
 			<div className='min-h-screen relative'>
 				<div className='absolute top-6 left-6'>
-					<Navigation hidden='contact' home={true} />
+					<Navigation hidden='contact' />
 				</div>
 				<div className='px-8 bg-[var(--primary)] py-20 min-h-screen w-screen'>
 					<PageTitle title='kontakt' />
