@@ -13,7 +13,7 @@ interface RootLayoutProps {
 	isVisible?: boolean
 }
 
-const RootLayout = ({ children }: RootLayoutProps) => {
+const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
 	const pathname = usePathname()
 
 	return (
