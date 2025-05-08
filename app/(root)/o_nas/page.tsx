@@ -102,16 +102,17 @@ const AboutUsPage = () => {
 							dzieci, młodzieży i dorosłych. Realizatorka projektów
 							samorządowych, FIO Małopolska Lokalnie, MKiDN i wiele innych. W
 							swoich działaniach stawia na nieszablonowość i kreatywność,
-							kierując się zasadą, że "projekty są dla ludzi, nie dla idei".
-							Realizatorka i Inicjatorka takich projektów jak: "Nieruchomość
-							Literacka - budujemy mikroiblioteki", Noc Maturzystów, Nocny
-							Maraton Wiedzy, Wyklikaj to - edukacja medialna dla dzieci,
-							"Pudełko Czasu - kobiecy projekt międzypokoleniowy", "Kobieca
-							Przestrzeń Inspiracji - II edycje", Kreatywna Strefa Kobiet - II
-							edycje" i wiele innych. Realizatorka autorskich warsztatów
-							"Doradztwo Kreatywne - od pomysłu do projektu" (do tej pory w
-							Lublinie, Warszawie i Gdańsku). Aktualnie nauczycielka w szkole
-							podstawowej w Brzeszczach.
+							kierując się zasadą, że &quot;projekty są dla ludzi, nie dla
+							idei&quot;. Realizatorka i Inicjatorka takich projektów jak:
+							&quot;Nieruchomość Literacka - budujemy mikroiblioteki&quot;, Noc
+							Maturzystów, Nocny Maraton Wiedzy, Wyklikaj to - edukacja medialna
+							dla dzieci, &quot;Pudełko Czasu - kobiecy projekt
+							międzypokoleniowy&quot;, &quot;Kobieca Przestrzeń Inspiracji - II
+							edycje&quot;, Kreatywna Strefa Kobiet - II edycje&quot; i wiele
+							innych. Realizatorka autorskich warsztatów &quot;Doradztwo
+							Kreatywne - od pomysłu do projektu&quot; (do tej pory w Lublinie,
+							Warszawie i Gdańsku). Aktualnie nauczycielka w szkole podstawowej
+							w Brzeszczach.
 						</p>
 					</div>
 				</div>
