@@ -2,7 +2,7 @@
 
 import { PrismaClient } from '@prisma/client'
 import { convertToPlainObject } from '../utils'
-import { Prisma } from '@prisma/client'
+// import { Prisma } from '@prisma/client'
 import { revalidatePath } from 'next/cache'
 import z from 'zod'
 import { insertEventSchema, updateEventSchema } from '../validators'
@@ -18,10 +18,10 @@ export async function getLatestEvents() {
 	return convertToPlainObject(data)
 }
 
-type SalesDataType = {
-	month: string
-	totalSales: number
-}[]
+// type SalesDataType = {
+// 	month: string
+// 	totalSales: number
+// }[]
 
 export async function getEventsSummary() {
 	const prisma = new PrismaClient()
@@ -114,7 +114,7 @@ export async function updateEvent(data: z.infer<typeof updateEventSchema>) {
 		revalidatePath('/admin/events')
 
 		return { success: true, message: 'edytowano warsztat' }
-	} catch (error) {
+	} catch () {
 		return { success: false, message: 'nie udało się utworzyć warsztatu' }
 	}
 }
