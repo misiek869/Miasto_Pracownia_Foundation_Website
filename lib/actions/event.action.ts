@@ -73,6 +73,7 @@ export async function deleteEvent(id: string) {
 		revalidatePath('/admin/events')
 		return { success: true, message: 'Usunięto' }
 	} catch (error) {
+		console.error(error)
 		return { success: false, message: 'Nie udało się usunąć wydarzenia' }
 	}
 }
@@ -90,6 +91,7 @@ export async function createEvent(data: z.infer<typeof insertEventSchema>) {
 
 		return { success: true, message: 'utworzono warsztat' }
 	} catch (error) {
+		console.error(error)
 		return { success: false, message: 'nie udało się utworzyć warsztatu' }
 	}
 }
@@ -114,7 +116,8 @@ export async function updateEvent(data: z.infer<typeof updateEventSchema>) {
 		revalidatePath('/admin/events')
 
 		return { success: true, message: 'edytowano warsztat' }
-	} catch () {
+	} catch (error) {
+		console.error(error)
 		return { success: false, message: 'nie udało się utworzyć warsztatu' }
 	}
 }
