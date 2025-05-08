@@ -81,5 +81,5 @@ export const config = {
 		},
 	},
 } satisfies NextAuthConfig
-
+// @ts-ignore
 export const { handlers, auth, signIn, signOut } = NextAuth(config)

@@ -1,10 +1,11 @@
 'use client'
 
+import { z } from 'zod'
 import { Event } from '@/types'
 import { useRouter } from 'next/navigation'
 import { toast } from 'sonner'
 import { format } from 'date-fns'
-import { SubmitHandler, useForm } from 'react-hook-form'
+import { FieldValues, Resolver, SubmitHandler, useForm } from 'react-hook-form'
 import { insertEventSchema, updateEventSchema } from '@/lib/validators'
 import { zodResolver } from '@hookform/resolvers/zod'
 import {
@@ -40,8 +41,7 @@ type EventFormProps = {
 	eventId?: string
 }
 
-export const eventDefaultValues = {
-	id: undefined,
+export const eventDefaultValues: EventFormValues = {
 	name: '',
 	color: '',
 	signUpUrl: '',
@@ -51,13 +51,17 @@ export const eventDefaultValues = {
 }
 
 type EventFormValues = {
+	id?: string
 	name: string
 	color: string
 	signUpUrl: string
 	description: string
 	eventDate: string
 	eventHour: string
-	id?: string
+} & FieldValues
+
+const createResolver = <T extends z.ZodTypeAny>(schema: T) => {
+	return zodResolver(schema) as Resolver<EventFormValues>
 }
 
 const EventForm = ({ type, event, eventId }: EventFormProps) => {
@@ -65,8 +69,8 @@ const EventForm = ({ type, event, eventId }: EventFormProps) => {
 	const form = useForm<EventFormValues>({
 		resolver:
 			type === 'update'
-				? zodResolver(updateEventSchema)
-				: zodResolver(insertEventSchema),
+				? createResolver(updateEventSchema)
+				: createResolver(insertEventSchema),
 		defaultValues: event && type === 'update' ? event : eventDefaultValues,
 	})
 
