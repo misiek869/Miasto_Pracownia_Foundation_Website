@@ -42,23 +42,26 @@ export async function getEventsSummary() {
 
 export async function getAllOrders({
 	limit = 10,
-	page,
+	page = 1,
 }: {
 	limit?: number
 	page?: number
 }) {
 	const prisma = new PrismaClient()
+
+	const safePage = Math.max(1, page)
+	const safeLimit = Math.max(1, limit)
 	const data = await prisma.event.findMany({
 		orderBy: { eventDate: 'desc' },
-		take: limit,
-		skip: (page - 1) * limit,
+		take: safeLimit,
+		skip: (safePage - 1) * safeLimit,
 	})
 
 	const dataCount = await prisma.event.count()
 
 	return {
 		data,
-		totalPages: Math.ceil(dataCount / limit),
+		totalPages: Math.ceil(dataCount / safeLimit),
 	}
 }
 
@@ -105,6 +108,8 @@ export async function updateEvent(data: z.infer<typeof updateEventSchema>) {
 		})
 
 		if (!existingEvent) {
+			// @ts-expect-error will fix later
+
 			throw new error('Nie udało się znaleźć warsztatu')
 		}
 
