@@ -14,10 +14,11 @@ const CityWorkshopPage = () => {
 					łączą kreatywność, praktyczność i sąsiedzką energię. Podczas naszych
 					spotkań tworzymy dekoracje i przedmioty do domu – jak kwietniki,
 					wiosenne stroiki, półki na klucze czy inne drobiazgi, które sprawiają,
-					że codzienna przestrzeń staje się bardziej "nasza". „Pracownia w
-					mieście” to również przestrzeń dialogu i współtworzenia. Regularnie
-					pytamy uczestników, jakie tematy, techniki czy pomysły chcieliby
-					wspólnie realizować – a potem działamy razem, by je urzeczywistnić.
+					że codzienna przestrzeń staje się bardziej &quot;nasza&quot;.
+					„Pracownia w mieście” to również przestrzeń dialogu i współtworzenia.
+					Regularnie pytamy uczestników, jakie tematy, techniki czy pomysły
+					chcieliby wspólnie realizować – a potem działamy razem, by je
+					urzeczywistnić.
 				</h3>
 
 				<h3 className='w-full text-justify font-montserrat tracking-wide leading-loose text-lg lg:text-xl mx-auto mt-4'>
