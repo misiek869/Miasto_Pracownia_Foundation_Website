@@ -15,7 +15,7 @@ const SignInForm = () => {
 	})
 
 	const searchParams = useSearchParams()
-	const callbackUrl = searchParams.get('callbackUrl' || '/')
+	const callbackUrl = searchParams.get('callbackUrl') || '/'
 
 	const SingInButton = () => {
 		const { pending } = useFormStatus()
