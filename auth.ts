@@ -6,6 +6,12 @@ import { compareSync } from 'bcrypt-ts-edge'
 import type { NextAuthConfig } from 'next-auth'
 import type { User } from 'next-auth'
 
+declare module 'next-auth' {
+	interface User {
+		role: string
+	}
+}
+
 export const config = {
 	pages: {
 		signIn: '/sign-in',
@@ -22,47 +28,41 @@ export const config = {
 				email: { type: 'email' },
 				password: { type: 'password' },
 			},
-			async authorize(credentials) {
+			async authorize(credentials): Promise<User | null> {
 				if (!credentials?.email || !credentials?.password) return null
 
 				const user = await prisma.user.findFirst({
-					where: {
-						email: credentials.email as string,
-					},
+					where: { email: credentials.email as string },
 				})
 
 				if (!user?.password) return null
 
-				if (user && user.password) {
-					const isMatch = compareSync(
-						credentials.password as string,
-						user.password
-					)
+				const isMatch = compareSync(
+					credentials.password as string,
+					user.password
+				)
 
-					if (isMatch) {
-						return {
+				return isMatch
+					? {
 							id: user.id,
 							name: user.name,
 							email: user.email,
 							role: user.role,
-						}
-					}
-
-					return null
-				}
+					  }
+					: null
 			},
 		}),
 	],
 
 	callbacks: {
-		async session({ session, user, trigger, token }: any) {
+		async session({ session, token }: any) {
 			session.user.id = token.sub
 			session.user.role = token.role
 			session.user.name = token.name
 
 			return session
 		},
-		async jwt({ token, user, trigger, session }: any) {
+		async jwt({ token, user }: any) {
 			if (user) {
 				token.role = user.role
 

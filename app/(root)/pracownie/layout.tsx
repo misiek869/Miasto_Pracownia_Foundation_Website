@@ -8,11 +8,11 @@ import { usePathname } from 'next/navigation'
 
 import React from 'react'
 
-interface RootLayoutProps {
+export default function RootLayout({
+	children,
+}: Readonly<{
 	children: React.ReactNode
-}
-
-const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
+}>) {
 	const pathname = usePathname()
 
 	return (
@@ -38,5 +38,3 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
 		</div>
 	)
 }
-
-export default RootLayout
