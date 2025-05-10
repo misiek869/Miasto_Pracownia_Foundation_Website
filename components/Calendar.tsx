@@ -103,7 +103,9 @@ const Calendar = ({ events }: CalendarProps) => {
 														className='mt-4'
 														variant={'outline'}
 														size={'sm'}>
-														<Link href={'#'}>Zapisz się na warsztat</Link>
+														<Link target={'_blank'} href={event.signUpUrl}>
+															Zapisz się na warsztat
+														</Link>
 													</Button>
 												) : (
 													''
