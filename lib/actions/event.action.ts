@@ -73,7 +73,12 @@ export async function deleteEvent(id: string) {
 			where: { id },
 		})
 
-		revalidatePath('/admin/events')
+		await Promise.all([
+			revalidatePath('/admin/events'),
+			revalidatePath('/kalendarz'),
+			revalidatePath('/'),
+		])
+
 		return { success: true, message: 'Usunięto' }
 	} catch (error) {
 		console.error(error)
@@ -90,7 +95,11 @@ export async function createEvent(data: z.infer<typeof insertEventSchema>) {
 			data: event,
 		})
 
-		revalidatePath('/admin/events')
+		await Promise.all([
+			revalidatePath('/admin/events'),
+			revalidatePath('/kalendarz'),
+			revalidatePath('/'),
+		])
 
 		return { success: true, message: 'utworzono warsztat' }
 	} catch (error) {
