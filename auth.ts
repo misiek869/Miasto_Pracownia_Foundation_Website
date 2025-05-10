@@ -13,6 +13,7 @@ declare module 'next-auth' {
 }
 
 export const config = {
+	trustHost: true,
 	pages: {
 		signIn: '/sign-in',
 		error: '/sign-in',
