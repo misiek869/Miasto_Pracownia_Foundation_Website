@@ -25,7 +25,7 @@ const Pagination = ({ page, totalPages, urlParamName }: PaginationProps) => {
 	}
 
 	return (
-		<div className='flex gap-x-4 mt-6'>
+		<div className='flex items-center gap-x-4 mt-6'>
 			<Button
 				size={'sm'}
 				variant='outline'
@@ -42,6 +42,9 @@ const Pagination = ({ page, totalPages, urlParamName }: PaginationProps) => {
 				onClick={() => handleClick('next')}>
 				Dalej
 			</Button>
+			<p className='font-semibold'>
+				{page} / {totalPages}
+			</p>
 		</div>
 	)
 }
