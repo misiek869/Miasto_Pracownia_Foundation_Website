@@ -8,7 +8,6 @@ import {
 	APIProvider,
 	InfoWindow,
 	Map,
-	Pin,
 } from '@vis.gl/react-google-maps'
 import Footer from '@/components/Footer'
 import Image from 'next/image'
