@@ -1,16 +1,24 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import Navigation from '@/components/Navigation'
 import PageTitle from '@/components/PageTitle'
-import { AdvancedMarker, APIProvider, Map } from '@vis.gl/react-google-maps'
+import {
+	AdvancedMarker,
+	APIProvider,
+	InfoWindow,
+	Map,
+	Pin,
+} from '@vis.gl/react-google-maps'
 import Footer from '@/components/Footer'
 import Image from 'next/image'
 import logoMedium from '@/public/images/Miasto-Pracownia_Logo_medium.png'
 import { MdEmail } from 'react-icons/md'
+import { GiFlamingo } from 'react-icons/gi'
 
 const ContactPage = () => {
 	const position = { lat: 50.0387346443218, lng: 19.226098300000004 }
+	const [open, setOpen] = useState<boolean>(false)
 
 	return (
 		<>
@@ -18,17 +26,34 @@ const ContactPage = () => {
 				<div className='absolute top-6 left-6'>
 					<Navigation hidden='contact' />
 				</div>
-				<div className='px-8 bg-[var(--primary)] py-20 min-h-screen w-screen'>
+				<div className='px-8 bg-[var(--primary)] py-20 min-h-screen w-screen '>
 					<PageTitle title='kontakt' />
-					<div className='grid grid-cols-1 xl:grid-cols-2 pt-20 items-start'>
+					<div className='grid grid-cols-1 xl:grid-cols-3 pt-20 items-start xl:w-[80vw] mx-auto'>
 						<APIProvider
 							apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY || ''}>
-							<div className='h-[50vh] w-[100%]'>
+							<div className='h-[50vh] w-[100%] col-span-2'>
 								<Map
 									defaultCenter={position}
-									defaultZoom={10}
+									defaultZoom={17}
 									mapId={process.env.NEXT_PUBLIC_MAP_ID}>
-									<AdvancedMarker position={position} />
+									<AdvancedMarker
+										position={position}
+										onClick={() => setOpen(true)}>
+										<GiFlamingo
+											size={70}
+											color='#ff4081'
+											className='animate-bounce '
+										/>
+									</AdvancedMarker>
+									{open && (
+										<InfoWindow
+											position={position}
+											onCloseClick={() => setOpen(false)}>
+											<p className='text-lg'>
+												ul. Gen. Jarosława Dąbrowskiego 15, 2 piętro
+											</p>
+										</InfoWindow>
+									)}
 								</Map>
 							</div>
 						</APIProvider>
@@ -39,19 +64,22 @@ const ContactPage = () => {
 								width={400}
 								className='mx-auto'
 							/>
-							<div className='w-full flex justify-center flex-col items-center gap-4 mt-10'>
-								<h2 className='capitalize font-montserrat tracking-wider text-2xl font-bold'>
+							<div className='w-full flex justify-center flex-col items-center gap-4 mt-6 text-gray-900 text-center'>
+								<h2 className='capitalize font-montserrat tracking-wider text-lg md:text-xl lg:text-2xl font-bold'>
 									fundacja miasto pracownia
 								</h2>
-								<h3 className='font-montserrat tracking-wide text-xl font-medium'>
-									ul. Gen. Jarosława Dąbrowskiego 15
+								<h3 className='font-montserrat tracking-wide text-md md:text-xl  font-medium'>
+									Gen. Jarosława Dąbrowskiego 15, 2 piętro
 								</h3>
-								<h3 className='font-montserrat tracking-wide text-xl font-medium'>
+								<h3 className='font-montserrat tracking-wide text-md md:text-xl  font-medium'>
 									32-600 Oświęcim
 								</h3>
-								<div className='flex items-center gap-2'>
-									<MdEmail className='w-6 h-6 text-rose-400' />
-									<h3 className='font-montserrat tracking-wide text-xl font-medium'>
+								<div className='flex items-center gap-2 md:flex-row flex-col'>
+									<MdEmail
+										color='#ff4081'
+										className='lg:w-10 lg:h-10 w-8 h-8'
+									/>
+									<h3 className='font-montserrat tracking-wide text-md md:text-xl  font-medium'>
 										fundacjamiastopracownia@gmail.com
 									</h3>
 								</div>
