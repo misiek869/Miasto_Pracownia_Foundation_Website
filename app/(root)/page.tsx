@@ -23,8 +23,8 @@ const HomePage = () => {
 
 	return (
 		<>
-			<div className='flex flex-col'>
-				<div className='bg-rose-400 h-screen px-2 lg:pt-10 flex flex-col items-center justify-center lg:justify-baseline relative'>
+			<div className='flex flex-col min-h-screen'>
+				<div className='bg-rose-400 h-screen py-4 px-2 lg:pt-10 flex flex-col items-center justify-center lg:justify-baseline relative'>
 					<div className='absolute top-6 left-6'>
 						<Navigation disabled={true} />
 					</div>
