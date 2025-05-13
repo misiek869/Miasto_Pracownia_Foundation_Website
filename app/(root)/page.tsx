@@ -8,6 +8,7 @@ import Navigation from '@/components/Navigation'
 // import { EmblaOptionsType } from 'embla-carousel'
 // import Carousel from '@/components/carousel/Carousel'
 import Button from '@/components/Button'
+// import bgImg from '@/public/images/bg-dots.webp'
 
 // const images: string[] = [
 // 	'/images/carousel_images/1.jpg',
@@ -25,7 +26,14 @@ const HomePage = () => {
 	return (
 		<>
 			<div className='flex flex-col min-h-screen'>
-				<div className='bg-rose-400 h-screen py-4 px-2 lg:pt-10 flex flex-col items-center justify-center lg:justify-baseline relative'>
+				{/* <Image
+					src={bgImg}
+					alt='Tło strony'
+					fill // Wypełnia cały dostępny obszar rodzica
+					className='object-cover -z-10' // -z-10 umieszcza za zawartością
+					priority // Optymalizacja ładowania
+				/> */}
+				<div className='bg-[var(--primary)] h-screen py-4 px-2 lg:pt-10 flex flex-col items-center justify-center lg:justify-baseline relative'>
 					<div className='absolute top-6 left-6'>
 						<Navigation disabled={true} />
 					</div>
