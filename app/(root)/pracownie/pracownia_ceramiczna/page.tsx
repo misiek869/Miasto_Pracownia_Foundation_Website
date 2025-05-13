@@ -42,7 +42,10 @@ const CeramicsWorkshopPage = () => {
 						imageHeight='h-[350px]'
 					/>
 				</div>
-				<Button bgColor='yellow-400' hoverTextColor='yellow-400' />
+				<Button
+					bgColor='bg-yellow-400'
+					hoverTextColor='hover:text-yellow-400'
+				/>
 			</div>
 		</>
 	)

@@ -51,7 +51,10 @@ const WoodWorkshopPage = () => {
 						btnHoverBgColor='bg-yellow-800'
 					/>
 				</div>
-				<Button bgColor='yellow-700' hoverTextColor='yellow-700' />
+				<Button
+					bgColor='bg-yellow-700'
+					hoverTextColor='hover:text-yellow-700'
+				/>
 			</div>
 		</>
 	)

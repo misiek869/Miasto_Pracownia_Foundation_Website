@@ -3,6 +3,7 @@
 import PageTitle from '@/components/PageTitle'
 import { EmblaOptionsType } from 'embla-carousel'
 import Carousel from '@/components/carousel/Carousel'
+import Button from '@/components/Button'
 
 // export const metadata = {
 // 	title: 'FMP | Pracownia Dzieci',
@@ -31,8 +32,8 @@ const ChildrenWorkshopPage = () => {
 
 	return (
 		<>
-			<PageTitle title='pracownia dzieci' />
-			<div className='mt-10 lg:mt-20 max-w-[80vw] md:max-w-[60vw] mx-auto flex flex-col justify-center'>
+			<PageTitle title='pracownia dzieci' bgColor='bg-orange-500' />
+			<div className='mt-10 lg:mt-20 max-w-[80vw] md:max-w-[60vw] mx-auto flex flex-col justify-center items-center'>
 				<h3 className='w-full text-justify font-montserrat tracking-wide leading-loose text-lg lg:text-xl mx-auto'>
 					Przestrzeń stworzona z myślą o najmłodszych – pełna koloru, pomysłów i
 					radości tworzenia. Twórczo-konstrukcyjne warsztaty, podczas których
@@ -54,6 +55,10 @@ const ChildrenWorkshopPage = () => {
 						imageHeight='h-[350px]'
 					/>
 				</div>
+				<Button
+					bgColor='bg-orange-500'
+					hoverTextColor='hover:text-orange-500'
+				/>
 			</div>
 		</>
 	)

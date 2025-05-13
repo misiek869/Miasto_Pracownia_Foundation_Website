@@ -3,6 +3,7 @@
 import PageTitle from '@/components/PageTitle'
 import { EmblaOptionsType } from 'embla-carousel'
 import Carousel from '@/components/carousel/Carousel'
+import Button from '@/components/Button'
 
 // export const metadata = {
 // 	title: 'FMP | Pracownia Drewna',
@@ -22,8 +23,8 @@ const WomanWorkshopPage = () => {
 	const OPTIONS: EmblaOptionsType = { loop: true }
 	return (
 		<>
-			<PageTitle title='pracownia kobiet' />
-			<div className='mt-10 lg:mt-20 max-w-[80vw] md:max-w-[60vw] mx-auto flex flex-col justify-center'>
+			<PageTitle title='pracownia kobiet' bgColor='bg-pink-500' />
+			<div className='mt-10 lg:mt-20 max-w-[80vw] md:max-w-[60vw] mx-auto flex flex-col justify-center items-center'>
 				<h3 className='w-full text-justify font-montserrat tracking-wide leading-loose text-lg lg:text-xl mx-auto'>
 					Przestrzeń stworzona z myślą o kobietach – pełna ciepła, zrozumienia i
 					wzajemnego wsparcia. Nasze warsztaty to coś więcej niż tylko zajęcia –
@@ -45,6 +46,7 @@ const WomanWorkshopPage = () => {
 						imageHeight='h-[350px]'
 					/>
 				</div>
+				<Button bgColor='bg-pink-500' hoverTextColor='hover:text-pink-500' />
 			</div>
 		</>
 	)

@@ -49,7 +49,7 @@ const TailoringWorkshopPage = () => {
 						imageHeight='h-[350px]'
 					/>
 				</div>
-				<Button bgColor='sky-600' hoverTextColor='sky-600' />
+				<Button bgColor='bg-sky-600' hoverTextColor='hover:text-sky-600' />
 			</div>
 		</>
 	)

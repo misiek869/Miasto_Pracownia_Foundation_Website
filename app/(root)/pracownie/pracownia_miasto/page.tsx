@@ -1,15 +1,35 @@
-import PageTitle from '@/components/PageTitle'
+'use client'
 
-export const metadata = {
-	title: 'FMP | Pracownia w Mieście',
-}
+import PageTitle from '@/components/PageTitle'
+import { EmblaOptionsType } from 'embla-carousel'
+import Carousel from '@/components/carousel/Carousel'
+import Button from '@/components/Button'
+
+// export const metadata = {
+// 	title: 'FMP | Pracownia w Mieście',
+// }
+
+const images: string[] = [
+	'/images/workshops_images/wood/01.webp',
+	'/images/workshops_images/wood/02.webp',
+	'/images/workshops_images/wood/03.webp',
+	'/images/workshops_images/wood/04.webp',
+	'/images/workshops_images/wood/05.webp',
+	'/images/workshops_images/wood/06.webp',
+	'/images/workshops_images/wood/07.webp',
+	'/images/workshops_images/wood/08.webp',
+	'/images/workshops_images/wood/09.webp',
+	'/images/workshops_images/wood/10.webp',
+	'/images/workshops_images/wood/11.webp',
+]
 
 const CityWorkshopPage = () => {
+	const OPTIONS: EmblaOptionsType = { loop: true }
 	return (
 		<>
-			<PageTitle title='pracownia w mieście' />
-			<div className='mt-10 lg:mt-20 max-w-[80vw] md:max-w-[60vw] mx-auto flex flex-col justify-center'>
-				<h3 className='w-full text-justify font-montserrat tracking-wide leading-loose text-lg lg:text-xl mx-auto'>
+			<PageTitle title='pracownia w mieście' bgColor='bg-lime-600' />
+			<div className='mt-10 lg:mt-20 max-w-[80vw] md:max-w-[60vw] mx-auto flex flex-col justify-center items-center'>
+				<h3 className='w-full text-justify font-montserrat tracking-wide leading-loose text-lg lg:text-xl mx-auto '>
 					Projekt „Pracownia w mieście” to cykl warsztatów twórczych, które
 					łączą kreatywność, praktyczność i sąsiedzką energię. Podczas naszych
 					spotkań tworzymy dekoracje i przedmioty do domu – jak kwietniki,
@@ -30,6 +50,16 @@ const CityWorkshopPage = () => {
 					Pracownia Krawiecka i Pracownia Ceramiki – kobiety, które zgłosiły się
 					z pomysłem, dziś prowadzą własne warsztaty dla innych.
 				</h3>
+
+				<div className='max-w-[80vw] md:max-w-[60vw] mt-20 pb-20 mx-auto '>
+					<Carousel
+						slides={images}
+						options={OPTIONS}
+						borderColor={'border-[var(--primary)]'}
+						imageHeight='h-[350px]'
+					/>
+				</div>
+				<Button bgColor='bg-lime-600' hoverTextColor='hover:text-lime-600' />
 			</div>
 		</>
 	)
