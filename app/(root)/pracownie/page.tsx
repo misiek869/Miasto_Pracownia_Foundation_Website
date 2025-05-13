@@ -45,7 +45,7 @@ const WorkshopsPage = () => {
 				</Link>
 				<Link
 					href={'/pracownie/pracownia_dzieci'}
-					className={`${linkStyle} li`}>
+					className={`${linkStyle} bg-orange-500`}>
 					Pracownia
 					<br />
 					Dzieci
