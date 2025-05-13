@@ -60,7 +60,7 @@ const Navigation = ({ disabled, hidden }: NavigationProps) => {
 						href='/o_nas'
 						className={
 							hidden === 'about'
-								? 'text-center my-0.5 py-0.5 text-xl font-semibold text-rose-300 pointer-events-none'
+								? 'text-center my-0.5 py-0.5 text-xl font-semibold text-pink-500 pointer-events-none'
 								: 'text-center my-0.5 py-0.5 text-xl font-semibold'
 						}
 						prefetch={false}>
@@ -70,7 +70,7 @@ const Navigation = ({ disabled, hidden }: NavigationProps) => {
 						href='/pracownie'
 						className={
 							hidden === 'workshops'
-								? 'text-center my-0.5 py-0.5 text-xl font-semibold text-rose-300'
+								? 'text-center my-0.5 py-0.5 text-xl font-semibold text-pink-500'
 								: 'text-center my-0.5 py-0.5 text-xl font-semibold'
 						}
 						prefetch={false}>
@@ -80,7 +80,7 @@ const Navigation = ({ disabled, hidden }: NavigationProps) => {
 						href='/kalendarz'
 						className={
 							hidden === 'calendar'
-								? 'text-center my-0.5 py-0.5 text-xl font-semibold text-rose-300 pointer-events-none'
+								? 'text-center my-0.5 py-0.5 text-xl font-semibold text-pink-500 pointer-events-none'
 								: 'text-center my-0.5 py-0.5 text-xl font-semibold'
 						}
 						prefetch={false}>
@@ -90,7 +90,7 @@ const Navigation = ({ disabled, hidden }: NavigationProps) => {
 						href='/kontakt'
 						className={
 							hidden === 'contact'
-								? 'text-center my-0.5 py-0.5 text-xl font-semibold text-rose-300 pointer-events-none'
+								? 'text-center my-0.5 py-0.5 text-xl font-semibold text-pink-500 pointer-events-none'
 								: 'text-center my-0.5 py-0.5 text-xl font-semibold'
 						}
 						prefetch={false}>
