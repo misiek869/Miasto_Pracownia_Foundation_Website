@@ -22,7 +22,7 @@ type CalendarProps = {
 
 const Calendar = ({ events }: CalendarProps) => {
 	dayjs.locale('pl')
-	console.log(events)
+
 	const days = ['Pon', 'Wt', 'Śr', 'Czw', 'Pt', 'Sob', 'Ndz']
 	const currentDate = dayjs()
 	// const currentHour = dayjs().format('HH:mm')
