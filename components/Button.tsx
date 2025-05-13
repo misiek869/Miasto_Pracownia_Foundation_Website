@@ -1,10 +1,23 @@
 import Link from 'next/link'
 import React from 'react'
 
-const Button = ({ text, link }: { text: string; link: string }) => {
+type ButtonProps = {
+	text: string
+	link: string
+	bgColor?: string
+	bgHoverColor?: string
+}
+
+const Button = ({
+	text,
+	link,
+	bgColor = 'bg-pink-500',
+	bgHoverColor = 'bg-pink-500',
+}: ButtonProps) => {
 	return (
 		<Link href={link}>
-			<button className='group relative inline-flex h-[calc(48px+8px)] items-center justify-center rounded-full bg-pink-500 py-1 pl-6 pr-14 font-medium text-neutral-50 cursor-pointer hover:text-pink-500 '>
+			<button
+				className={`group relative inline-flex h-[calc(48px+8px)] items-center justify-center rounded-full ${bgColor} py-1 pl-6 pr-14 font-medium text-neutral-50 cursor-pointer ${bgHoverColor}`}>
 				<span className='z-10 pr-2 text-md md:text-2xl xl:text-3xl  font-calistoga tracking-wider  transition-colors duration-300'>
 					{text}
 				</span>
