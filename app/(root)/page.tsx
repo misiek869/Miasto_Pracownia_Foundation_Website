@@ -1,12 +1,13 @@
 'use client'
 
-import { Button } from '@/components/ui/button'
+// import { Button } from '@/components/ui/button'
 import Image from 'next/image'
-import Link from 'next/link'
+// import Link from 'next/link'
 import logo from '@/public/images/Miasto-Pracownia_Logo.png'
 import Navigation from '@/components/Navigation'
 import { EmblaOptionsType } from 'embla-carousel'
-import Carousel from '@/components/carousel/Carousel'
+// import Carousel from '@/components/carousel/Carousel'
+import Button from '@/components/Button'
 
 const images: string[] = [
 	'/images/carousel_images/1.jpg',
@@ -37,13 +38,16 @@ const HomePage = () => {
 						className='pb-16 xl:pb-2'
 					/>
 
-					<Button
+					{/* <Button
 						asChild
 						size={'lg'}
 						variant={'ghost'}
-						className='bg-black text-xl font-montserrat font-semibold uppercase tracking-wider text-rose-400 rounded-full duration-300 shadow-xl'>
+						className='bg-black text-md md:text-xl lg:text-2xl font-montserrat font-semibold uppercase tracking-wider text-rose-400 rounded-full duration-300 shadow-xl'>
 						<Link href={'/kalendarz'}>Kalendarz Wydarzeń</Link>
-					</Button>
+					</Button> */}
+
+					<Button text='Kalendarz Wydarzeń' link='/kalendarz' />
+
 					{/* <div className='w-[90vw] mt-20'>
 						<Carousel
 							slides={images}
