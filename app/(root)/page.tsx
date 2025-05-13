@@ -44,14 +44,14 @@ const HomePage = () => {
 						className='bg-black text-xl font-montserrat font-semibold uppercase tracking-wider text-rose-400 rounded-full duration-300 shadow-xl'>
 						<Link href={'/kalendarz'}>Kalendarz Wydarzeń</Link>
 					</Button>
-					<div className='w-[90vw] mt-20'>
+					{/* <div className='w-[90vw] mt-20'>
 						<Carousel
 							slides={images}
 							options={OPTIONS}
 							borderColor={'border-rose-300'}
 							hideBtns='hidden'
 						/>
-					</div>
+					</div> */}
 				</div>
 			</div>
 		</>
