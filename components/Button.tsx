@@ -5,7 +5,7 @@ const Button = ({ text, link }: { text: string; link: string }) => {
 	return (
 		<Link href={link}>
 			<button className='group relative inline-flex h-[calc(48px+8px)] items-center justify-center rounded-full bg-neutral-950 py-1 pl-6 pr-14 font-medium text-neutral-50 cursor-pointer'>
-				<span className='z-10 pr-2 text-md md:text-2xl xl:text-3xl text-neutral-50'>
+				<span className='z-10 pr-2 text-md md:text-2xl xl:text-3xl text-neutral-50 font-calistoga tracking-wider'>
 					{text}
 				</span>
 				<div className='absolute right-1 inline-flex h-12 w-12 items-center justify-end rounded-full bg-rose-400 transition-[width] group-hover:w-[calc(100%-8px)]'>
