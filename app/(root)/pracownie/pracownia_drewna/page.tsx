@@ -47,6 +47,8 @@ const WoodWorkshopPage = () => {
 						options={OPTIONS}
 						borderColor={'border-[var(--primary)]'}
 						imageHeight='h-[350px]'
+						btnBgColor='bg-yellow-700'
+						btnHoverBgColor='bg-yellow-800'
 					/>
 				</div>
 				<Button bgColor='yellow-700' hoverTextColor='yellow-700' />

@@ -11,6 +11,8 @@ type CarouselPropType = {
 	borderColor: string
 	hideBtns?: string
 	imageHeight?: string
+	btnBgColor?: string
+	btnHoverBgColor?: string
 }
 
 const Carousel = ({
@@ -19,6 +21,8 @@ const Carousel = ({
 	borderColor,
 	hideBtns,
 	imageHeight,
+	btnBgColor = 'bg-gray-900',
+	btnHoverBgColor = 'bg-gray-800',
 }: CarouselPropType) => {
 	const [emblaRef, emblaApi] = useEmblaCarousel(options, [
 		AutoScroll({ playOnInit: true, speed: 1 }),
@@ -100,7 +104,7 @@ const Carousel = ({
 				</div>
 
 				<button
-					className={`bg-gray-900 w-[85px] py-2 rounded-full touch-manipulation cursor-pointer items-center justify-center justify-self-end font-semibold tracking-wider uppercase hover:bg-gray-800 duration-300 text-slate-50`}
+					className={`${btnBgColor} w-[85px] py-2 rounded-full touch-manipulation cursor-pointer items-center justify-center justify-self-end font-semibold tracking-wider uppercase hover:${btnHoverBgColor} duration-300 text-slate-50`}
 					onClick={toggleAutoplay}
 					type='button'>
 					{isPlaying ? 'Stop' : 'Start'}
