@@ -20,7 +20,7 @@ const images: string[] = [
 ]
 
 const HomePage = () => {
-	const OPTIONS: EmblaOptionsType = { loop: true }
+	// const OPTIONS: EmblaOptionsType = { loop: true }
 
 	return (
 		<>
