@@ -3,6 +3,7 @@
 import PageTitle from '@/components/PageTitle'
 import { EmblaOptionsType } from 'embla-carousel'
 import Carousel from '@/components/carousel/Carousel'
+import Button from '@/components/Button'
 
 // export const metadata = {
 // 	title: 'FMP | Pracownia Ceramiczna',
@@ -19,8 +20,8 @@ const CeramicsWorkshopPage = () => {
 	const OPTIONS: EmblaOptionsType = { loop: true }
 	return (
 		<>
-			<PageTitle title='pracownia ceramiczna' />
-			<div className='mt-10 lg:mt-20 max-w-[80vw] md:max-w-[60vw] mx-auto flex flex-col justify-center'>
+			<PageTitle title='pracownia ceramiczna' bgColor='bg-yellow-400' />
+			<div className='mt-10 lg:mt-20 max-w-[80vw] md:max-w-[60vw] mx-auto flex flex-col justify-center items-center'>
 				<h3 className='w-full text-justify font-montserrat tracking-wide leading-loose text-lg lg:text-xl mx-auto'>
 					Warsztaty ceramiczne, podczas których odkrywamy magię pracy z gliną –
 					od pierwszego dotyku, przez lepienie, aż po szkliwienie i wypalanie w
@@ -41,6 +42,7 @@ const CeramicsWorkshopPage = () => {
 						imageHeight='h-[350px]'
 					/>
 				</div>
+				<Button bgColor='yellow-400' hoverTextColor='yellow-400' />
 			</div>
 		</>
 	)

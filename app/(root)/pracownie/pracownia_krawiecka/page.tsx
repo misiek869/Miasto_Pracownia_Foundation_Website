@@ -3,6 +3,7 @@
 import PageTitle from '@/components/PageTitle'
 import { EmblaOptionsType } from 'embla-carousel'
 import Carousel from '@/components/carousel/Carousel'
+import Button from '@/components/Button'
 
 // export const metadata = {
 // 	title: 'FMP | Pracownia Drewna',
@@ -26,8 +27,8 @@ const TailoringWorkshopPage = () => {
 	const OPTIONS: EmblaOptionsType = { loop: true }
 	return (
 		<>
-			<PageTitle title='pracownia krawiecka' />
-			<div className='mt-10 lg:mt-20 max-w-[80vw] md:max-w-[60vw] mx-auto flex flex-col justify-center'>
+			<PageTitle title='pracownia krawiecka' bgColor='bg-sky-600' />
+			<div className='mt-10 lg:mt-20 max-w-[80vw] md:max-w-[60vw] mx-auto flex flex-col justify-center items-center'>
 				<h3 className='w-full text-justify font-montserrat tracking-wide leading-loose text-lg lg:text-xl mx-auto'>
 					Kreatywne warsztaty krawieckie dla dzieci, dorosłych i całych rodzin!
 					Niezależnie od wieku i doświadczenia – każdy może tu odkryć radość
@@ -48,6 +49,7 @@ const TailoringWorkshopPage = () => {
 						imageHeight='h-[350px]'
 					/>
 				</div>
+				<Button bgColor='sky-600' hoverTextColor='sky-600' />
 			</div>
 		</>
 	)
