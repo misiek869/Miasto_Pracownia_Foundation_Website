@@ -22,17 +22,6 @@ export default function RootLayout({
 					<Navigation hidden='workshops' />
 				</div>
 				{children}
-				<Button
-					asChild
-					size={'lg'}
-					variant={'ghost'}
-					className={
-						pathname === '/pracownie'
-							? 'hidden'
-							: `bg-gray-900 text-lg sm:text-xl font-montserrat font-semibold uppercase tracking-wider text-slate-50 rounded-full duration-300 mb-20 mt-4 `
-					}>
-					<Link href={'/kalendarz'}>Kalendarz Wydarzeń</Link>
-				</Button>
 			</div>
 			<Footer />
 		</div>

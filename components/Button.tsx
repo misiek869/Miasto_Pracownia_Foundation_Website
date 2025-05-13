@@ -2,22 +2,22 @@ import Link from 'next/link'
 import React from 'react'
 
 type ButtonProps = {
-	text: string
-	link: string
+	text?: string
+	link?: string
 	bgColor?: string
-	bgHoverColor?: string
+	hoverTextColor?: string
 }
 
 const Button = ({
-	text,
-	link,
+	text = 'Kalendarz Wydarzeń',
+	link = '/kalendarz',
 	bgColor = 'pink-500',
-	bgHoverColor = 'pink-500',
+	hoverTextColor = 'pink-500',
 }: ButtonProps) => {
 	return (
 		<Link href={link}>
 			<button
-				className={`group relative inline-flex h-[calc(48px+8px)] items-center justify-center rounded-full bg-${bgColor} py-1 pl-6 pr-14 font-medium text-neutral-50 cursor-pointer hover:text-${bgHoverColor}`}>
+				className={`group relative inline-flex h-[calc(48px+8px)] items-center justify-center rounded-full bg-${bgColor} py-1 pl-6 pr-14 font-medium text-neutral-50 cursor-pointer hover:text-${hoverTextColor}`}>
 				<span className='z-10 pr-2 text-md md:text-2xl xl:text-3xl  font-calistoga tracking-wider  transition-colors duration-300'>
 					{text}
 				</span>

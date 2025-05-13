@@ -3,6 +3,7 @@
 import PageTitle from '@/components/PageTitle'
 import { EmblaOptionsType } from 'embla-carousel'
 import Carousel from '@/components/carousel/Carousel'
+import Button from '@/components/Button'
 
 // export const metadata = {
 // 	title: 'FMP | Pracownia Drewna',
@@ -27,7 +28,7 @@ const WoodWorkshopPage = () => {
 	return (
 		<>
 			<PageTitle title='pracownia drewna' bgColor='bg-yellow-700' />
-			<div className='mt-10 lg:mt-20 max-w-[80vw] md:max-w-[60vw] mx-auto flex flex-col justify-center'>
+			<div className='mt-10 lg:mt-20 max-w-[80vw] md:max-w-[60vw] mx-auto flex flex-col justify-center items-center'>
 				<h3 className='w-full text-justify font-montserrat tracking-wide leading-loose text-lg lg:text-xl mx-auto'>
 					Warsztaty rodzinne, podczas których wspólnie tworzymy drewniane
 					konstrukcje – od prostych projektów po prawdziwe dzieła wyobraźni! To
@@ -48,6 +49,7 @@ const WoodWorkshopPage = () => {
 						imageHeight='h-[350px]'
 					/>
 				</div>
+				<Button bgColor='yellow-700' hoverTextColor='yellow-700' />
 			</div>
 		</>
 	)

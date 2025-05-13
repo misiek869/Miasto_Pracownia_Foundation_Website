@@ -54,7 +54,7 @@ const HomePage = () => {
 						<Link href={'/kalendarz'}>Kalendarz Wydarzeń</Link>
 					</Button> */}
 
-					<Button text='Kalendarz Wydarzeń' link='/kalendarz' />
+					<Button />
 
 					{/* <div className='w-[90vw] mt-20'>
 						<Carousel
