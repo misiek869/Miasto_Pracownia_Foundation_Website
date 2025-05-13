@@ -26,7 +26,7 @@ const WoodWorkshopPage = () => {
 	const OPTIONS: EmblaOptionsType = { loop: true }
 	return (
 		<>
-			<PageTitle title='pracownia drewna' />
+			<PageTitle title='pracownia drewna' bgColor='bg-yellow-700' />
 			<div className='mt-10 lg:mt-20 max-w-[80vw] md:max-w-[60vw] mx-auto flex flex-col justify-center'>
 				<h3 className='w-full text-justify font-montserrat tracking-wide leading-loose text-lg lg:text-xl mx-auto'>
 					Warsztaty rodzinne, podczas których wspólnie tworzymy drewniane
@@ -54,6 +54,3 @@ const WoodWorkshopPage = () => {
 }
 
 export default WoodWorkshopPage
-
-
-
