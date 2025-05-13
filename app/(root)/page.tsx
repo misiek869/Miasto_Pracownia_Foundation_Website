@@ -5,19 +5,19 @@ import Image from 'next/image'
 // import Link from 'next/link'
 import logo from '@/public/images/Miasto-Pracownia_Logo.png'
 import Navigation from '@/components/Navigation'
-import { EmblaOptionsType } from 'embla-carousel'
+// import { EmblaOptionsType } from 'embla-carousel'
 // import Carousel from '@/components/carousel/Carousel'
 import Button from '@/components/Button'
 
-const images: string[] = [
-	'/images/carousel_images/1.jpg',
-	'/images/carousel_images/2.jpg',
-	'/images/carousel_images/3.jpg',
-	'/images/carousel_images/4.jpg',
-	'/images/carousel_images/5.jpg',
-	'/images/carousel_images/6.jpg',
-	'/images/carousel_images/7.jpg',
-]
+// const images: string[] = [
+// 	'/images/carousel_images/1.jpg',
+// 	'/images/carousel_images/2.jpg',
+// 	'/images/carousel_images/3.jpg',
+// 	'/images/carousel_images/4.jpg',
+// 	'/images/carousel_images/5.jpg',
+// 	'/images/carousel_images/6.jpg',
+// 	'/images/carousel_images/7.jpg',
+// ]
 
 const HomePage = () => {
 	// const OPTIONS: EmblaOptionsType = { loop: true }
