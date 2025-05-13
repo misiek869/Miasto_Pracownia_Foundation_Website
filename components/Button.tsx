@@ -11,13 +11,13 @@ type ButtonProps = {
 const Button = ({
 	text,
 	link,
-	bgColor = 'bg-pink-500',
-	bgHoverColor = 'bg-pink-500',
+	bgColor = 'pink-500',
+	bgHoverColor = 'pink-500',
 }: ButtonProps) => {
 	return (
 		<Link href={link}>
 			<button
-				className={`group relative inline-flex h-[calc(48px+8px)] items-center justify-center rounded-full ${bgColor} py-1 pl-6 pr-14 font-medium text-neutral-50 cursor-pointer ${bgHoverColor}`}>
+				className={`group relative inline-flex h-[calc(48px+8px)] items-center justify-center rounded-full bg-${bgColor} py-1 pl-6 pr-14 font-medium text-neutral-50 cursor-pointer hover:text-${bgHoverColor}`}>
 				<span className='z-10 pr-2 text-md md:text-2xl xl:text-3xl  font-calistoga tracking-wider  transition-colors duration-300'>
 					{text}
 				</span>
