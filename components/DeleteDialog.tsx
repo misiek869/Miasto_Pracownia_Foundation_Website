@@ -40,9 +40,17 @@ const DeleteDialog = ({
 	return (
 		<AlertDialog open={open} onOpenChange={setOpen}>
 			<AlertDialogTrigger asChild>
-				<Button size={'sm'} variant={'destructive'}>
-					Usuń
-				</Button>
+				<div>
+					<Button
+						size={'sm'}
+						variant={'destructive'}
+						className='hidden md:inline-flex'>
+						Usuń
+					</Button>
+					<Button size={'sm'} variant={'destructive'} className='md:hidden'>
+						X
+					</Button>
+				</div>
 			</AlertDialogTrigger>
 			<AlertDialogContent>
 				<AlertDialogHeader>

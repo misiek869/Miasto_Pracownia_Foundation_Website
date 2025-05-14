@@ -15,8 +15,8 @@ export default async function AdminLayout({
 	return (
 		<>
 			<div className='flex flex-col'>
-				<div className='border-b container mx-auto'>
-					<div className='flex items-center justify-between h-16 px-4'>
+				<div className='border-b mx-auto md:container'>
+					<div className='flex items-center  justify-between h-16 px-4'>
 						<div className='flex flex-row gap-x-12'>
 							<Link href='/' className='w-22'>
 								<Image src={smallLogo} height={150} width={150} alt={'logo'} />
@@ -28,7 +28,7 @@ export default async function AdminLayout({
 					</div>
 				</div>
 
-				<div className='flex-1 space-y-4 p-8 pt-6 container mx-auto'>
+				<div className='flex-1 space-y-4 md:py-4 pt-6 container mx-auto'>
 					{children}
 				</div>
 			</div>

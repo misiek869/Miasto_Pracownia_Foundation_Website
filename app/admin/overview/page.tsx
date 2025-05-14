@@ -37,30 +37,36 @@ const AdminOverviewPage = async () => {
 			<h1 className='text-xl font-bold'>Panel Administratora</h1>
 			<div className='grid grid-cols-3 gap-x-4'>
 				<Card>
-					<CardHeader className='flex flex-row items-center justify-between space-y-0 pb-2'>
-						<CardTitle className='text-sm font-medium'>Warsztaty</CardTitle>
-						<GrWorkshop />
+					<CardHeader className='flex flex-row items-center justify-center md:justify-between space-y-0 pb-2'>
+						<CardTitle className='text-sm font-medium '>Warsztaty</CardTitle>
+						<GrWorkshop className='hidden md:block' />
 					</CardHeader>
 					<CardContent>
-						<div className='text-2xl font-bold'>{events.length}</div>
+						<div className='text-2xl font-bold text-center md:text-left'>
+							{events.length}
+						</div>
 					</CardContent>
 				</Card>
 				<Card>
-					<CardHeader className='flex flex-row items-center justify-between space-y-0 pb-2'>
+					<CardHeader className='flex flex-row items-center justify-center md:justify-between space-y-0 pb-2'>
 						<CardTitle className='text-sm font-medium'>Zakończone</CardTitle>
-						<FaRegCalendarCheck />
+						<FaRegCalendarCheck className='hidden md:block' />
 					</CardHeader>
 					<CardContent>
-						<div className='text-2xl font-bold'>{endedWorkshops.length}</div>
+						<div className='text-2xl font-bold text-center md:text-left'>
+							{endedWorkshops.length}
+						</div>
 					</CardContent>
 				</Card>
 				<Card>
-					<CardHeader className='flex flex-row items-center justify-between space-y-0 pb-2'>
+					<CardHeader className='flex flex-row items-center justify-center md:justify-between space-y-0 pb-2'>
 						<CardTitle className='text-sm font-medium'>Przyszłe</CardTitle>
-						<FaRegCalendarPlus />
+						<FaRegCalendarPlus className='hidden md:block' />
 					</CardHeader>
 					<CardContent>
-						<div className='text-2xl font-bold'>{futureWorkshops.length}</div>
+						<div className='text-2xl font-bold text-center md:text-left'>
+							{futureWorkshops.length}
+						</div>
 					</CardContent>
 				</Card>
 				<Card className='col-span-3 mt-4'>

@@ -18,6 +18,8 @@ import { Button } from '@/components/ui/button'
 import { ImCheckboxChecked } from 'react-icons/im'
 import dayjs from 'dayjs'
 
+import { CiEdit } from 'react-icons/ci'
+
 export const metadata: Metadata = {
 	title: 'Admin Warsztaty',
 }
@@ -55,11 +57,13 @@ const AdminEventsPage = async (props: {
 				<Table>
 					<TableHeader>
 						<TableRow>
-							<TableHead>ID</TableHead>
+							<TableHead className='hidden md:table-cell'>ID</TableHead>
 							<TableHead>NAZWA</TableHead>
 							<TableHead>DATA</TableHead>
-							<TableHead>GODZINA</TableHead>
-							<TableHead className='text-center'>ZAKOŃCZONY</TableHead>
+							<TableHead className='hidden md:table-cell'>GODZINA</TableHead>
+							<TableHead className='text-center hidden md:table-cell'>
+								ZAKOŃCZONY
+							</TableHead>
 							<TableHead className='flex items-center justify-end'>
 								EDYCJA
 							</TableHead>
@@ -68,11 +72,15 @@ const AdminEventsPage = async (props: {
 					<TableBody>
 						{events.data.map(event => (
 							<TableRow key={event.id}>
-								<TableCell>{formatId(event.id)}</TableCell>
+								<TableCell className='hidden md:table-cell'>
+									{formatId(event.id)}
+								</TableCell>
 								<TableCell>{event.name}</TableCell>
 								<TableCell>{event.eventDate}</TableCell>
-								<TableCell>{event.eventHour}</TableCell>
-								<TableCell>
+								<TableCell className='hidden md:table-cell'>
+									{event.eventHour}
+								</TableCell>
+								<TableCell className='hidden md:table-cell'>
 									{event.eventDate < currentDate.format('YYYY-MM-DD') ? (
 										<ImCheckboxChecked className='w-5 h-5 text-green-800 mx-auto' />
 									) : (
@@ -80,8 +88,21 @@ const AdminEventsPage = async (props: {
 									)}
 								</TableCell>
 								<TableCell className='flex gap-x-4 justify-end'>
-									<Button asChild variant='outline' size='sm'>
+									<Button
+										asChild
+										variant='outline'
+										size='sm'
+										className='hidden md:inline-flex'>
 										<Link href={`/admin/events/${event.id}`}>Edytuj</Link>
+									</Button>
+									<Button
+										asChild
+										variant='outline'
+										size='sm'
+										className='md:hidden'>
+										<Link href={`/admin/events/${event.id}`}>
+											<CiEdit className='w-4 h-4' />
+										</Link>
 									</Button>
 									<DeleteDialog id={event.id} action={deleteEvent} />
 								</TableCell>
