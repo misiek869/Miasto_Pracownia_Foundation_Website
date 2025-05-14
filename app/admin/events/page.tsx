@@ -46,7 +46,7 @@ const AdminEventsPage = async (props: {
 	// )
 
 	return (
-		<div className='space-y-2'>
+		<div className='space-y-2 px-4 md:px-0'>
 			<div className='flex items-center justify-between mb-6'>
 				<h2 className='font-bold text-xl'>Warsztaty: {events.data.length}</h2>
 				<Button asChild variant={'secondary'} className='text-slate-50'>
