@@ -11,8 +11,8 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<div className='px-8 bg-[var(--primary)] pt-20 pb-20 min-h-screen relative flex flex-col'>
-			<div className='flex flex-col justify-center items-center'>
+		<div className='px-8 bg-[var(--primary)] pt-20 min-h-screen relative flex flex-col'>
+			<div className='flex flex-col justify-center pb-40  items-center'>
 				<div className='absolute top-6 left-6'>
 					<Navigation hidden='workshops' />
 				</div>
