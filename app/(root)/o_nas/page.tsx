@@ -13,7 +13,7 @@ export const metadata = {
 const AboutUsPage = () => {
 	return (
 		<>
-			<div className='min-h-screen bg-slate-50 pt-20 flex flex-col relative px-4'>
+			<div className='min-h-screen bg-[var(--primary)] pt-20 flex flex-col relative px-4'>
 				<div className='fixed top-6 left-6'>
 					<Navigation hidden='about' />
 				</div>
