@@ -8,6 +8,7 @@ import Navigation from '@/components/Navigation'
 // import { EmblaOptionsType } from 'embla-carousel'
 // import Carousel from '@/components/carousel/Carousel'
 import Button from '@/components/Button'
+import { motion } from 'framer-motion'
 // import bgImg from '@/public/images/bg-dots.webp'
 
 // const images: string[] = [
@@ -25,7 +26,13 @@ const HomePage = () => {
 
 	return (
 		<>
-			<div className='flex flex-col min-h-screen'>
+			<motion.div
+				className='flex flex-col min-h-screen'
+				initial={{ opacity: 0 }}
+				animate={{
+					opacity: 1,
+					transition: { delay: 1, duration: 0.4, ease: 'easeIn' },
+				}}>
 				{/* <Image
 					src={bgImg}
 					alt='Tło strony'
@@ -65,7 +72,7 @@ const HomePage = () => {
 						/>
 					</div> */}
 				</div>
-			</div>
+			</motion.div>
 		</>
 	)
 }
