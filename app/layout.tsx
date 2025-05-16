@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Montserrat, Calistoga } from 'next/font/google'
 import './globals.css'
 import { Toaster } from 'sonner'
+import PageTransition from '@/components/PageTransition'
 
 const calistoga = Calistoga({
 	variable: '--font-calistoga',
@@ -27,8 +28,10 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body className={`${calistoga.variable} ${montserrat.variable}`}>
-				{children}
-				<Toaster />
+				<PageTransition>
+					{children}
+					<Toaster />
+				</PageTransition>
 			</body>
 		</html>
 	)
